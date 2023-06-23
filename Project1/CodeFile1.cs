@@ -7,11 +7,16 @@ class CodeFile1 : Form
     private TableLayoutPanel tlp;
 
     public static void Main()
+    {
         Application.Run(new CodeFile1());
+
+    }
 
         public CodeFile1()
     {
-
+        this.Text = "サンプル";
+        this.Width = 300;
+        this.Height = 200;
     }
 
 }
