@@ -23,6 +23,8 @@ class CodeFile1 : Form
         this.Text = "Enterprise Systems";
         this.Width = 1500;
         this.Height = 800;
+
+        InitializeComponent();
     }
 
     private void InitializeComponent()
@@ -40,12 +42,13 @@ class CodeFile1 : Form
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(348, 447);
+            this.button1.Location = new System.Drawing.Point(343, 423);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -130,6 +133,11 @@ class CodeFile1 : Form
     }
 
     private void textBox1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void button1_Click(object sender, EventArgs e)
     {
 
     }
