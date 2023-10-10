@@ -14,9 +14,9 @@ class CodeFile1 : Form
 
         public CodeFile1()
     {
-        this.Text = "サンプル";
-        this.Width = 300;
-        this.Height = 200;
+        this.Text = "企業システム";
+        this.Width = 1500;
+        this.Height = 800;
     }
 
 }
