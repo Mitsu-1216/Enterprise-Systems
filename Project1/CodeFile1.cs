@@ -46,7 +46,7 @@ class CodeFile1 : Form
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -74,15 +74,19 @@ class CodeFile1 : Form
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(234, 3);
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Location = new System.Drawing.Point(234, 56);
             this.textBox1.Name = "textBox1";
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox1.Size = new System.Drawing.Size(225, 19);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(234, 135);
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.Location = new System.Drawing.Point(234, 189);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(225, 19);
             this.textBox2.TabIndex = 4;
@@ -112,7 +116,7 @@ class CodeFile1 : Form
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(730, 594);
+            this.panel1.Size = new System.Drawing.Size(788, 594);
             this.panel1.TabIndex = 6;
             // 
             // CodeFile1
