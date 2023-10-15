@@ -12,11 +12,6 @@ class LoginFile : Form
     private TableLayoutPanel tableLayoutPanel1;
     private Panel panel1;
     private TableLayoutPanel tlp;
-    public static void Main()
-    {
-        Application.Run(new CodeFile1());
-
-    }
 
         public LoginFile()
     {
