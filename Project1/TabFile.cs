@@ -18,8 +18,8 @@ class TabFile : Form
     public TabFile()
     {
         this.Text = "detail screen";
-        this.Width = 1500;
-        this.Height = 800;
+        this.Width = 3000;
+        this.Height = 1600;
 
         InitializeComponent();
     }
