@@ -15,7 +15,7 @@ class ListFile : Form
 
         public ListFile()
     {
-        this.Text = "Enterprise Systems";
+        this.Text = "Lists";
         this.Width = 1500;
         this.Height = 800;
 
@@ -136,8 +136,16 @@ class ListFile : Form
 
     }
 
+    /// <summary>
+    /// 詳細画面へ遷移
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void button1_Click(object sender, EventArgs e)
     {
-
+        {
+            TabFile tabfile = new TabFile();
+            tabfile.Show();
+        }
     }
 }

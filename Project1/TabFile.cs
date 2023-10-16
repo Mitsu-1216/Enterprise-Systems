@@ -15,7 +15,7 @@ class TabFile : Form
 
     public TabFile()
     {
-        this.Text = "Enterprise Systems";
+        this.Text = "detail screen";
         this.Width = 1500;
         this.Height = 800;
 

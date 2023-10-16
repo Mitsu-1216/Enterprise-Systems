@@ -149,7 +149,6 @@ class CodeFile1 : Form
     private void button1_Click(object sender, EventArgs e)
     {
         {
-            // 業務一覧画面詳細を表示
             ListFile listfile = new ListFile();
             listfile.Show();
         }
