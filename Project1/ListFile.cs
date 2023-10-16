@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-class LoginFile : Form
+class ListFile : Form
 {
     private Button[] bt = new Button[6];
     private Button button1;
@@ -13,7 +13,7 @@ class LoginFile : Form
     private Panel panel1;
     private TableLayoutPanel tlp;
 
-        public LoginFile()
+        public ListFile()
     {
         this.Text = "Enterprise Systems";
         this.Width = 1500;

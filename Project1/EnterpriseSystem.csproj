@@ -41,7 +41,10 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="lLstFile.cs">
+    <Compile Include="TabFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListFile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginFile.cs">
@@ -49,8 +52,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="lLstFile.resx">
-      <DependentUpon>lLstFile.cs</DependentUpon>
+    <EmbeddedResource Include="TabFile.resx">
+      <DependentUpon>TabFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListFile.resx">
+      <DependentUpon>ListFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginFile.resx">
       <DependentUpon>LoginFile.cs</DependentUpon>
