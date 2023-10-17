@@ -21,7 +21,7 @@ class CodeFile1 : Form
         public CodeFile1()
     {
         this.Text = "Enterprise Systems";
-        this.Width = 3000;
+        this.Width = 5000;
         this.Height = 1600;
 
         InitializeComponent();
@@ -117,12 +117,12 @@ class CodeFile1 : Form
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(788, 594);
+            this.panel1.Size = new System.Drawing.Size(927, 594);
             this.panel1.TabIndex = 6;
             // 
             // CodeFile1
             // 
-            this.ClientSize = new System.Drawing.Size(786, 513);
+            this.ClientSize = new System.Drawing.Size(1484, 861);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeFile1";

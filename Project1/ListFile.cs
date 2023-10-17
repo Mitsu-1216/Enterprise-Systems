@@ -12,8 +12,8 @@ class ListFile : Form
         public ListFile()
     {
         this.Text = "Lists";
-        this.Width = 3000;
-        this.Height = 1600;
+        this.Width = 1500;
+        this.Height = 900;
 
         InitializeComponent();
     }
@@ -44,8 +44,9 @@ class ListFile : Form
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(788, 594);
+            this.panel1.Size = new System.Drawing.Size(927, 594);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -59,9 +60,11 @@ class ListFile : Form
             // 
             // ListFile
             // 
-            this.ClientSize = new System.Drawing.Size(786, 513);
+            this.ClientSize = new System.Drawing.Size(1484, 861);
             this.Controls.Add(this.panel1);
             this.Name = "ListFile";
+            this.Text = "顧客リスト";
+            this.Load += new System.EventHandler(this.ListFile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -92,6 +95,16 @@ class ListFile : Form
     }
 
     private void label1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void panel1_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
+
+    private void ListFile_Load(object sender, EventArgs e)
     {
 
     }
