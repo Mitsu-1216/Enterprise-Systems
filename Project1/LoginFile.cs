@@ -29,6 +29,7 @@ class CodeFile1 : Form
 
     private void InitializeComponent()
     {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeFile1));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -123,7 +124,9 @@ class CodeFile1 : Form
             // 
             this.ClientSize = new System.Drawing.Size(786, 513);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeFile1";
+            this.Load += new System.EventHandler(this.CodeFile1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -152,5 +155,10 @@ class CodeFile1 : Form
             ListFile listfile = new ListFile();
             listfile.Show();
         }
+    }
+
+    private void CodeFile1_Load(object sender, EventArgs e)
+    {
+
     }
 }
