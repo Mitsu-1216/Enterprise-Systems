@@ -41,6 +41,9 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TabFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,6 +55,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="NewFile.resx">
+      <DependentUpon>NewFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TabFile.resx">
       <DependentUpon>TabFile.cs</DependentUpon>
     </EmbeddedResource>

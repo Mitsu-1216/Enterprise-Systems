@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-class ListFile : Form
+class NewFile : Form
 {
     private Button[] bt = new Button[6];
     private Button button1;
@@ -10,7 +10,7 @@ class ListFile : Form
     private Button button2;
     private TableLayoutPanel tlp;
 
-        public ListFile()
+        public NewFile()
     {
         this.Text = "Lists";
         this.Width = 1500;
@@ -124,7 +124,7 @@ class ListFile : Form
 
     private void button2_Click(object sender, EventArgs e)
     {
-        NewFile newfile = new NewFile();
-        newfile.Show();
+        TabFile tabfile = new TabFile();
+        tabfile.Show();
     }
 }
