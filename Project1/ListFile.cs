@@ -52,9 +52,9 @@ class ListFile : Form
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(23, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 12);
+            this.label1.Size = new System.Drawing.Size(84, 12);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ここに一覧を作る。";
+            this.label1.Text = "ここに一覧を作る";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ListFile
