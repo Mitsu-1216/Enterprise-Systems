@@ -145,6 +145,7 @@ class TabFile : Form
             this.ClientSize = new System.Drawing.Size(1484, 861);
             this.Controls.Add(this.panel1);
             this.Name = "TabFile";
+            this.Text = "顧客情報詳細画面";
             this.Load += new System.EventHandler(this.TabFile_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
