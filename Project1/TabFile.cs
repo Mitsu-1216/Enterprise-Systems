@@ -35,6 +35,8 @@ class TabFile : Form
     private BindingSource bindingSource1;
     private ColorDialog colorDialog1;
     private System.ComponentModel.BackgroundWorker backgroundWorker1;
+    private TextBox textBox1;
+    private TextBox textBox2;
     private TableLayoutPanel tlp;
 
     public TabFile()
@@ -80,9 +82,12 @@ class TabFile : Form
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -196,9 +201,11 @@ class TabFile : Form
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(181, 197);
+            this.flowLayoutPanel1.Controls.Add(this.textBox1);
+            this.flowLayoutPanel1.Controls.Add(this.textBox2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(45, 48);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(330, 146);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(195, 88);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // timer1
@@ -348,6 +355,20 @@ class TabFile : Form
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(129, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(63, 19);
+            this.textBox1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(60, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(63, 19);
+            this.textBox2.TabIndex = 1;
+            // 
             // TabFile
             // 
             this.ClientSize = new System.Drawing.Size(1484, 861);
@@ -358,6 +379,8 @@ class TabFile : Form
             this.tabControl1.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
