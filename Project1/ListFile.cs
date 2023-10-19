@@ -77,7 +77,6 @@ class ListFile : Form
             this.Controls.Add(this.panel1);
             this.Name = "ListFile";
             this.Text = "顧客一覧画面";
-            this.Load += new System.EventHandler(this.ListFile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -113,11 +112,6 @@ class ListFile : Form
     }
 
     private void panel1_Paint(object sender, PaintEventArgs e)
-    {
-
-    }
-
-    private void ListFile_Load(object sender, EventArgs e)
     {
 
     }

@@ -146,31 +146,10 @@ class TabFile : Form
             this.Controls.Add(this.panel1);
             this.Name = "TabFile";
             this.Text = "顧客情報詳細画面";
-            this.Load += new System.EventHandler(this.TabFile_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
     }
 
-    private void textBox2_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void textBox1_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-
-    private void button1_Click(object sender, EventArgs e)
-    { 
-
-    }
-
-    private void TabFile_Load(object sender, EventArgs e)
-    {
-
-    }
 }
