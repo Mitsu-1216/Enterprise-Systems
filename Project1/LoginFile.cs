@@ -84,7 +84,6 @@ class CodeFile1 : Form
             this.textBox1.Size = new System.Drawing.Size(165, 44);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -114,7 +113,6 @@ class CodeFile1 : Form
             this.textBox2.Size = new System.Drawing.Size(165, 44);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // panel1
             // 
@@ -134,16 +132,10 @@ class CodeFile1 : Form
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeFile1";
             this.Text = "ログイン画面";
-            this.Load += new System.EventHandler(this.CodeFile1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
-    }
-
-    private void textBox2_TextChanged(object sender, EventArgs e)
-    {
 
     }
 
@@ -165,13 +157,4 @@ class CodeFile1 : Form
         }
     }
 
-    private void CodeFile1_Load(object sender, EventArgs e)
-    {
-
-    }
-
-    private void textBox2_TextChanged_1(object sender, EventArgs e)
-    {
-
-    }
 }
