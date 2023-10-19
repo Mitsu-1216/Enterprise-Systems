@@ -144,21 +144,21 @@ class NewFile : Form
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 536);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // textBox6
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.Location = new System.Drawing.Point(641, 135);
+            this.textBox6.Location = new System.Drawing.Point(641, 147);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(41, 26);
             this.textBox6.TabIndex = 14;
@@ -175,7 +175,7 @@ class NewFile : Form
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(197, 138);
+            this.label7.Location = new System.Drawing.Point(197, 150);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 19);
             this.label7.TabIndex = 12;
@@ -185,7 +185,7 @@ class NewFile : Form
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(178, 112);
+            this.label6.Location = new System.Drawing.Point(178, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 19);
             this.label6.TabIndex = 11;
@@ -345,7 +345,7 @@ class NewFile : Form
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(178, 170);
+            this.label8.Location = new System.Drawing.Point(178, 182);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 19);
             this.label8.TabIndex = 15;
@@ -355,7 +355,7 @@ class NewFile : Form
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(155, 196);
+            this.label9.Location = new System.Drawing.Point(155, 214);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 19);
             this.label9.TabIndex = 16;
@@ -365,7 +365,7 @@ class NewFile : Form
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(197, 216);
+            this.label10.Location = new System.Drawing.Point(197, 246);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 19);
             this.label10.TabIndex = 17;
@@ -375,7 +375,7 @@ class NewFile : Form
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(188, 236);
+            this.label11.Location = new System.Drawing.Point(188, 275);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 19);
             this.label11.TabIndex = 18;
@@ -385,7 +385,7 @@ class NewFile : Form
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(197, 256);
+            this.label12.Location = new System.Drawing.Point(197, 304);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 19);
             this.label12.TabIndex = 19;
@@ -395,7 +395,7 @@ class NewFile : Form
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(199, 396);
+            this.label13.Location = new System.Drawing.Point(199, 423);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 19);
             this.label13.TabIndex = 20;
@@ -404,7 +404,7 @@ class NewFile : Form
             // textBox8
             // 
             this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox8.Location = new System.Drawing.Point(641, 199);
+            this.textBox8.Location = new System.Drawing.Point(641, 211);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(41, 26);
             this.textBox8.TabIndex = 22;
@@ -412,7 +412,7 @@ class NewFile : Form
             // textBox7
             // 
             this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox7.Location = new System.Drawing.Point(641, 167);
+            this.textBox7.Location = new System.Drawing.Point(641, 179);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(41, 26);
             this.textBox7.TabIndex = 21;
@@ -420,7 +420,7 @@ class NewFile : Form
             // textBox9
             // 
             this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox9.Location = new System.Drawing.Point(641, 219);
+            this.textBox9.Location = new System.Drawing.Point(641, 243);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(41, 26);
             this.textBox9.TabIndex = 23;
@@ -428,7 +428,7 @@ class NewFile : Form
             // textBox10
             // 
             this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox10.Location = new System.Drawing.Point(641, 259);
+            this.textBox10.Location = new System.Drawing.Point(641, 301);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(41, 26);
             this.textBox10.TabIndex = 24;
@@ -436,7 +436,7 @@ class NewFile : Form
             // textBox11
             // 
             this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox11.Location = new System.Drawing.Point(641, 393);
+            this.textBox11.Location = new System.Drawing.Point(641, 420);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(41, 26);
             this.textBox11.TabIndex = 25;
@@ -445,7 +445,7 @@ class NewFile : Form
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(601, 239);
+            this.comboBox1.Location = new System.Drawing.Point(601, 275);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 27);
             this.comboBox1.TabIndex = 26;
