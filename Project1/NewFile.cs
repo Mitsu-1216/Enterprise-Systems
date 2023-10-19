@@ -7,6 +7,7 @@ class NewFile : Form
     private Panel panel1;
     private Label label1;
     private Button button2;
+    private TableLayoutPanel tableLayoutPanel1;
     private TableLayoutPanel tlp;
 
         public NewFile()
@@ -23,20 +24,21 @@ class NewFile : Form
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(1123, 624);
+            this.panel1.Size = new System.Drawing.Size(1123, 684);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button2
             // 
@@ -47,7 +49,6 @@ class NewFile : Form
             this.button2.TabIndex = 2;
             this.button2.Text = "登録する";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -57,7 +58,19 @@ class NewFile : Form
             this.label1.Size = new System.Drawing.Size(138, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "新規顧客情報を登録します";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 46);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(271, 126);
+            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // NewFile
             // 
@@ -65,20 +78,9 @@ class NewFile : Form
             this.Controls.Add(this.panel1);
             this.Name = "NewFile";
             this.Text = "新規登録画面";
-            this.Load += new System.EventHandler(this.ListFile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-
-    }
-
-    private void textBox2_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void textBox1_TextChanged(object sender, EventArgs e)
-    {
 
     }
 
@@ -95,24 +97,4 @@ class NewFile : Form
         }
     }
 
-    private void label1_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void panel1_Paint(object sender, PaintEventArgs e)
-    {
-
-    }
-
-    private void ListFile_Load(object sender, EventArgs e)
-    {
-
-    }
-
-    private void button2_Click(object sender, EventArgs e)
-    {
-        TabFile tabfile = new TabFile();
-        tabfile.Show();
-    }
 }
