@@ -7,14 +7,11 @@ class NewFile : Form
     private Panel panel1;
     private Label label1;
     private Button button2;
-    private TextBox textBox1;
-    private TextBox textBox2;
     private DateTimePicker dateTimePicker1;
     private RadioButton radioButton1;
     private TableLayoutPanel tableLayoutPanel4;
     private RadioButton radioButton2;
     private TableLayoutPanel tableLayoutPanel3;
-    private TextBox textBox3;
     private TextBox textBox4;
     private TableLayoutPanel tableLayoutPanel2;
     private Label label3;
@@ -38,6 +35,9 @@ class NewFile : Form
     private TextBox textBox10;
     private TextBox textBox11;
     private ComboBox comboBox1;
+    private TextBox textBox2;
+    private TextBox textBox1;
+    private TextBox textBox3;
     private TableLayoutPanel tlp;
 
         public NewFile()
@@ -61,14 +61,11 @@ class NewFile : Form
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -85,6 +82,9 @@ class NewFile : Form
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -228,37 +228,22 @@ class NewFile : Form
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.textBox2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(615, 3);
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(481, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(94, 24);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(362, 24);
             this.tableLayoutPanel2.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(50, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(41, 26);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(41, 26);
-            this.textBox1.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker1.Location = new System.Drawing.Point(615, 83);
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
+            this.dateTimePicker1.Location = new System.Drawing.Point(563, 83);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(94, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(197, 26);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -269,12 +254,12 @@ class NewFile : Form
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.radioButton1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.radioButton2, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(615, 63);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(559, 63);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(94, 14);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(205, 14);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
             // radioButton1
@@ -282,7 +267,7 @@ class NewFile : Form
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(3, 3);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(41, 8);
+            this.radioButton1.Size = new System.Drawing.Size(97, 8);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "radioButton1";
@@ -291,9 +276,9 @@ class NewFile : Form
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(50, 3);
+            this.radioButton2.Location = new System.Drawing.Point(106, 3);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(41, 8);
+            this.radioButton2.Size = new System.Drawing.Size(96, 8);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "radioButton2";
@@ -307,28 +292,20 @@ class NewFile : Form
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.textBox3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox4, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(615, 33);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(482, 33);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(94, 24);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(360, 24);
             this.tableLayoutPanel3.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(50, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(41, 26);
-            this.textBox3.TabIndex = 1;
             // 
             // textBox4
             // 
             this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(3, 3);
+            this.textBox4.Location = new System.Drawing.Point(9, 3);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(41, 26);
+            this.textBox4.Size = new System.Drawing.Size(162, 26);
             this.textBox4.TabIndex = 0;
             // 
             // label2
@@ -468,6 +445,30 @@ class NewFile : Form
             this.label1.Size = new System.Drawing.Size(138, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "新規顧客情報を登録します";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Location = new System.Drawing.Point(191, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(162, 26);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.Location = new System.Drawing.Point(10, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(162, 26);
+            this.textBox2.TabIndex = 3;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox3.Location = new System.Drawing.Point(189, 3);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(162, 26);
+            this.textBox3.TabIndex = 3;
             // 
             // NewFile
             // 
