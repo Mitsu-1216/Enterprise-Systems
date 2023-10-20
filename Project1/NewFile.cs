@@ -143,6 +143,7 @@ class NewFile : Form
             this.tableLayoutPanel1.RowCount = 12;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -152,15 +153,13 @@ class NewFile : Form
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 536);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // textBox6
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox6.Location = new System.Drawing.Point(180, 147);
+            this.textBox6.Location = new System.Drawing.Point(180, 162);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(353, 26);
             this.textBox6.TabIndex = 14;
@@ -168,7 +167,7 @@ class NewFile : Form
             // textBox5
             // 
             this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox5.Location = new System.Drawing.Point(180, 115);
+            this.textBox5.Location = new System.Drawing.Point(180, 130);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(351, 26);
             this.textBox5.TabIndex = 13;
@@ -177,7 +176,7 @@ class NewFile : Form
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 150);
+            this.label7.Location = new System.Drawing.Point(3, 165);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 19);
             this.label7.TabIndex = 12;
@@ -187,7 +186,7 @@ class NewFile : Form
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 118);
+            this.label6.Location = new System.Drawing.Point(3, 133);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 19);
             this.label6.TabIndex = 11;
@@ -197,7 +196,7 @@ class NewFile : Form
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 86);
+            this.label5.Location = new System.Drawing.Point(3, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 19);
             this.label5.TabIndex = 10;
@@ -207,7 +206,7 @@ class NewFile : Form
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 60);
+            this.label4.Location = new System.Drawing.Point(3, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 19);
             this.label4.TabIndex = 9;
@@ -259,7 +258,7 @@ class NewFile : Form
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
-            this.dateTimePicker1.Location = new System.Drawing.Point(180, 83);
+            this.dateTimePicker1.Location = new System.Drawing.Point(180, 98);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(197, 26);
             this.dateTimePicker1.TabIndex = 2;
@@ -277,16 +276,16 @@ class NewFile : Form
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(205, 14);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(212, 29);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
             // radioButton1
             // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
+            this.radioButton1.Location = new System.Drawing.Point(21, 3);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 8);
+            this.radioButton1.Size = new System.Drawing.Size(65, 23);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "男性";
@@ -294,10 +293,11 @@ class NewFile : Form
             // 
             // radioButton2
             // 
+            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(137, 3);
+            this.radioButton2.Location = new System.Drawing.Point(127, 3);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(65, 8);
+            this.radioButton2.Size = new System.Drawing.Size(65, 23);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "女性";
@@ -349,7 +349,7 @@ class NewFile : Form
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 182);
+            this.label8.Location = new System.Drawing.Point(3, 197);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 19);
             this.label8.TabIndex = 15;
@@ -359,7 +359,7 @@ class NewFile : Form
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 214);
+            this.label9.Location = new System.Drawing.Point(3, 229);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 19);
             this.label9.TabIndex = 16;
@@ -369,7 +369,7 @@ class NewFile : Form
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 247);
+            this.label10.Location = new System.Drawing.Point(3, 262);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 19);
             this.label10.TabIndex = 17;
@@ -379,7 +379,7 @@ class NewFile : Form
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 280);
+            this.label11.Location = new System.Drawing.Point(3, 295);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 19);
             this.label11.TabIndex = 18;
@@ -389,7 +389,7 @@ class NewFile : Form
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 312);
+            this.label12.Location = new System.Drawing.Point(3, 327);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 19);
             this.label12.TabIndex = 19;
@@ -399,7 +399,7 @@ class NewFile : Form
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 338);
+            this.label13.Location = new System.Drawing.Point(3, 353);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 19);
             this.label13.TabIndex = 20;
@@ -408,7 +408,7 @@ class NewFile : Form
             // textBox8
             // 
             this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox8.Location = new System.Drawing.Point(180, 211);
+            this.textBox8.Location = new System.Drawing.Point(180, 226);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(353, 26);
             this.textBox8.TabIndex = 22;
@@ -416,7 +416,7 @@ class NewFile : Form
             // textBox7
             // 
             this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox7.Location = new System.Drawing.Point(180, 179);
+            this.textBox7.Location = new System.Drawing.Point(180, 194);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(351, 26);
             this.textBox7.TabIndex = 21;
@@ -424,7 +424,7 @@ class NewFile : Form
             // textBox10
             // 
             this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox10.Location = new System.Drawing.Point(180, 309);
+            this.textBox10.Location = new System.Drawing.Point(180, 324);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(353, 26);
             this.textBox10.TabIndex = 24;
@@ -434,7 +434,7 @@ class NewFile : Form
             this.textBox11.AcceptsReturn = true;
             this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBox11.BackColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(180, 343);
+            this.textBox11.Location = new System.Drawing.Point(180, 356);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
             this.textBox11.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -445,7 +445,7 @@ class NewFile : Form
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(180, 276);
+            this.comboBox1.Location = new System.Drawing.Point(180, 291);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 27);
             this.comboBox1.TabIndex = 26;
@@ -463,9 +463,10 @@ class NewFile : Form
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(23, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 12);
+            this.label1.Size = new System.Drawing.Size(145, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "新規顧客情報を登録します";
             // 
@@ -473,7 +474,7 @@ class NewFile : Form
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(180, 243);
+            this.comboBox2.Location = new System.Drawing.Point(180, 258);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(182, 27);
             this.comboBox2.TabIndex = 27;
