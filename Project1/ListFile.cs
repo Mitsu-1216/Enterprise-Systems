@@ -30,10 +30,10 @@ class ListFile : Form
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button1.Location = new System.Drawing.Point(521, 146);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 48);
+            this.button1.Size = new System.Drawing.Size(186, 79);
             this.button1.TabIndex = 0;
             this.button1.Text = "顧客情報詳細へ";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,10 +54,10 @@ class ListFile : Form
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button2.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button2.Location = new System.Drawing.Point(521, 523);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 45);
+            this.button2.Size = new System.Drawing.Size(186, 71);
             this.button2.TabIndex = 2;
             this.button2.Text = "顧客情報新規作成";
             this.button2.UseVisualStyleBackColor = true;

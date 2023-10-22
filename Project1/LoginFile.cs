@@ -132,6 +132,7 @@ class CodeFile1 : Form
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeFile1";
             this.Text = "ログイン画面";
+            this.Load += new System.EventHandler(this.CodeFile1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -157,4 +158,8 @@ class CodeFile1 : Form
         }
     }
 
+    private void CodeFile1_Load(object sender, EventArgs e)
+    {
+
+    }
 }
