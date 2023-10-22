@@ -12,7 +12,7 @@ class NewFile : Form
     private TableLayoutPanel tableLayoutPanel4;
     private RadioButton radioButton2;
     private TableLayoutPanel tableLayoutPanel3;
-    private TextBox textBox4;
+    private TextBox nameTextBoxKanaSei;
     private TableLayoutPanel tableLayoutPanel2;
     private Label label3;
     private TableLayoutPanel tableLayoutPanel1;
@@ -34,9 +34,9 @@ class NewFile : Form
     private TextBox textBox10;
     private TextBox textBox11;
     private ComboBox comboBox1;
-    private TextBox textBox2;
-    private TextBox textBox1;
-    private TextBox textBox3;
+    private TextBox nameTextBoxKanjiSei;
+    private TextBox nameTextBoxKanjiMei;
+    private TextBox nameTextBoxKanaMei;
     private ComboBox comboBox2;
     private TableLayoutPanel tlp;
 
@@ -62,12 +62,12 @@ class NewFile : Form
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameTextBoxKanjiSei = new System.Windows.Forms.TextBox();
+            this.nameTextBoxKanjiMei = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.nameTextBoxKanaMei = new System.Windows.Forms.TextBox();
+            this.nameTextBoxKanaSei = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -237,8 +237,8 @@ class NewFile : Form
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.nameTextBoxKanjiSei, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.nameTextBoxKanjiMei, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(180, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -247,21 +247,21 @@ class NewFile : Form
             this.tableLayoutPanel2.Size = new System.Drawing.Size(362, 24);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // textBox2
+            // nameTextBoxKanjiSei
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(10, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 26);
-            this.textBox2.TabIndex = 3;
+            this.nameTextBoxKanjiSei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nameTextBoxKanjiSei.Location = new System.Drawing.Point(10, 3);
+            this.nameTextBoxKanjiSei.Name = "nameTextBoxKanjiSei";
+            this.nameTextBoxKanjiSei.Size = new System.Drawing.Size(162, 26);
+            this.nameTextBoxKanjiSei.TabIndex = 3;
             // 
-            // textBox1
+            // nameTextBoxKanjiMei
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(191, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 26);
-            this.textBox1.TabIndex = 2;
+            this.nameTextBoxKanjiMei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nameTextBoxKanjiMei.Location = new System.Drawing.Point(191, 3);
+            this.nameTextBoxKanjiMei.Name = "nameTextBoxKanjiMei";
+            this.nameTextBoxKanjiMei.Size = new System.Drawing.Size(162, 26);
+            this.nameTextBoxKanjiMei.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -278,8 +278,8 @@ class NewFile : Form
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.textBox3, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox4, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.nameTextBoxKanaMei, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.nameTextBoxKanaSei, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(180, 33);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -288,21 +288,21 @@ class NewFile : Form
             this.tableLayoutPanel3.Size = new System.Drawing.Size(360, 24);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // textBox3
+            // nameTextBoxKanaMei
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(189, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 26);
-            this.textBox3.TabIndex = 3;
+            this.nameTextBoxKanaMei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nameTextBoxKanaMei.Location = new System.Drawing.Point(189, 3);
+            this.nameTextBoxKanaMei.Name = "nameTextBoxKanaMei";
+            this.nameTextBoxKanaMei.Size = new System.Drawing.Size(162, 26);
+            this.nameTextBoxKanaMei.TabIndex = 3;
             // 
-            // textBox4
+            // nameTextBoxKanaSei
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(9, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 26);
-            this.textBox4.TabIndex = 0;
+            this.nameTextBoxKanaSei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nameTextBoxKanaSei.Location = new System.Drawing.Point(9, 3);
+            this.nameTextBoxKanaSei.Name = "nameTextBoxKanaSei";
+            this.nameTextBoxKanaSei.Size = new System.Drawing.Size(162, 26);
+            this.nameTextBoxKanaSei.TabIndex = 0;
             // 
             // label2
             // 
@@ -468,6 +468,7 @@ class NewFile : Form
             this.button2.TabIndex = 2;
             this.button2.Text = "登録する";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -513,4 +514,11 @@ class NewFile : Form
         }
     }
 
+    private void button2_Click(object sender, EventArgs e)
+    {
+        string nameKanjiSei = nameTextBoxKanjiSei.Text;
+        string nameKanjiMei = nameTextBoxKanjiMei.Text;
+        string nameKanaSei = nameTextBoxKanaSei.Text;
+        string nameKanaMei = nameTextBoxKanaMei.Text;
+    }
 }
