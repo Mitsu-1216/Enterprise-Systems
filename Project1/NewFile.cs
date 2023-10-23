@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Data;
 using NpgsqlTypes;
 using System.Collections.Generic;
+using System.Data.Common;
 
 class NewFile : Form
 {
@@ -547,21 +548,49 @@ class NewFile : Form
         connection.Open();
         Console.WriteLine("接続開始");
 
+        //String customerId = "SELECT customer_id FROM customer_table";
+        ////String customerId = "SELECT nextval('customer_id_seq')";
+        //NpgsqlCommand cus = new NpgsqlCommand(customerId, connection);;
+        //var br = cus.ExecuteReader();
+
+        //SELECT処理
+        NpgsqlCommand cmd = null;
+        string cmd_str = null;
+        DataTable dt = null;
+        NpgsqlDataAdapter da = null;
+
+        dt = new DataTable();
+        cmd_str = "SELECT * FROM customer_table";
+        cmd = new NpgsqlCommand(cmd_str, connection);
+        da = new NpgsqlDataAdapter(cmd);
+        da.Fill(dt);
+
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            Console.WriteLine("(col1, col2) = (" + dt.Rows[i][0] + ", " + dt.Rows[i][1] + ")");
+            var newid = int.Parse(dt.Rows[i][0].ToString());
+
+        }
+        
+
         //SQL作成
-        sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday) VALUES (2,@sei_kanji,@mei_kanji,@sei_kana,@mei_kana,'1996/12/16')";
-        NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
-        //パラメーター追加
-        cmd.Parameters.Add(new NpgsqlParameter("sei_kanji", NpgsqlDbType.Varchar));
-        cmd.Parameters["sei_kanji"].Value = nameKanjiSei;
-        cmd.Parameters.Add(new NpgsqlParameter("mei_kanji", NpgsqlDbType.Varchar));
-        cmd.Parameters["mei_kanji"].Value = nameKanjiMei;
-        cmd.Parameters.Add(new NpgsqlParameter("sei_kana", NpgsqlDbType.Varchar));
-        cmd.Parameters["sei_kana"].Value = nameKanaSei;
-        cmd.Parameters.Add(new NpgsqlParameter("mei_kana", NpgsqlDbType.Varchar));
-        cmd.Parameters["mei_kana"].Value = nameKanaMei;
+        //sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday) VALUES (@customer_id,@sei_kanji,@mei_kanji,@sei_kana,@mei_kana,'1996/12/16')";
+        //NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+
+        ////パラメーター追加
+        //cmd.Parameters.Add(new NpgsqlParameter("customer_id", NpgsqlDbType.Varchar));
+        //cmd.Parameters["customer_id"].Value = customerId;
+        //cmd.Parameters.Add(new NpgsqlParameter("sei_kanji", NpgsqlDbType.Varchar));
+        //cmd.Parameters["sei_kanji"].Value = nameKanjiSei;
+        //cmd.Parameters.Add(new NpgsqlParameter("mei_kanji", NpgsqlDbType.Varchar));
+        //cmd.Parameters["mei_kanji"].Value = nameKanjiMei;
+        //cmd.Parameters.Add(new NpgsqlParameter("sei_kana", NpgsqlDbType.Varchar));
+        //cmd.Parameters["sei_kana"].Value = nameKanaSei;
+        //cmd.Parameters.Add(new NpgsqlParameter("mei_kana", NpgsqlDbType.Varchar));
+        //cmd.Parameters["mei_kana"].Value = nameKanaMei;
 
         //SQL実行
-        NpgsqlDataReader dr = cmd.ExecuteReader();
+        //NpgsqlDataReader dr = cmd.ExecuteReader();
 
         Console.WriteLine("接続解除");
         connection.Close();

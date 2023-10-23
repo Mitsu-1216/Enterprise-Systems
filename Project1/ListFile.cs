@@ -9,7 +9,6 @@ class ListFile : Form
     private Panel panel1;
     private Label label1;
     private Button button2;
-    private TableLayoutPanel tlp;
 
         public ListFile()
     {
