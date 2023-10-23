@@ -1,5 +1,11 @@
-﻿using System;
+﻿using Npgsql;
+using System;
+using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.Data;
+using NpgsqlTypes;
+using System.Collections.Generic;
 
 class NewFile : Form
 {
@@ -522,7 +528,43 @@ class NewFile : Form
         string nameKanaMei = nameTextBoxKanaMei.Text;
 
 
+        string connectInfo = string.Empty;
+        string sql = string.Empty;
+        string userid = string.Empty;
+        string username = string.Empty;
 
+        //接続情報を作成
+        connectInfo = "Server=localhost;" //接続先サーバ 
+                    + "Port=5432;"  //ポート番号
+                    + "User Id=postgres;"  //接続ユーザ
+                    + "Password=root;" //パスワード
+                    + "Database=postgres;"; //接続先データベース
+
+        //インスタンスを生成
+        NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
+
+        //データベース接続
+        connection.Open();
+        Console.WriteLine("接続開始");
+
+        //SQL作成
+        sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday) VALUES (2,@sei_kanji,'a','a','s','1996/12/16')";
+        NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+
+        cmd.Parameters.Add(new NpgsqlParameter("sei_kanji", NpgsqlDbType.Varchar)); //パラメーターの追加
+        cmd.Parameters["sei_kanji"].Value = nameKanjiSei; //パラメーターに値をセット
+        //cmd.Parameters.Add(new NpgsqlParameter("mei_kanji", NpgsqlDbType.Varchar)); //パラメーターの追加
+        //cmd.Parameters["mei_kanji"].Value = nameKanjiMei; //パラメーターに値をセット
+        //cmd.Parameters.Add(new NpgsqlParameter("sei_kana", NpgsqlDbType.Varchar)); //パラメーターの追加
+        //cmd.Parameters["sei_kana"].Value = nameKanaSei; //パラメーターに値をセット
+        //cmd.Parameters.Add(new NpgsqlParameter("mei_kana", NpgsqlDbType.Varchar)); //パラメーターの追加s
+        //cmd.Parameters["mei_kana"].Value = nameKanaMei; //パラメーターに値をセット
+
+        //SQL実行
+        NpgsqlDataReader dr = cmd.ExecuteReader();
+
+        Console.WriteLine("接続解除");
+        connection.Close();
 
 
     }
