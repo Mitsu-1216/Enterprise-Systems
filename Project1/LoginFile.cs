@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Windows.Forms;
 
 class CodeFile1 : Form
@@ -12,7 +13,7 @@ class CodeFile1 : Form
     private Panel panel1;
     private TextBox textBox2;
     private TableLayoutPanel tlp;
-    public static void Main()
+        public static void Main()
     {
         Application.Run(new CodeFile1());
 

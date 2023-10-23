@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Windows.Forms;
 
 class ListFile : Form
@@ -17,6 +18,36 @@ class ListFile : Form
         this.Height = 900;
 
         InitializeComponent();
+
+
+        string connectInfo = string.Empty;
+        string sql = string.Empty;
+        string userid = string.Empty;
+        string username = string.Empty;
+
+        //接続情報を作成
+        connectInfo = "Server=localhost;" //接続先サーバ 
+                    + "Port=5432;"  //ポート番号
+                    + "User Id=postgres;"  //接続ユーザ
+                    + "Password=root;" //パスワード
+                    + "Database=postgres;"; //接続先データベース
+
+        //インスタンスを生成
+        NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
+
+        //データベース接続
+        connection.Open();
+        Console.WriteLine("接続開始");
+
+        //SQL作成
+        sql = "SELECT * FROM public.m_job";
+        NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+
+        //SQL実行
+        NpgsqlDataReader dr = cmd.ExecuteReader();
+
+        Console.WriteLine("接続解除");
+        connection.Close();
     }
 
     private void InitializeComponent()
