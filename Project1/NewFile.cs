@@ -548,7 +548,7 @@ class NewFile : Form
         connection.Open();
         Console.WriteLine("接続開始");
 
-        //SELECT処理
+        //シーケンス取得
         NpgsqlCommand command = null;
         string cmd_str = null;
         DataTable dt = null;
@@ -560,11 +560,11 @@ class NewFile : Form
         da = new NpgsqlDataAdapter(command);
         da.Fill(dt);
 
+        //次の顧客番号を取得
         int customerId = int.Parse(dt.Rows[0][0].ToString());
 
-        //SQL作成
+        //新規顧客情報登録
         sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday) VALUES (@customer_id,@sei_kanji,@mei_kanji,@sei_kana,@mei_kana,'1996/12/16')";
-        //sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday) VALUES (4,@sei_kanji,'u','h','h','1996/12/16')";
         NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
 
         ////パラメーター追加
@@ -584,7 +584,6 @@ class NewFile : Form
 
         Console.WriteLine("接続解除");
         connection.Close();
-
 
     }
 }
