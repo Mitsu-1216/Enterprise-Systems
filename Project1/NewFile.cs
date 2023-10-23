@@ -548,17 +548,17 @@ class NewFile : Form
         Console.WriteLine("接続開始");
 
         //SQL作成
-        sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday) VALUES (2,@sei_kanji,'a','a','s','1996/12/16')";
+        sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday) VALUES (2,@sei_kanji,@mei_kanji,@sei_kana,@mei_kana,'1996/12/16')";
         NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
-
-        cmd.Parameters.Add(new NpgsqlParameter("sei_kanji", NpgsqlDbType.Varchar)); //パラメーターの追加
-        cmd.Parameters["sei_kanji"].Value = nameKanjiSei; //パラメーターに値をセット
-        //cmd.Parameters.Add(new NpgsqlParameter("mei_kanji", NpgsqlDbType.Varchar)); //パラメーターの追加
-        //cmd.Parameters["mei_kanji"].Value = nameKanjiMei; //パラメーターに値をセット
-        //cmd.Parameters.Add(new NpgsqlParameter("sei_kana", NpgsqlDbType.Varchar)); //パラメーターの追加
-        //cmd.Parameters["sei_kana"].Value = nameKanaSei; //パラメーターに値をセット
-        //cmd.Parameters.Add(new NpgsqlParameter("mei_kana", NpgsqlDbType.Varchar)); //パラメーターの追加s
-        //cmd.Parameters["mei_kana"].Value = nameKanaMei; //パラメーターに値をセット
+        //パラメーター追加
+        cmd.Parameters.Add(new NpgsqlParameter("sei_kanji", NpgsqlDbType.Varchar));
+        cmd.Parameters["sei_kanji"].Value = nameKanjiSei;
+        cmd.Parameters.Add(new NpgsqlParameter("mei_kanji", NpgsqlDbType.Varchar));
+        cmd.Parameters["mei_kanji"].Value = nameKanjiMei;
+        cmd.Parameters.Add(new NpgsqlParameter("sei_kana", NpgsqlDbType.Varchar));
+        cmd.Parameters["sei_kana"].Value = nameKanaSei;
+        cmd.Parameters.Add(new NpgsqlParameter("mei_kana", NpgsqlDbType.Varchar));
+        cmd.Parameters["mei_kana"].Value = nameKanaMei;
 
         //SQL実行
         NpgsqlDataReader dr = cmd.ExecuteReader();
