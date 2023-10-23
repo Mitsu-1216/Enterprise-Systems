@@ -520,5 +520,10 @@ class NewFile : Form
         string nameKanjiMei = nameTextBoxKanjiMei.Text;
         string nameKanaSei = nameTextBoxKanaSei.Text;
         string nameKanaMei = nameTextBoxKanaMei.Text;
+
+
+
+
+
     }
 }

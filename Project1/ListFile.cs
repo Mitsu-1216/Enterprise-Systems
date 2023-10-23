@@ -19,7 +19,6 @@ class ListFile : Form
 
         InitializeComponent();
 
-
         string connectInfo = string.Empty;
         string sql = string.Empty;
         string userid = string.Empty;
