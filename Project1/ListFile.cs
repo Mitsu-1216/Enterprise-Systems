@@ -81,7 +81,6 @@ class ListFile : Form
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(1129, 626);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button2
             // 
@@ -103,7 +102,6 @@ class ListFile : Form
             this.label1.Size = new System.Drawing.Size(121, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "顧客一覧を表示します";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ListFile
             // 
@@ -114,18 +112,8 @@ class ListFile : Form
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-
     }
 
-    private void textBox2_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void textBox1_TextChanged(object sender, EventArgs e)
-    {
-
-    }
 
     /// <summary>
     /// 詳細画面へ遷移
@@ -138,16 +126,6 @@ class ListFile : Form
             TabFile tabfile = new TabFile();
             tabfile.Show();
         }
-    }
-
-    private void label1_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void panel1_Paint(object sender, PaintEventArgs e)
-    {
-
     }
 
     private void button2_Click(object sender, EventArgs e)
