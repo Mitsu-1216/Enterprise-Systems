@@ -15,9 +15,9 @@ class NewFile : Form
     private Label label1;
     private Button button2;
     private DateTimePicker dateTimePicker1;
-    private RadioButton radioButton1;
+    private RadioButton radioButtonMan;
+    private RadioButton radioButtonWoman;
     private TableLayoutPanel tableLayoutPanel4;
-    private RadioButton radioButton2;
     private TableLayoutPanel tableLayoutPanel3;
     private TextBox textBoxKanjiSei;
     private TextBox textBoxKanjiMei;
@@ -30,7 +30,7 @@ class NewFile : Form
     private Label label5;
     private Label label4;
     private TextBox textBoxAddress;
-    private TextBox textBoxpostalNumber;
+    private TextBox textBoxPostalNumber;
     private Label label7;
     private Label label6;
     private Label label8;
@@ -62,19 +62,19 @@ class NewFile : Form
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxJob = new System.Windows.Forms.ComboBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.postalNumber = new System.Windows.Forms.TextBox();
+            this.textBoxPostalNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.nameTextBoxKanjiSei = new System.Windows.Forms.TextBox();
-            this.nameTextBoxKanjiMei = new System.Windows.Forms.TextBox();
+            this.textBoxKanjiSei = new System.Windows.Forms.TextBox();
+            this.textBoxKanjiMei = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.nameTextBoxKanaMei = new System.Windows.Forms.TextBox();
-            this.nameTextBoxKanaSei = new System.Windows.Forms.TextBox();
+            this.textBoxKanaMei = new System.Windows.Forms.TextBox();
+            this.textBoxKanaSei = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -82,14 +82,14 @@ class NewFile : Form
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.emailAddress = new System.Windows.Forms.TextBox();
-            this.phoneNumber = new System.Windows.Forms.TextBox();
+            this.textBoxEmailAddress = new System.Windows.Forms.TextBox();
+            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.textBoxHobby = new System.Windows.Forms.TextBox();
             this.comboBoxBirthPlace = new System.Windows.Forms.ComboBox();
             this.textBoxMemo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMan = new System.Windows.Forms.RadioButton();
+            this.radioButtonWoman = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -121,7 +121,7 @@ class NewFile : Form
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.comboBoxJob, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.textBoxAddress, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.postalNumber, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPostalNumber, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label5, 1, 3);
@@ -137,8 +137,8 @@ class NewFile : Form
             this.tableLayoutPanel1.Controls.Add(this.label11, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label12, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.label13, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.emailAddress, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.phoneNumber, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxEmailAddress, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPhoneNumber, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.textBoxHobby, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxBirthPlace, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBoxMemo, 0, 11);
@@ -180,13 +180,13 @@ class NewFile : Form
             this.textBoxAddress.Size = new System.Drawing.Size(353, 26);
             this.textBoxAddress.TabIndex = 14;
             // 
-            // postalNumber
+            // textBoxPostalNumber
             // 
-            this.postalNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.postalNumber.Location = new System.Drawing.Point(180, 130);
-            this.postalNumber.Name = "textBoxPostalNumber";
-            this.postalNumber.Size = new System.Drawing.Size(351, 26);
-            this.postalNumber.TabIndex = 13;
+            this.textBoxPostalNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxPostalNumber.Location = new System.Drawing.Point(180, 130);
+            this.textBoxPostalNumber.Name = "textBoxtextBoxPostalNumber";
+            this.textBoxPostalNumber.Size = new System.Drawing.Size(351, 26);
+            this.textBoxPostalNumber.TabIndex = 13;
             // 
             // label7
             // 
@@ -244,8 +244,8 @@ class NewFile : Form
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.nameTextBoxKanjiSei, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.nameTextBoxKanjiMei, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBoxKanjiSei, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBoxKanjiMei, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(180, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -254,21 +254,21 @@ class NewFile : Form
             this.tableLayoutPanel2.Size = new System.Drawing.Size(362, 24);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // nameTextBoxKanjiSei
+            // textBoxKanjiSei
             // 
-            this.nameTextBoxKanjiSei.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameTextBoxKanjiSei.Location = new System.Drawing.Point(10, 3);
-            this.nameTextBoxKanjiSei.Name = "nameTextBoxKanjiSei";
-            this.nameTextBoxKanjiSei.Size = new System.Drawing.Size(162, 26);
-            this.nameTextBoxKanjiSei.TabIndex = 3;
+            this.textBoxKanjiSei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxKanjiSei.Location = new System.Drawing.Point(10, 3);
+            this.textBoxKanjiSei.Name = "textBoxKanjiSei";
+            this.textBoxKanjiSei.Size = new System.Drawing.Size(162, 26);
+            this.textBoxKanjiSei.TabIndex = 3;
             // 
-            // nameTextBoxKanjiMei
+            // textBoxKanjiMei
             // 
-            this.nameTextBoxKanjiMei.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameTextBoxKanjiMei.Location = new System.Drawing.Point(191, 3);
-            this.nameTextBoxKanjiMei.Name = "nameTextBoxKanjiMei";
-            this.nameTextBoxKanjiMei.Size = new System.Drawing.Size(162, 26);
-            this.nameTextBoxKanjiMei.TabIndex = 2;
+            this.textBoxKanjiMei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxKanjiMei.Location = new System.Drawing.Point(191, 3);
+            this.textBoxKanjiMei.Name = "textBoxKanjiMei";
+            this.textBoxKanjiMei.Size = new System.Drawing.Size(162, 26);
+            this.textBoxKanjiMei.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -285,8 +285,8 @@ class NewFile : Form
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.nameTextBoxKanaMei, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.nameTextBoxKanaSei, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxKanaMei, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxKanaSei, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(180, 33);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -295,21 +295,21 @@ class NewFile : Form
             this.tableLayoutPanel3.Size = new System.Drawing.Size(360, 24);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // nameTextBoxKanaMei
+            // textBoxKanaMei
             // 
-            this.nameTextBoxKanaMei.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameTextBoxKanaMei.Location = new System.Drawing.Point(189, 3);
-            this.nameTextBoxKanaMei.Name = "nameTextBoxKanaMei";
-            this.nameTextBoxKanaMei.Size = new System.Drawing.Size(162, 26);
-            this.nameTextBoxKanaMei.TabIndex = 3;
+            this.textBoxKanaMei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxKanaMei.Location = new System.Drawing.Point(189, 3);
+            this.textBoxKanaMei.Name = "textBoxKanaMei";
+            this.textBoxKanaMei.Size = new System.Drawing.Size(162, 26);
+            this.textBoxKanaMei.TabIndex = 3;
             // 
-            // nameTextBoxKanaSei
+            // textBoxKanaSei
             // 
-            this.nameTextBoxKanaSei.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameTextBoxKanaSei.Location = new System.Drawing.Point(9, 3);
-            this.nameTextBoxKanaSei.Name = "TextBoxKanaSei";
-            this.nameTextBoxKanaSei.Size = new System.Drawing.Size(162, 26);
-            this.nameTextBoxKanaSei.TabIndex = 0;
+            this.textBoxKanaSei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxKanaSei.Location = new System.Drawing.Point(9, 3);
+            this.textBoxKanaSei.Name = "TextBoxKanaSei";
+            this.textBoxKanaSei.Size = new System.Drawing.Size(162, 26);
+            this.textBoxKanaSei.TabIndex = 0;
             // 
             // label2
             // 
@@ -383,19 +383,19 @@ class NewFile : Form
             // 
             // emailAddress
             // 
-            this.emailAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.emailAddress.Location = new System.Drawing.Point(180, 226);
-            this.emailAddress.Name = "emailAddress";
-            this.emailAddress.Size = new System.Drawing.Size(353, 26);
-            this.emailAddress.TabIndex = 22;
+            this.textBoxEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxEmailAddress.Location = new System.Drawing.Point(180, 226);
+            this.textBoxEmailAddress.Name = "textBoxEmailAddress";
+            this.textBoxEmailAddress.Size = new System.Drawing.Size(353, 26);
+            this.textBoxEmailAddress.TabIndex = 22;
             // 
             // phoneNumber
             // 
-            this.phoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.phoneNumber.Location = new System.Drawing.Point(180, 194);
-            this.phoneNumber.Name = "textBoxPhoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(351, 26);
-            this.phoneNumber.TabIndex = 21;
+            this.textBoxPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(180, 194);
+            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(351, 26);
+            this.textBoxPhoneNumber.TabIndex = 21;
             // 
             // textBoxHobby
             // 
@@ -432,8 +432,8 @@ class NewFile : Form
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.radioButton1, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.radioButton2, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.radioButtonMan, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.radioButtonWoman, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(180, 63);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -442,29 +442,29 @@ class NewFile : Form
             this.tableLayoutPanel4.Size = new System.Drawing.Size(212, 29);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
-            // radioButton1
+            // radioButtonMan
             // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(21, 3);
-            this.radioButton1.Name = "radioButtonGender1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 23);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "男性";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonMan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonMan.AutoSize = true;
+            this.radioButtonMan.Location = new System.Drawing.Point(21, 3);
+            this.radioButtonMan.Name = "radioButtonGender1";
+            this.radioButtonMan.Size = new System.Drawing.Size(65, 23);
+            this.radioButtonMan.TabIndex = 3;
+            this.radioButtonMan.TabStop = true;
+            this.radioButtonMan.Text = "男性";
+            this.radioButtonMan.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonWoman
             // 
-            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(127, 3);
-            this.radioButton2.Name = "radioButtonGender2";
-            this.radioButton2.Size = new System.Drawing.Size(65, 23);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "女性";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonWoman.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonWoman.AutoSize = true;
+            this.radioButtonWoman.Location = new System.Drawing.Point(127, 3);
+            this.radioButtonWoman.Name = "radioButtonGender2";
+            this.radioButtonWoman.Size = new System.Drawing.Size(65, 23);
+            this.radioButtonWoman.TabIndex = 7;
+            this.radioButtonWoman.TabStop = true;
+            this.radioButtonWoman.Text = "女性";
+            this.radioButtonWoman.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -528,14 +528,22 @@ class NewFile : Form
         string nameKanaSei = textBoxKanjiSei.Text;
         string nameKanaMei = textBoxKanaMei.Text;
         DateTime birthday = dateTimePicker1.Value;
-        String phoneNumber = textBoxPhoneNumber.Text;
-        String emailAddress = textBoxEmailAddress.Text;
-        String postalNumber = textBoxpostalNumber.Text;
-        String address = textBoxAddress.Text;
+        string phoneNumber = textBoxPhoneNumber.Text;
+        string emailAddress = textBoxEmailAddress.Text;
+        string postalNumber = textBoxPostalNumber.Text;
+        string address = textBoxAddress.Text;
         //int job = textBoxAddress.Text;
         //int birthplace = textBoxAddress.Text;
-        String hobby = textBoxHobby.Text;
-        String memo = textBoxMemo.Text;
+        string hobby = textBoxHobby.Text;
+        string memo = textBoxMemo.Text;
+        if (radioButtonMan.Checked == true)
+        {
+
+        } else if (radioButtonWoman.Checked == true)
+        {
+
+        }
+
 
 
         string connectInfo = string.Empty;

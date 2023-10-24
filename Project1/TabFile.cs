@@ -78,7 +78,7 @@ class TabFile : Form
     private Button button2;
     private Label label1;
     private Button button1;
-    private TableLayoutPanel tlp;
+
 
     public TabFile()
     {
