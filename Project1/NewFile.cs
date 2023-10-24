@@ -536,12 +536,13 @@ class NewFile : Form
         //int birthplace = textBoxAddress.Text;
         string hobby = textBoxHobby.Text;
         string memo = textBoxMemo.Text;
+        int gender = 0;
         if (radioButtonMan.Checked == true)
         {
-            int gender = 1;
+            gender = 1;
         } else if (radioButtonWoman.Checked == true)
         {
-            int gender = 2;
+            gender = 2;
         }
 
         string connectInfo = string.Empty;
@@ -579,7 +580,7 @@ class NewFile : Form
         int customerId = int.Parse(dt.Rows[0][0].ToString());
 
         //新規顧客情報登録
-        sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday) VALUES (@customer_id,@sei_kanji,@mei_kanji,@sei_kana,@mei_kana,@birthday)";
+        sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday,gender) VALUES (@customer_id,@sei_kanji,@mei_kanji,@sei_kana,@mei_kana,@birthday,@gender)";
         NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
 
         ////パラメーター追加
@@ -595,6 +596,8 @@ class NewFile : Form
         cmd.Parameters["mei_kana"].Value = nameKanaMei;
         cmd.Parameters.Add(new NpgsqlParameter("birthday", NpgsqlDbType.Date));
         cmd.Parameters["birthday"].Value = birthday;
+        cmd.Parameters.Add(new NpgsqlParameter("gender", NpgsqlDbType.Smallint));
+        cmd.Parameters["gender"].Value = gender;
 
         //SQL実行
         NpgsqlDataReader dr = cmd.ExecuteReader();
