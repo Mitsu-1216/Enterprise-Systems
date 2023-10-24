@@ -19,10 +19,10 @@ class NewFile : Form
     private TableLayoutPanel tableLayoutPanel4;
     private RadioButton radioButton2;
     private TableLayoutPanel tableLayoutPanel3;
-    private TextBox TextBoxKanjiSei;
-    private TextBox TextBoxKanjiMei;
-    private TextBox TextBoxKanaSei;
-    private TextBox TextBoxKanaMei;
+    private TextBox textBoxKanjiSei;
+    private TextBox textBoxKanjiMei;
+    private TextBox textBoxKanaSei;
+    private TextBox textBoxKanaMei;
     private TableLayoutPanel tableLayoutPanel2;
     private Label label3;
     private TableLayoutPanel tableLayoutPanel1;
@@ -30,7 +30,7 @@ class NewFile : Form
     private Label label5;
     private Label label4;
     private TextBox textBoxAddress;
-    private TextBox postalNumber;
+    private TextBox textBoxpostalNumber;
     private Label label7;
     private Label label6;
     private Label label8;
@@ -39,8 +39,8 @@ class NewFile : Form
     private Label label11;
     private Label label12;
     private Label label13;
-    private TextBox emailAddress;
-    private TextBox phoneNumber;
+    private TextBox textBoxEmailAddress;
+    private TextBox textBoxPhoneNumber;
     private TextBox textBoxHobby;
     private TextBox textBoxMemo;
     private ComboBox comboBoxBirthPlace;
@@ -523,11 +523,19 @@ class NewFile : Form
 
     private void button2_Click(object sender, EventArgs e)
     {
-        string nameKanjiSei = TextBoxKanjiSei.Text;
-        string nameKanjiMei = TextBoxKanjiMei.Text;
-        string nameKanaSei = TextBoxKanjiSei.Text;
-        string nameKanaMei = TextBoxKanaMei.Text;
+        string nameKanjiSei = textBoxKanjiSei.Text;
+        string nameKanjiMei = textBoxKanjiMei.Text;
+        string nameKanaSei = textBoxKanjiSei.Text;
+        string nameKanaMei = textBoxKanaMei.Text;
         DateTime birthday = dateTimePicker1.Value;
+        String phoneNumber = textBoxPhoneNumber.Text;
+        String emailAddress = textBoxEmailAddress.Text;
+        String postalNumber = textBoxpostalNumber.Text;
+        String address = textBoxAddress.Text;
+        //int job = textBoxAddress.Text;
+        //int birthplace = textBoxAddress.Text;
+        String hobby = textBoxHobby.Text;
+        String memo = textBoxMemo.Text;
 
 
         string connectInfo = string.Empty;
