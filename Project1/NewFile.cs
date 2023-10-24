@@ -538,13 +538,11 @@ class NewFile : Form
         string memo = textBoxMemo.Text;
         if (radioButtonMan.Checked == true)
         {
-
+            int gender = 1;
         } else if (radioButtonWoman.Checked == true)
         {
-
+            int gender = 2;
         }
-
-
 
         string connectInfo = string.Empty;
         string sql = string.Empty;
