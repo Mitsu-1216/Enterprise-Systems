@@ -19,15 +19,18 @@ class NewFile : Form
     private TableLayoutPanel tableLayoutPanel4;
     private RadioButton radioButton2;
     private TableLayoutPanel tableLayoutPanel3;
-    private TextBox nameTextBoxKanaSei;
+    private TextBox TextBoxKanjiSei;
+    private TextBox TextBoxKanjiMei;
+    private TextBox TextBoxKanaSei;
+    private TextBox TextBoxKanaMei;
     private TableLayoutPanel tableLayoutPanel2;
     private Label label3;
     private TableLayoutPanel tableLayoutPanel1;
     private Label label2;
     private Label label5;
     private Label label4;
-    private TextBox textBox6;
-    private TextBox textBox5;
+    private TextBox textBoxAddress;
+    private TextBox postalNumber;
     private Label label7;
     private Label label6;
     private Label label8;
@@ -36,15 +39,12 @@ class NewFile : Form
     private Label label11;
     private Label label12;
     private Label label13;
-    private TextBox textBox8;
-    private TextBox textBox7;
-    private TextBox textBox10;
-    private TextBox textBox11;
-    private ComboBox comboBox1;
-    private TextBox nameTextBoxKanjiSei;
-    private TextBox nameTextBoxKanjiMei;
-    private TextBox nameTextBoxKanaMei;
-    private ComboBox comboBox2;
+    private TextBox emailAddress;
+    private TextBox phoneNumber;
+    private TextBox textBoxHobby;
+    private TextBox textBoxMemo;
+    private ComboBox comboBoxBirthPlace;
+    private ComboBox comboBoxJob;
     private TableLayoutPanel tlp;
 
     public NewFile()
@@ -60,9 +60,9 @@ class NewFile : Form
     {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBoxJob = new System.Windows.Forms.ComboBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.postalNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -82,11 +82,11 @@ class NewFile : Form
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.emailAddress = new System.Windows.Forms.TextBox();
+            this.phoneNumber = new System.Windows.Forms.TextBox();
+            this.textBoxHobby = new System.Windows.Forms.TextBox();
+            this.comboBoxBirthPlace = new System.Windows.Forms.ComboBox();
+            this.textBoxMemo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -119,9 +119,9 @@ class NewFile : Form
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxJob, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.postalNumber, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label5, 1, 3);
@@ -137,11 +137,11 @@ class NewFile : Form
             this.tableLayoutPanel1.Controls.Add(this.label11, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label12, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.label13, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.textBox8, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox10, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textBox11, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.emailAddress, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.phoneNumber, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxHobby, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxBirthPlace, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxMemo, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 2);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -163,30 +163,30 @@ class NewFile : Form
             this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 536);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // comboBox2
+            // comboBoxJob
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(180, 258);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(182, 27);
-            this.comboBox2.TabIndex = 27;
+            this.comboBoxJob.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.comboBoxJob.FormattingEnabled = true;
+            this.comboBoxJob.Location = new System.Drawing.Point(180, 258);
+            this.comboBoxJob.Name = "comboBoxJob";
+            this.comboBoxJob.Size = new System.Drawing.Size(182, 27);
+            this.comboBoxJob.TabIndex = 27;
             // 
-            // textBox6
+            // textBoxAddress
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox6.Location = new System.Drawing.Point(180, 162);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(353, 26);
-            this.textBox6.TabIndex = 14;
+            this.textBoxAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxAddress.Location = new System.Drawing.Point(180, 162);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(353, 26);
+            this.textBoxAddress.TabIndex = 14;
             // 
-            // textBox5
+            // postalNumber
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox5.Location = new System.Drawing.Point(180, 130);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(351, 26);
-            this.textBox5.TabIndex = 13;
+            this.postalNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.postalNumber.Location = new System.Drawing.Point(180, 130);
+            this.postalNumber.Name = "textBoxPostalNumber";
+            this.postalNumber.Size = new System.Drawing.Size(351, 26);
+            this.postalNumber.TabIndex = 13;
             // 
             // label7
             // 
@@ -307,7 +307,7 @@ class NewFile : Form
             // 
             this.nameTextBoxKanaSei.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameTextBoxKanaSei.Location = new System.Drawing.Point(9, 3);
-            this.nameTextBoxKanaSei.Name = "nameTextBoxKanaSei";
+            this.nameTextBoxKanaSei.Name = "TextBoxKanaSei";
             this.nameTextBoxKanaSei.Size = new System.Drawing.Size(162, 26);
             this.nameTextBoxKanaSei.TabIndex = 0;
             // 
@@ -381,50 +381,50 @@ class NewFile : Form
             this.label13.TabIndex = 20;
             this.label13.Text = "メモ";
             // 
-            // textBox8
+            // emailAddress
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox8.Location = new System.Drawing.Point(180, 226);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(353, 26);
-            this.textBox8.TabIndex = 22;
+            this.emailAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.emailAddress.Location = new System.Drawing.Point(180, 226);
+            this.emailAddress.Name = "emailAddress";
+            this.emailAddress.Size = new System.Drawing.Size(353, 26);
+            this.emailAddress.TabIndex = 22;
             // 
-            // textBox7
+            // phoneNumber
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox7.Location = new System.Drawing.Point(180, 194);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(351, 26);
-            this.textBox7.TabIndex = 21;
+            this.phoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.phoneNumber.Location = new System.Drawing.Point(180, 194);
+            this.phoneNumber.Name = "textBoxPhoneNumber";
+            this.phoneNumber.Size = new System.Drawing.Size(351, 26);
+            this.phoneNumber.TabIndex = 21;
             // 
-            // textBox10
+            // textBoxHobby
             // 
-            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox10.Location = new System.Drawing.Point(180, 324);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(353, 26);
-            this.textBox10.TabIndex = 24;
+            this.textBoxHobby.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxHobby.Location = new System.Drawing.Point(180, 324);
+            this.textBoxHobby.Name = "textBoxHobby";
+            this.textBoxHobby.Size = new System.Drawing.Size(353, 26);
+            this.textBoxHobby.TabIndex = 24;
             // 
-            // comboBox1
+            // comboBoxBirthPlace
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(180, 291);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 27);
-            this.comboBox1.TabIndex = 26;
+            this.comboBoxBirthPlace.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.comboBoxBirthPlace.FormattingEnabled = true;
+            this.comboBoxBirthPlace.Location = new System.Drawing.Point(180, 291);
+            this.comboBoxBirthPlace.Name = "comboBoxBirthPlace";
+            this.comboBoxBirthPlace.Size = new System.Drawing.Size(182, 27);
+            this.comboBoxBirthPlace.TabIndex = 26;
             // 
-            // textBox11
+            // textBoxMemo
             // 
-            this.textBox11.AcceptsReturn = true;
-            this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox11.BackColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(180, 356);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox11.Size = new System.Drawing.Size(387, 187);
-            this.textBox11.TabIndex = 25;
+            this.textBoxMemo.AcceptsReturn = true;
+            this.textBoxMemo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxMemo.BackColor = System.Drawing.Color.White;
+            this.textBoxMemo.Location = new System.Drawing.Point(180, 356);
+            this.textBoxMemo.Multiline = true;
+            this.textBoxMemo.Name = "textBoxMemo";
+            this.textBoxMemo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxMemo.Size = new System.Drawing.Size(387, 187);
+            this.textBoxMemo.TabIndex = 25;
             // 
             // tableLayoutPanel4
             // 
@@ -447,7 +447,7 @@ class NewFile : Form
             this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(21, 3);
-            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Name = "radioButtonGender1";
             this.radioButton1.Size = new System.Drawing.Size(65, 23);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
@@ -459,7 +459,7 @@ class NewFile : Form
             this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(127, 3);
-            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Name = "radioButtonGender2";
             this.radioButton2.Size = new System.Drawing.Size(65, 23);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.TabStop = true;
@@ -523,10 +523,10 @@ class NewFile : Form
 
     private void button2_Click(object sender, EventArgs e)
     {
-        string nameKanjiSei = nameTextBoxKanjiSei.Text;
-        string nameKanjiMei = nameTextBoxKanjiMei.Text;
-        string nameKanaSei = nameTextBoxKanaSei.Text;
-        string nameKanaMei = nameTextBoxKanaMei.Text;
+        string nameKanjiSei = TextBoxKanjiSei.Text;
+        string nameKanjiMei = TextBoxKanjiMei.Text;
+        string nameKanaSei = TextBoxKanjiSei.Text;
+        string nameKanaMei = TextBoxKanaMei.Text;
         DateTime birthday = dateTimePicker1.Value;
 
 
