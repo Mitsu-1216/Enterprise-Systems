@@ -184,7 +184,7 @@ class NewFile : Form
             // 
             this.textBoxPostalNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxPostalNumber.Location = new System.Drawing.Point(180, 130);
-            this.textBoxPostalNumber.Name = "textBoxtextBoxPostalNumber";
+            this.textBoxPostalNumber.Name = "textBoxPostalNumber";
             this.textBoxPostalNumber.Size = new System.Drawing.Size(351, 26);
             this.textBoxPostalNumber.TabIndex = 13;
             // 
@@ -307,7 +307,7 @@ class NewFile : Form
             // 
             this.textBoxKanaSei.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxKanaSei.Location = new System.Drawing.Point(9, 3);
-            this.textBoxKanaSei.Name = "TextBoxKanaSei";
+            this.textBoxKanaSei.Name = "textBoxKanaSei";
             this.textBoxKanaSei.Size = new System.Drawing.Size(162, 26);
             this.textBoxKanaSei.TabIndex = 0;
             // 
@@ -381,7 +381,7 @@ class NewFile : Form
             this.label13.TabIndex = 20;
             this.label13.Text = "メモ";
             // 
-            // emailAddress
+            // textBoxEmailAddress
             // 
             this.textBoxEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxEmailAddress.Location = new System.Drawing.Point(180, 226);
@@ -389,7 +389,7 @@ class NewFile : Form
             this.textBoxEmailAddress.Size = new System.Drawing.Size(353, 26);
             this.textBoxEmailAddress.TabIndex = 22;
             // 
-            // phoneNumber
+            // textBoxPhoneNumber
             // 
             this.textBoxPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxPhoneNumber.Location = new System.Drawing.Point(180, 194);
@@ -447,7 +447,7 @@ class NewFile : Form
             this.radioButtonMan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonMan.AutoSize = true;
             this.radioButtonMan.Location = new System.Drawing.Point(21, 3);
-            this.radioButtonMan.Name = "radioButtonGender1";
+            this.radioButtonMan.Name = "radioButtonMan";
             this.radioButtonMan.Size = new System.Drawing.Size(65, 23);
             this.radioButtonMan.TabIndex = 3;
             this.radioButtonMan.TabStop = true;
@@ -459,7 +459,7 @@ class NewFile : Form
             this.radioButtonWoman.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonWoman.AutoSize = true;
             this.radioButtonWoman.Location = new System.Drawing.Point(127, 3);
-            this.radioButtonWoman.Name = "radioButtonGender2";
+            this.radioButtonWoman.Name = "radioButtonWoman";
             this.radioButtonWoman.Size = new System.Drawing.Size(65, 23);
             this.radioButtonWoman.TabIndex = 7;
             this.radioButtonWoman.TabStop = true;
@@ -493,6 +493,7 @@ class NewFile : Form
             this.Controls.Add(this.panel1);
             this.Name = "NewFile";
             this.Text = "新規登録画面";
+            this.Load += new System.EventHandler(this.comboBoxJob_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -604,6 +605,34 @@ class NewFile : Form
 
         Console.WriteLine("接続解除");
         connection.Close();
+
+    }
+
+    private void comboBoxJob_Load(object sender, EventArgs e)
+    {
+        DataTable dt = new DataTable();
+        DataRow dr;
+        dt.Columns.Add("animalId");
+        dt.Columns.Add("animalNm");
+
+        dr = dt.NewRow();
+        dr["animalId"] = "0001";
+        dr["animalNm"] = "きりん";
+        dt.Rows.Add(dr);
+
+        dr = dt.NewRow();
+        dr["animalId"] = "0002";
+        dr["animalNm"] = "ぞう";
+        dt.Rows.Add(dr);
+
+        dr = dt.NewRow();
+        dr["animalId"] = "0003";
+        dr["animalNm"] = "いぬ";
+        dt.Rows.Add(dr);
+
+        comboBoxJob.DataSource = dt;
+        comboBoxJob.DisplayMember = "animalNm";
+        comboBoxJob.ValueMember = "animalId";
 
     }
 }
