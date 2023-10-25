@@ -85,11 +85,11 @@ class NewFile : Form
             this.textBoxEmailAddress = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.textBoxHobby = new System.Windows.Forms.TextBox();
-            this.comboBoxBirthPlace = new System.Windows.Forms.ComboBox();
             this.textBoxMemo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.radioButtonMan = new System.Windows.Forms.RadioButton();
             this.radioButtonWoman = new System.Windows.Forms.RadioButton();
+            this.comboBoxBirthPlace = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -166,11 +166,14 @@ class NewFile : Form
             // comboBoxJob
             // 
             this.comboBoxJob.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.comboBoxJob.DisplayMember = "job_name";
+            this.comboBoxJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJob.FormattingEnabled = true;
             this.comboBoxJob.Location = new System.Drawing.Point(180, 258);
             this.comboBoxJob.Name = "comboBoxJob";
             this.comboBoxJob.Size = new System.Drawing.Size(351, 27);
             this.comboBoxJob.TabIndex = 27;
+            this.comboBoxJob.ValueMember = "job_name";
             // 
             // textBoxAddress
             // 
@@ -405,15 +408,6 @@ class NewFile : Form
             this.textBoxHobby.Size = new System.Drawing.Size(353, 26);
             this.textBoxHobby.TabIndex = 24;
             // 
-            // comboBoxBirthPlace
-            // 
-            this.comboBoxBirthPlace.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBoxBirthPlace.FormattingEnabled = true;
-            this.comboBoxBirthPlace.Location = new System.Drawing.Point(180, 291);
-            this.comboBoxBirthPlace.Name = "comboBoxBirthPlace";
-            this.comboBoxBirthPlace.Size = new System.Drawing.Size(351, 27);
-            this.comboBoxBirthPlace.TabIndex = 26;
-            // 
             // textBoxMemo
             // 
             this.textBoxMemo.AcceptsReturn = true;
@@ -465,6 +459,15 @@ class NewFile : Form
             this.radioButtonWoman.TabStop = true;
             this.radioButtonWoman.Text = "女性";
             this.radioButtonWoman.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxBirthPlace
+            // 
+            this.comboBoxBirthPlace.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.comboBoxBirthPlace.FormattingEnabled = true;
+            this.comboBoxBirthPlace.Location = new System.Drawing.Point(180, 291);
+            this.comboBoxBirthPlace.Name = "comboBoxBirthPlace";
+            this.comboBoxBirthPlace.Size = new System.Drawing.Size(351, 27);
+            this.comboBoxBirthPlace.TabIndex = 26;
             // 
             // button2
             // 
@@ -628,15 +631,14 @@ class NewFile : Form
 
         //データベース接続
         connection.Open();
- 
-        //シーケンス取得
+
         NpgsqlCommand command = null;
         string cmd_str = null;
         DataTable dt = null;
         NpgsqlDataAdapter da = null;
 
         dt = new DataTable();
-        cmd_str = "SELECT job_name FROM m_job";
+        cmd_str = "SELECT job_id,job_name FROM m_job";
         command = new NpgsqlCommand(cmd_str, connection);
         da = new NpgsqlDataAdapter(command);
         da.Fill(dt);
@@ -644,7 +646,8 @@ class NewFile : Form
         connection.Close();
 
         comboBoxJob.DataSource = dt;
-        //コンボボックスに表示させる内容を設定
-        comboBoxJob.ValueMember = "job_name";
+        ////コンボボックスに表示させる内容を設定
+        comboBoxJob.DisplayMember = "job_name";
+
     }
 }
