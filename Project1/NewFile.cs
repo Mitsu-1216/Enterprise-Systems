@@ -497,6 +497,7 @@ class NewFile : Form
             this.Name = "NewFile";
             this.Text = "新規登録画面";
             this.Load += new System.EventHandler(this.comboBoxJob_Load);
+            this.Load += new System.EventHandler(this.comboBoxBirthPlace_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -648,6 +649,44 @@ class NewFile : Form
         comboBoxJob.DataSource = dt;
         ////コンボボックスに表示させる内容を設定
         comboBoxJob.DisplayMember = "job_name";
+    }
 
+    private void comboBoxBirthPlace_Load(object sender, EventArgs e)
+    {
+        //DB接続
+        string connectInfo = string.Empty;
+        string sql = string.Empty;
+        string userid = string.Empty;
+        string username = string.Empty;
+
+        //接続情報を作成
+        connectInfo = "Server=localhost;" //接続先サーバ 
+                    + "Port=5432;"  //ポート番号
+                    + "User Id=postgres;"  //接続ユーザ
+                    + "Password=root;" //パスワード
+                    + "Database=postgres;"; //接続先データベース
+
+        //インスタンスを生成
+        NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
+
+        //データベース接続
+        connection.Open();
+
+        NpgsqlCommand command = null;
+        string cmd_str = null;
+        DataTable dt = null;
+        NpgsqlDataAdapter da = null;
+
+        dt = new DataTable();
+        cmd_str = "SELECT prefecture_id,prefecture_name FROM m_prefecture";
+        command = new NpgsqlCommand(cmd_str, connection);
+        da = new NpgsqlDataAdapter(command);
+        da.Fill(dt);
+
+        connection.Close();
+
+        comboBoxBirthPlace.DataSource = dt;
+        ////コンボボックスに表示させる内容を設定
+        comboBoxBirthPlace.DisplayMember = "prefecture_name";
     }
 }
