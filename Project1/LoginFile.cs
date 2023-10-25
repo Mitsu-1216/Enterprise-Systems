@@ -5,7 +5,7 @@ using System.Windows.Forms;
 class CodeFile1 : Form
 {
     private Button[] bt = new Button[6];
-    private Button button1;
+    private Button loginbutton;
     private Label label1;
     private Label label2;
     private TextBox textBox1;
@@ -31,7 +31,7 @@ class CodeFile1 : Form
     private void InitializeComponent()
     {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeFile1));
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,16 +42,16 @@ class CodeFile1 : Form
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // loginbutton
             // 
-            this.button1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(516, 489);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ログインする";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loginbutton.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.loginbutton.Location = new System.Drawing.Point(516, 489);
+            this.loginbutton.Name = "loginbutton";
+            this.loginbutton.Size = new System.Drawing.Size(121, 43);
+            this.loginbutton.TabIndex = 0;
+            this.loginbutton.Text = "ログインする";
+            this.loginbutton.UseVisualStyleBackColor = true;
+            this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
             // 
             // label1
             // 
@@ -117,7 +117,7 @@ class CodeFile1 : Form
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.loginbutton);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -145,8 +145,11 @@ class CodeFile1 : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void button1_Click(object sender, EventArgs e)
+    private void loginbutton_Click(object sender, EventArgs e)
     {
+
+
+
         {
             ListFile listfile = new ListFile();
             listfile.Show();
