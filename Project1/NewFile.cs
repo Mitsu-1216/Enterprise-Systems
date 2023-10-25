@@ -140,9 +140,9 @@ class NewFile : Form
             this.tableLayoutPanel1.Controls.Add(this.textBoxEmailAddress, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPhoneNumber, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.textBoxHobby, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxBirthPlace, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBoxMemo, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxBirthPlace, 0, 9);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 46);
@@ -169,7 +169,7 @@ class NewFile : Form
             this.comboBoxJob.FormattingEnabled = true;
             this.comboBoxJob.Location = new System.Drawing.Point(180, 258);
             this.comboBoxJob.Name = "comboBoxJob";
-            this.comboBoxJob.Size = new System.Drawing.Size(182, 27);
+            this.comboBoxJob.Size = new System.Drawing.Size(351, 27);
             this.comboBoxJob.TabIndex = 27;
             // 
             // textBoxAddress
@@ -411,7 +411,7 @@ class NewFile : Form
             this.comboBoxBirthPlace.FormattingEnabled = true;
             this.comboBoxBirthPlace.Location = new System.Drawing.Point(180, 291);
             this.comboBoxBirthPlace.Name = "comboBoxBirthPlace";
-            this.comboBoxBirthPlace.Size = new System.Drawing.Size(182, 27);
+            this.comboBoxBirthPlace.Size = new System.Drawing.Size(351, 27);
             this.comboBoxBirthPlace.TabIndex = 26;
             // 
             // textBoxMemo
@@ -643,7 +643,8 @@ class NewFile : Form
 
         connection.Close();
 
-        this.comboBoxJob.DataSource = dt;
+        comboBoxJob.DataSource = dt;
+        //コンボボックスに表示させる内容を設定
         comboBoxJob.ValueMember = "job_name";
     }
 }
