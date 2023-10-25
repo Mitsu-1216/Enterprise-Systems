@@ -463,6 +463,7 @@ class NewFile : Form
             // comboBoxBirthPlace
             // 
             this.comboBoxBirthPlace.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.comboBoxBirthPlace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBirthPlace.FormattingEnabled = true;
             this.comboBoxBirthPlace.Location = new System.Drawing.Point(180, 291);
             this.comboBoxBirthPlace.Name = "comboBoxBirthPlace";
