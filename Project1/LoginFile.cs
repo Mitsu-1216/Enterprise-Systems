@@ -147,15 +147,24 @@ class CodeFile1 : Form
     /// <param name="e"></param>
     private void loginbutton_Click(object sender, EventArgs e)
     {
-        if(textBoxUserId.Text == null)
+        if(textBoxUserId.Text == "")
         {
             //アラート表示
-            //ユーザーIDを入力してください。
+            MessageBox.Show("ユーザーIDを入力してください。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            return;
         }
-        if (textBoxPassword.Text == null)
+
+        if (textBoxPassword.Text == "")
         {
             //アラート表示
-            //パスワードを入力してください。
+            MessageBox.Show("パスワードを入力してください。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            return;
         }
 
 
