@@ -8,10 +8,10 @@ class CodeFile1 : Form
     private Button loginbutton;
     private Label label1;
     private Label label2;
-    private TextBox textBox1;
+    private TextBox textBoxUserId;
     private TableLayoutPanel tableLayoutPanel1;
     private Panel panel1;
-    private TextBox textBox2;
+    private TextBox textBoxPassword;
     private TableLayoutPanel tlp;
         public static void Main()
     {
@@ -34,9 +34,9 @@ class CodeFile1 : Form
             this.loginbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxUserId = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,26 +75,26 @@ class CodeFile1 : Form
             this.label2.Text = "パスワード";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textBoxUserId
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(316, 54);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(165, 44);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxUserId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxUserId.Location = new System.Drawing.Point(316, 54);
+            this.textBoxUserId.Multiline = true;
+            this.textBoxUserId.Name = "textBoxUserId";
+            this.textBoxUserId.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxUserId.Size = new System.Drawing.Size(165, 44);
+            this.textBoxUserId.TabIndex = 3;
+            this.textBoxUserId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPassword, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxUserId, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(306, 117);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -104,16 +104,16 @@ class CodeFile1 : Form
             this.tableLayoutPanel1.Size = new System.Drawing.Size(531, 305);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(316, 206);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(165, 44);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPassword.Location = new System.Drawing.Point(316, 206);
+            this.textBoxPassword.Multiline = true;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxPassword.Size = new System.Drawing.Size(165, 44);
+            this.textBoxPassword.TabIndex = 4;
+            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel1
             // 
@@ -147,7 +147,16 @@ class CodeFile1 : Form
     /// <param name="e"></param>
     private void loginbutton_Click(object sender, EventArgs e)
     {
-
+        if(textBoxUserId.Text == null)
+        {
+            //アラート表示
+            //ユーザーIDを入力してください。
+        }
+        if (textBoxPassword.Text == null)
+        {
+            //アラート表示
+            //パスワードを入力してください。
+        }
 
 
         {
