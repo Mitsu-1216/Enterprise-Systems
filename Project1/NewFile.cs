@@ -610,29 +610,40 @@ class NewFile : Form
 
     private void comboBoxJob_Load(object sender, EventArgs e)
     {
-        DataTable dt = new DataTable();
-        DataRow dr;
-        dt.Columns.Add("animalId");
-        dt.Columns.Add("animalNm");
+        //DB接続
+        string connectInfo = string.Empty;
+        string sql = string.Empty;
+        string userid = string.Empty;
+        string username = string.Empty;
 
-        dr = dt.NewRow();
-        dr["animalId"] = "0001";
-        dr["animalNm"] = "きりん";
-        dt.Rows.Add(dr);
+        //接続情報を作成
+        connectInfo = "Server=localhost;" //接続先サーバ 
+                    + "Port=5432;"  //ポート番号
+                    + "User Id=postgres;"  //接続ユーザ
+                    + "Password=root;" //パスワード
+                    + "Database=postgres;"; //接続先データベース
 
-        dr = dt.NewRow();
-        dr["animalId"] = "0002";
-        dr["animalNm"] = "ぞう";
-        dt.Rows.Add(dr);
+        //インスタンスを生成
+        NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
 
-        dr = dt.NewRow();
-        dr["animalId"] = "0003";
-        dr["animalNm"] = "いぬ";
-        dt.Rows.Add(dr);
+        //データベース接続
+        connection.Open();
+ 
+        //シーケンス取得
+        NpgsqlCommand command = null;
+        string cmd_str = null;
+        DataTable dt = null;
+        NpgsqlDataAdapter da = null;
 
-        comboBoxJob.DataSource = dt;
-        comboBoxJob.DisplayMember = "animalNm";
-        comboBoxJob.ValueMember = "animalId";
+        dt = new DataTable();
+        cmd_str = "SELECT job_name FROM m_job";
+        command = new NpgsqlCommand(cmd_str, connection);
+        da = new NpgsqlDataAdapter(command);
+        da.Fill(dt);
 
+        connection.Close();
+
+        this.comboBoxJob.DataSource = dt;
+        comboBoxJob.ValueMember = "job_name";
     }
 }
