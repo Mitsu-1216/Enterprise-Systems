@@ -678,7 +678,7 @@ class NewFile : Form
         NpgsqlDataAdapter da = null;
 
         dt = new DataTable();
-        cmd_str = "SELECT prefecture_id,prefecture_name FROM m_prefecture";
+        cmd_str = "SELECT prefecture_id,prefecture_name FROM m_prefecture ORDER BY prefecture_id";
         command = new NpgsqlCommand(cmd_str, connection);
         da = new NpgsqlDataAdapter(command);
         da.Fill(dt);
