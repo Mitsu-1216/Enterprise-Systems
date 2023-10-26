@@ -2,6 +2,11 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Security.Cryptography;
+using NpgsqlTypes;
+using System.Collections.Generic;
+using System.Data.Common;
 
 class CodeFile1 : Form
 {
@@ -168,8 +173,9 @@ class CodeFile1 : Form
             return;
         }
 
-        if (textBoxUserId.Text != "" && textBoxPassword.Text != "")
-        {
+
+            string enteredUserId = textBoxUserId.Text;
+            string enteredPassword = textBoxPassword.Text;
             string connectInfo = string.Empty;
             string sql = string.Empty;
 
@@ -191,8 +197,13 @@ class CodeFile1 : Form
             connection.Open();
 
             dt = new DataTable();
-            sql = "SELECT * FROM user_table";
+            sql = "SELECT * FROM user_table WHERE user_id = @user_id";
             NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+
+            ////パラメーター追加
+            cmd.Parameters.Add(new NpgsqlParameter("user_id", NpgsqlDbType.Varchar));
+            cmd.Parameters["user_id"].Value = enteredUserId;
+
             da = new NpgsqlDataAdapter(cmd);
             da.Fill(dt);
 
@@ -200,25 +211,31 @@ class CodeFile1 : Form
             NpgsqlDataReader dr = cmd.ExecuteReader();
 
             connection.Close();
+            if (dt.Rows == null || dt.Rows.Count == 0)
+            {
+                //アラート表示
+                MessageBox.Show("ユーザIDが間違っています。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            } else
+            {
+                DataRow dataRow = dt.Rows[0];
+                string password = dt.Rows[0][2].ToString();
+                if(password != enteredPassword)
+                {
+                    //アラート表示
+                    MessageBox.Show("パスワードが間違っています。",
+                    "エラー",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
-            DataRow dataRow = dt.Rows[0];
-            string userID = dt.Rows[0][0].ToString();
-            string password = dt.Rows[0][2].ToString();
-
-
-
-
-        }
-        else
-        {
-            return;
-        }
-
-
-        {
+            //顧客一覧リストへ
             ListFile listfile = new ListFile();
             listfile.Show();
-        }
     }
-
 }
