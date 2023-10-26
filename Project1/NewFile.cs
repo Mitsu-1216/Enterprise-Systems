@@ -497,8 +497,8 @@ class NewFile : Form
             this.Controls.Add(this.panel1);
             this.Name = "NewFile";
             this.Text = "新規登録画面";
-            this.Load += new System.EventHandler(this.comboBoxBirthPlace_Load);
             this.Load += new System.EventHandler(this.comboBoxJob_Load);
+            this.Load += new System.EventHandler(this.comboBoxBirthPlace_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -690,4 +690,6 @@ class NewFile : Form
         ////コンボボックスに表示させる内容を設定
         comboBoxBirthPlace.DisplayMember = "prefecture_name";
     }
+
+
 }

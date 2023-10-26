@@ -84,6 +84,7 @@ class CodeFile1 : Form
             // textBoxUserId
             // 
             this.textBoxUserId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxUserId.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxUserId.Location = new System.Drawing.Point(316, 54);
             this.textBoxUserId.Multiline = true;
             this.textBoxUserId.Name = "textBoxUserId";
@@ -113,6 +114,7 @@ class CodeFile1 : Form
             // textBoxPassword
             // 
             this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxPassword.Location = new System.Drawing.Point(316, 206);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
@@ -139,12 +141,13 @@ class CodeFile1 : Form
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeFile1";
             this.Text = "ログイン画面";
+            this.Load += new System.EventHandler(this.textBoxUserId_Load);
+            this.Load += new System.EventHandler(this.textBoxPassword_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.Load += new System.EventHandler(this.textBoxUserId_Load);
-            this.Load += new System.EventHandler(this.textBoxPassword_Load);
+
     }
 
     // 今だけ
