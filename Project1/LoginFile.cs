@@ -143,7 +143,19 @@ class CodeFile1 : Form
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.textBoxUserId_Load);
+            this.Load += new System.EventHandler(this.textBoxPassword_Load);
+    }
 
+    // 今だけ
+    private void textBoxUserId_Load(object sender, EventArgs e)
+    {
+        textBoxUserId.Text = "ADMIN01";
+    }
+
+    private void textBoxPassword_Load(object sender, EventArgs e)
+    {
+        textBoxPassword.Text = "ADMIN01";
     }
 
     /// <summary>
@@ -172,7 +184,6 @@ class CodeFile1 : Form
             MessageBoxIcon.Error);
             return;
         }
-
 
             string enteredUserId = textBoxUserId.Text;
             string enteredPassword = textBoxPassword.Text;
