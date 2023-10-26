@@ -88,10 +88,10 @@ class CodeFile1 : Form
             this.textBoxUserId.Location = new System.Drawing.Point(316, 54);
             this.textBoxUserId.Multiline = true;
             this.textBoxUserId.Name = "textBoxUserId";
-            this.textBoxUserId.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxUserId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBoxUserId.Size = new System.Drawing.Size(165, 44);
             this.textBoxUserId.TabIndex = 3;
-            this.textBoxUserId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxUserId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel1
             // 
@@ -121,7 +121,7 @@ class CodeFile1 : Form
             this.textBoxPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxPassword.Size = new System.Drawing.Size(165, 44);
             this.textBoxPassword.TabIndex = 4;
-            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
@@ -141,7 +141,6 @@ class CodeFile1 : Form
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeFile1";
             this.Text = "ログイン画面";
-            this.Load += new System.EventHandler(this.textBoxUserId_Load);
             this.Load += new System.EventHandler(this.textBoxPassword_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -252,4 +251,5 @@ class CodeFile1 : Form
             ListFile listfile = new ListFile();
             listfile.Show();
     }
+
 }
