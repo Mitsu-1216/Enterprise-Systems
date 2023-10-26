@@ -603,8 +603,17 @@ class NewFile : Form
         cmd.Parameters["birthday"].Value = birthday;
         cmd.Parameters.Add(new NpgsqlParameter("gender", NpgsqlDbType.Smallint));
         cmd.Parameters["gender"].Value = gender;
-
-        //SQL実行
+        cmd.Parameters.Add(new NpgsqlParameter("email_Address", NpgsqlDbType.Smallint));
+        cmd.Parameters["email_Address"].Value = emailAddress;
+        cmd.Parameters.Add(new NpgsqlParameter("phone_number", NpgsqlDbType.Smallint));
+        cmd.Parameters["phone_number"].Value = phoneNumber; 
+        cmd.Parameters.Add(new NpgsqlParameter("postal_number", NpgsqlDbType.Smallint));
+        cmd.Parameters["postal_number"].Value = postalNumber;
+        cmd.Parameters.Add(new NpgsqlParameter("address", NpgsqlDbType.Smallint));
+        cmd.Parameters["address"].Value = address; 
+        
+            
+            //SQL実行
         NpgsqlDataReader dr = cmd.ExecuteReader();
 
         Console.WriteLine("接続解除");
