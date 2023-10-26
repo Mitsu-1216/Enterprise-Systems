@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 class CodeFile1 : Form
@@ -164,6 +165,52 @@ class CodeFile1 : Form
             "エラー",
             MessageBoxButtons.OK,
             MessageBoxIcon.Error);
+            return;
+        }
+
+        if (textBoxUserId.Text != "" && textBoxPassword.Text != "")
+        {
+            string connectInfo = string.Empty;
+            string sql = string.Empty;
+
+            NpgsqlCommand command = null;
+            DataTable dt = null;
+            NpgsqlDataAdapter da = null;
+
+            //接続情報を作成
+            connectInfo = "Server=localhost;" //接続先サーバ 
+                        + "Port=5432;"  //ポート番号
+                        + "User Id=postgres;"  //接続ユーザ
+                        + "Password=root;" //パスワード
+                        + "Database=postgres;"; //接続先データベース
+
+            //インスタンスを生成
+            NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
+
+            //データベース接続
+            connection.Open();
+
+            dt = new DataTable();
+            sql = "SELECT * FROM user_table";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+            da = new NpgsqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            //SQL実行
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+
+            connection.Close();
+
+            DataRow dataRow = dt.Rows[0];
+            string userID = dt.Rows[0][0].ToString();
+            string password = dt.Rows[0][2].ToString();
+
+
+
+
+        }
+        else
+        {
             return;
         }
 
