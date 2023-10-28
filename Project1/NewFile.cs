@@ -539,8 +539,8 @@ class NewFile : Form
         string emailAddress = textBoxEmailAddress.Text;
         string postalNumber = textBoxPostalNumber.Text;
         string address = textBoxAddress.Text;
-        //int job = textBoxAddress.Text;
-        //int birthplace = textBoxAddress.Text;
+        int job = comboBoxJob.SelectedIndex;
+        int birthplace = comboBoxBirthPlace.SelectedIndex;
         string hobby = textBoxHobby.Text;
         string memo = textBoxMemo.Text;
         int gender = 0;
@@ -587,7 +587,8 @@ class NewFile : Form
         int customerId = int.Parse(dt.Rows[0][0].ToString());
 
         //新規顧客情報登録
-        sql = "INSERT INTO customer_table(customer_id,sei_kanji,mei_kanji,sei_kana,mei_kana,birthday,gender) VALUES (@customer_id,@sei_kanji,@mei_kanji,@sei_kana,@mei_kana,@birthday,@gender)";
+        sql = "INSERT INTO customer_table(customer_id, sei_kanji, mei_kanji, sei_kana, mei_kana, gender, birthday, postal_number, address, phone_number, email_address, job, birthplace, hobby, memo)";
+        sql += "VALUES (@customer_id, @sei_kanji, @mei_kanji, @sei_kana, @mei_kana, @gender, @birthday, @postal_number, @address, @phone_number, @email_address, @job, @birthplace, @hobby, @memo)";
         NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
 
         ////パラメーター追加
@@ -601,21 +602,29 @@ class NewFile : Form
         cmd.Parameters["sei_kana"].Value = nameKanaSei;
         cmd.Parameters.Add(new NpgsqlParameter("mei_kana", NpgsqlDbType.Varchar));
         cmd.Parameters["mei_kana"].Value = nameKanaMei;
-        cmd.Parameters.Add(new NpgsqlParameter("birthday", NpgsqlDbType.Date));
-        cmd.Parameters["birthday"].Value = birthday;
         cmd.Parameters.Add(new NpgsqlParameter("gender", NpgsqlDbType.Smallint));
         cmd.Parameters["gender"].Value = gender;
-        cmd.Parameters.Add(new NpgsqlParameter("email_Address", NpgsqlDbType.Smallint));
-        cmd.Parameters["email_Address"].Value = emailAddress;
-        cmd.Parameters.Add(new NpgsqlParameter("phone_number", NpgsqlDbType.Smallint));
-        cmd.Parameters["phone_number"].Value = phoneNumber; 
+        cmd.Parameters.Add(new NpgsqlParameter("birthday", NpgsqlDbType.Date));
+        cmd.Parameters["birthday"].Value = birthday;
         cmd.Parameters.Add(new NpgsqlParameter("postal_number", NpgsqlDbType.Smallint));
         cmd.Parameters["postal_number"].Value = postalNumber;
-        cmd.Parameters.Add(new NpgsqlParameter("address", NpgsqlDbType.Smallint));
-        cmd.Parameters["address"].Value = address; 
-        
-            
-            //SQL実行
+        cmd.Parameters.Add(new NpgsqlParameter("address", NpgsqlDbType.Varchar));
+        cmd.Parameters["address"].Value = address;
+        cmd.Parameters.Add(new NpgsqlParameter("phone_number", NpgsqlDbType.Varchar));
+        cmd.Parameters["phone_number"].Value = phoneNumber; 
+        cmd.Parameters.Add(new NpgsqlParameter("email_Address", NpgsqlDbType.Varchar));
+        cmd.Parameters["email_Address"].Value = emailAddress;
+        cmd.Parameters.Add(new NpgsqlParameter("job", NpgsqlDbType.Smallint));
+        cmd.Parameters["job"].Value = job;
+        cmd.Parameters.Add(new NpgsqlParameter("birthplace", NpgsqlDbType.Smallint));
+        cmd.Parameters["birthplace"].Value = birthplace;
+        cmd.Parameters.Add(new NpgsqlParameter("hobby", NpgsqlDbType.Varchar));
+        cmd.Parameters["hobby"].Value = hobby;
+        cmd.Parameters.Add(new NpgsqlParameter("memo", NpgsqlDbType.Text));
+        cmd.Parameters["memo"].Value = memo;
+
+
+        //SQL実行
         NpgsqlDataReader dr = cmd.ExecuteReader();
 
         Console.WriteLine("接続解除");
