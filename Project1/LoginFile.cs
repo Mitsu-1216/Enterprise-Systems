@@ -32,6 +32,9 @@ class CodeFile1 : Form
         this.Height = 1600;
 
         InitializeComponent();
+
+        this.Load += new System.EventHandler(this.textBoxUserId_Load);
+        this.Load += new System.EventHandler(this.textBoxPassword_Load);
     }
 
     private void InitializeComponent()
@@ -141,7 +144,6 @@ class CodeFile1 : Form
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeFile1";
             this.Text = "ログイン画面";
-            this.Load += new System.EventHandler(this.textBoxPassword_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
