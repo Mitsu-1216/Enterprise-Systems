@@ -515,19 +515,6 @@ class NewFile : Form
 
     }
 
-    /// <summary>
-    /// 詳細画面へ遷移
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void button1_Click(object sender, EventArgs e)
-    {
-        {
-            TabFile tabfile = new TabFile();
-            tabfile.Show();
-        }
-    }
-
     private void register_button_Click(object sender, EventArgs e)
     {
         try

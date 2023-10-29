@@ -208,7 +208,7 @@ class ListFile : Form
         connection.Close();
 
 
-        TabFile tabfile = new TabFile();
+        TabFile tabfile = new TabFile(dt);
         tabfile.Show();
     }
 }
