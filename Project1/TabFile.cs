@@ -93,10 +93,28 @@ class TabFile : Form
         dt = customerData;
 
         textBoxKanjiSei.Text = (string)dt.Rows[0][1];
-
-
-
+        textBoxKanjiMei.Text = (string)dt.Rows[0][2];
+        textBoxKanjiSei.Text = (string)dt.Rows[0][3];
+        textBoxKanaMei.Text = (string)dt.Rows[0][4];
+        dateTimePicker1.Value = (DateTime)dt.Rows[0][6];
+        //string phoneNumber = textBoxPhoneNumber.Text;
+        //string emailAddress = textBoxEmailAddress.Text;
+        //postalNumber = int.Parse(textBoxPostalNumber.Text);
+        //textBoxPostalNumber.Text =
+        //textBoxAddress.Text;
+        //comboBoxJob.SelectedIndex + 1;
+        //comboBoxBirthPlace.SelectedIndex + 1;
+        //textBoxHobby.Text;
+        //textBoxMemo.Text
+        //if (int.Parse((string)dt.Rows[0][5]) == 1)
+        //{
+        //    radioButtonMan;
+        //} else if (int.Parse((string)dt.Rows[0][5]) == 2)
+        //{
+        //    radioButtonWoman;
+        //}
     }
+
 
     private void InitializeComponent()
     {
