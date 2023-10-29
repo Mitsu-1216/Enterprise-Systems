@@ -162,6 +162,12 @@ class ListFile : Form
     private void dataGridView_customerinfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
         //詳細画面へ
+        string click = dataGridView_customerinfo[1, e.RowIndex].Value.ToString();
+        int click_id = int.Parse(click);
+
+
+
+
         TabFile tabfile = new TabFile();
         tabfile.Show();
     }
