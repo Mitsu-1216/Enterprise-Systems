@@ -1,6 +1,9 @@
 ﻿using Npgsql;
+using NpgsqlTypes;
 using System;
 using System.Data;
+using System.Net.Mail;
+using System.Net;
 using System.Windows.Forms;
 
 class ListFile : Form
@@ -162,10 +165,47 @@ class ListFile : Form
     private void dataGridView_customerinfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
         //詳細画面へ
-        string click = dataGridView_customerinfo[1, e.RowIndex].Value.ToString();
-        int click_id = int.Parse(click);
+        int clickId = int.Parse(dataGridView_customerinfo[1, e.RowIndex].Value.ToString());
 
+        string connectInfo = string.Empty;
+        string sql = string.Empty;
+        string userid = string.Empty;
+        string username = string.Empty;
 
+        //接続情報を作成
+        connectInfo = "Server=localhost;" //接続先サーバ 
+                    + "Port=5432;"  //ポート番号
+                    + "User Id=postgres;"  //接続ユーザ
+                    + "Password=root;" //パスワード
+                    + "Database=postgres;"; //接続先データベース
+
+        //インスタンスを生成
+        NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
+
+        //データベース接続
+        connection.Open();
+        Console.WriteLine("接続開始");
+
+        NpgsqlCommand cmd = null;
+        string cmd_str = null;
+        DataTable dt = null;
+        NpgsqlDataAdapter da = null;
+
+        dt = new DataTable();
+        cmd_str = "SELECT * FROM customer_table";
+        cmd = new NpgsqlCommand(cmd_str, connection);
+        da = new NpgsqlDataAdapter(cmd);
+        da.Fill(dt);
+
+        ////パラメーター追加
+        cmd.Parameters.Add(new NpgsqlParameter("customer_id", NpgsqlDbType.Bigint));
+        cmd.Parameters["customer_id"].Value = clickId;
+
+        //SQL実行
+        NpgsqlDataReader dr = cmd.ExecuteReader();
+
+        Console.WriteLine("接続解除");
+        connection.Close();
 
 
         TabFile tabfile = new TabFile();
