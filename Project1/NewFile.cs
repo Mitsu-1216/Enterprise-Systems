@@ -539,8 +539,8 @@ class NewFile : Form
         string emailAddress = textBoxEmailAddress.Text;
         int postalNumber = int.Parse(textBoxPostalNumber.Text);
         string address = textBoxAddress.Text;
-        int job = comboBoxJob.SelectedIndex;
-        int birthplace = comboBoxBirthPlace.SelectedIndex;
+        int job = comboBoxJob.SelectedIndex + 1;
+        int birthplace = comboBoxBirthPlace.SelectedIndex + 1;
         string hobby = textBoxHobby.Text;
         string memo = textBoxMemo.Text;
         int gender = 0;
