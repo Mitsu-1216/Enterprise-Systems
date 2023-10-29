@@ -530,6 +530,9 @@ class NewFile : Form
 
     private void register_button_Click(object sender, EventArgs e)
     {
+        try
+        {
+        //入力された値を取得
         string nameKanjiSei = textBoxKanjiSei.Text;
         string nameKanjiMei = textBoxKanjiMei.Text;
         string nameKanaSei = textBoxKanjiSei.Text;
@@ -558,7 +561,44 @@ class NewFile : Form
         {
             postalNumber = int.Parse(textBoxPostalNumber.Text);
         }
-        
+
+        //入力チェック
+        if (nameKanjiSei == "")
+        {
+            //アラート表示
+            MessageBox.Show("お名前(姓)を入力してください。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            return;
+        }
+        if (nameKanjiMei == "")
+        {
+            //アラート表示
+            MessageBox.Show("お名前(名)を入力してください。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            return;
+         }
+        if (nameKanaSei == "")
+        {
+            //アラート表示
+            MessageBox.Show("フリガナ(姓)を入力してください。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            return;
+         }
+        if (nameKanaMei == "")
+        {
+            //アラート表示
+            MessageBox.Show("フリガナ(名)を入力してください。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            return;
+         }
 
         string connectInfo = string.Empty;
         string sql = string.Empty;
@@ -637,6 +677,15 @@ class NewFile : Form
         Console.WriteLine("接続解除");
         connection.Close();
 
+        } catch(Exception ex)
+        {
+            //例外処理時
+            MessageBox.Show("登録処理に失敗しました。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            return;
+        }
     }
 
     private void comboBoxJob_Load(object sender, EventArgs e)

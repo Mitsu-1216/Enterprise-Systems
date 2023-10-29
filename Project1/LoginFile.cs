@@ -169,6 +169,9 @@ class CodeFile1 : Form
     /// <param name="e"></param>
     private void loginbutton_Click(object sender, EventArgs e)
     {
+        try
+        {
+
         if(textBoxUserId.Text == "")
         {
             //アラート表示
@@ -252,6 +255,11 @@ class CodeFile1 : Form
             //顧客一覧リストへ
             ListFile listfile = new ListFile();
             listfile.Show();
+        }
+        catch(Exception ex)
+        {
+
+        }
     }
 
 }
