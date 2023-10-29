@@ -59,11 +59,12 @@ class ListFile : Form
 
     private void InitializeComponent()
     {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView_customerinfo = new System.Windows.Forms.DataGridView();
+            this.detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.create_button = new System.Windows.Forms.Button();
-            this.detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_customerinfo)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +94,21 @@ class ListFile : Form
             this.dataGridView_customerinfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView_customerinfo.Size = new System.Drawing.Size(1535, 808);
             this.dataGridView_customerinfo.TabIndex = 3;
+            this.dataGridView_customerinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_customerinfo_CellContentClick);
+            // 
+            // detail_button
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.detail_button.DefaultCellStyle = dataGridViewCellStyle1;
+            this.detail_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.detail_button.HeaderText = "";
+            this.detail_button.Name = "detail_button";
+            this.detail_button.Text = "詳細";
+            this.detail_button.ToolTipText = "顧客情報詳細画面を表示します。";
+            this.detail_button.UseColumnTextForButtonValue = true;
             // 
             // label1
             // 
@@ -113,15 +129,6 @@ class ListFile : Form
             this.create_button.TabIndex = 2;
             this.create_button.Text = "顧客情報新規作成";
             this.create_button.UseVisualStyleBackColor = true;
-            this.create_button.Click += new System.EventHandler(this.create_button_Click);
-            // 
-            // detail_button
-            // 
-            this.detail_button.HeaderText = "";
-            this.detail_button.Name = "detail_button";
-            this.detail_button.Text = "詳細";
-            this.detail_button.ToolTipText = "顧客情報詳細画面を表示します。";
-            this.detail_button.UseColumnTextForButtonValue = true;
             // 
             // ListFile
             // 
@@ -138,23 +145,24 @@ class ListFile : Form
     }
 
 
-    /// <summary>
-    /// 詳細画面へ遷移
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void detail_button_Click(object sender, EventArgs e)
-    {
-        {
-            //詳細画面へ
-            TabFile tabfile = new TabFile();
-            tabfile.Show();
-        }
-    }
+
+
 
     private void create_button_Click(object sender, EventArgs e)
     {
         NewFile newfile = new NewFile();
         newfile.Show();
+    }
+
+    /// <summary>
+    /// 詳細画面へ遷移
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void dataGridView_customerinfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        //詳細画面へ
+        TabFile tabfile = new TabFile();
+        tabfile.Show();
     }
 }
