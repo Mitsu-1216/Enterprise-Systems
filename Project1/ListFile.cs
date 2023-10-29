@@ -192,14 +192,16 @@ class ListFile : Form
         NpgsqlDataAdapter da = null;
 
         dt = new DataTable();
-        cmd_str = "SELECT * FROM customer_table";
+        cmd_str = "SELECT * FROM customer_table WHERE customer_id = @customer_id";
         cmd = new NpgsqlCommand(cmd_str, connection);
-        da = new NpgsqlDataAdapter(cmd);
-        da.Fill(dt);
-
+        
         ////パラメーター追加
         cmd.Parameters.Add(new NpgsqlParameter("customer_id", NpgsqlDbType.Bigint));
         cmd.Parameters["customer_id"].Value = clickId;
+        
+        da = new NpgsqlDataAdapter(cmd);
+        da.Fill(dt);
+
 
         //SQL実行
         NpgsqlDataReader dr = cmd.ExecuteReader();

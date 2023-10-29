@@ -17,37 +17,6 @@ class TabFile : Form
     private TabControl tabControl1;
     internal TabPage tabPage1;
     private Panel panel2;
-    private TableLayoutPanel tableLayoutPanel1;
-    private ComboBox comboBox2;
-    private TextBox textBox6;
-    private TextBox textBox5;
-    private Label label7;
-    private Label label6;
-    private Label label5;
-    private Label label4;
-    private Label label3;
-    private TableLayoutPanel tableLayoutPanel2;
-    private TextBox textBox3;
-    private TextBox textBox4;
-    private DateTimePicker dateTimePicker1;
-    private TableLayoutPanel tableLayoutPanel3;
-    private TextBox textBox7;
-    private TextBox textBox8;
-    private Label label2;
-    private Label label8;
-    private Label label9;
-    private Label label10;
-    private Label label11;
-    private Label label12;
-    private Label label13;
-    private TextBox textBox9;
-    private TextBox textBox10;
-    private TextBox textBox11;
-    private ComboBox comboBox1;
-    private TextBox textBox12;
-    private TableLayoutPanel tableLayoutPanel4;
-    private RadioButton radioButton1;
-    private RadioButton radioButton2;
     private Label label1;
     private TabPage tabPage2;
     private DataGridView dataGridView1;
@@ -77,6 +46,37 @@ class TabFile : Form
     private FlowLayoutPanel flowLayoutPanel1;
     private TextBox textBox1;
     private TextBox textBox2;
+    private TableLayoutPanel tableLayoutPanel1;
+    private ComboBox comboBoxJob;
+    private TextBox textBoxAddress;
+    private TextBox textBoxPostalNumber;
+    private Label label7;
+    private Label label6;
+    private Label label5;
+    private Label label4;
+    private Label label3;
+    private TableLayoutPanel tableLayoutPanel2;
+    private TextBox textBoxKanjiSei;
+    private TextBox textBoxKanjiMei;
+    private DateTimePicker dateTimePicker1;
+    private TableLayoutPanel tableLayoutPanel3;
+    private TextBox textBoxKanaMei;
+    private TextBox textBoxKanaSei;
+    private Label label2;
+    private Label label8;
+    private Label label9;
+    private Label label10;
+    private Label label11;
+    private Label label12;
+    private Label label13;
+    private TextBox textBoxEmailAddress;
+    private TextBox textBoxPhoneNumber;
+    private TextBox textBoxHobby;
+    private TextBox textBoxMemo;
+    private TableLayoutPanel tableLayoutPanel4;
+    private RadioButton radioButtonMan;
+    private RadioButton radioButtonWoman;
+    private ComboBox comboBoxBirthPlace;
     private Button button1;
 
 
@@ -91,6 +91,10 @@ class TabFile : Form
 
         DataTable dt = new DataTable();
         dt = customerData;
+
+        textBoxKanjiSei.Text = (string)dt.Rows[0][1];
+
+
 
     }
 
@@ -110,21 +114,21 @@ class TabFile : Form
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBoxJob = new System.Windows.Forms.ComboBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.textBoxPostalNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxKanjiSei = new System.Windows.Forms.TextBox();
+            this.textBoxKanjiMei = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxKanaMei = new System.Windows.Forms.TextBox();
+            this.textBoxKanaSei = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -132,14 +136,14 @@ class TabFile : Form
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxEmailAddress = new System.Windows.Forms.TextBox();
+            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
+            this.textBoxHobby = new System.Windows.Forms.TextBox();
+            this.textBoxMemo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.radioButtonMan = new System.Windows.Forms.RadioButton();
+            this.radioButtonWoman = new System.Windows.Forms.RadioButton();
+            this.comboBoxBirthPlace = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -250,10 +254,11 @@ class TabFile : Form
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -266,9 +271,9 @@ class TabFile : Form
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxJob, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPostalNumber, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label5, 1, 3);
@@ -284,15 +289,15 @@ class TabFile : Form
             this.tableLayoutPanel1.Controls.Add(this.label11, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label12, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.label13, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.textBox9, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBox10, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox11, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxEmailAddress, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPhoneNumber, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxHobby, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxMemo, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox12, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxBirthPlace, 0, 9);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 35);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 17);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 12;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -307,33 +312,36 @@ class TabFile : Form
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1274, 668);
-            this.tableLayoutPanel1.TabIndex = 7;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 536);
+            this.tableLayoutPanel1.TabIndex = 8;
             // 
-            // comboBox2
+            // comboBoxJob
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(258, 258);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(182, 27);
-            this.comboBox2.TabIndex = 27;
+            this.comboBoxJob.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.comboBoxJob.DisplayMember = "job_name";
+            this.comboBoxJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxJob.FormattingEnabled = true;
+            this.comboBoxJob.Location = new System.Drawing.Point(180, 258);
+            this.comboBoxJob.Name = "comboBoxJob";
+            this.comboBoxJob.Size = new System.Drawing.Size(351, 27);
+            this.comboBoxJob.TabIndex = 27;
+            this.comboBoxJob.ValueMember = "job_name";
             // 
-            // textBox6
+            // textBoxAddress
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox6.Location = new System.Drawing.Point(258, 162);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(353, 26);
-            this.textBox6.TabIndex = 14;
+            this.textBoxAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxAddress.Location = new System.Drawing.Point(180, 162);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(353, 26);
+            this.textBoxAddress.TabIndex = 14;
             // 
-            // textBox5
+            // textBoxPostalNumber
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox5.Location = new System.Drawing.Point(258, 130);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(351, 26);
-            this.textBox5.TabIndex = 13;
+            this.textBoxPostalNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxPostalNumber.Location = new System.Drawing.Point(180, 130);
+            this.textBoxPostalNumber.Name = "textBoxPostalNumber";
+            this.textBoxPostalNumber.Size = new System.Drawing.Size(351, 26);
+            this.textBoxPostalNumber.TabIndex = 13;
             // 
             // label7
             // 
@@ -391,9 +399,9 @@ class TabFile : Form
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox4, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(258, 3);
+            this.tableLayoutPanel2.Controls.Add(this.textBoxKanjiSei, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBoxKanjiMei, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(180, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -401,27 +409,27 @@ class TabFile : Form
             this.tableLayoutPanel2.Size = new System.Drawing.Size(362, 24);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // textBox3
+            // textBoxKanjiSei
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(10, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 26);
-            this.textBox3.TabIndex = 3;
+            this.textBoxKanjiSei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxKanjiSei.Location = new System.Drawing.Point(10, 3);
+            this.textBoxKanjiSei.Name = "textBoxKanjiSei";
+            this.textBoxKanjiSei.Size = new System.Drawing.Size(162, 26);
+            this.textBoxKanjiSei.TabIndex = 3;
             // 
-            // textBox4
+            // textBoxKanjiMei
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(191, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 26);
-            this.textBox4.TabIndex = 2;
+            this.textBoxKanjiMei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxKanjiMei.Location = new System.Drawing.Point(191, 3);
+            this.textBoxKanjiMei.Name = "textBoxKanjiMei";
+            this.textBoxKanjiMei.Size = new System.Drawing.Size(162, 26);
+            this.textBoxKanjiMei.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
-            this.dateTimePicker1.Location = new System.Drawing.Point(258, 98);
+            this.dateTimePicker1.Location = new System.Drawing.Point(180, 98);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(197, 26);
             this.dateTimePicker1.TabIndex = 2;
@@ -432,9 +440,9 @@ class TabFile : Form
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.textBox7, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox8, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(258, 33);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxKanaMei, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxKanaSei, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(180, 33);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -442,21 +450,21 @@ class TabFile : Form
             this.tableLayoutPanel3.Size = new System.Drawing.Size(360, 24);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // textBox7
+            // textBoxKanaMei
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox7.Location = new System.Drawing.Point(189, 3);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(162, 26);
-            this.textBox7.TabIndex = 3;
+            this.textBoxKanaMei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxKanaMei.Location = new System.Drawing.Point(189, 3);
+            this.textBoxKanaMei.Name = "textBoxKanaMei";
+            this.textBoxKanaMei.Size = new System.Drawing.Size(162, 26);
+            this.textBoxKanaMei.TabIndex = 3;
             // 
-            // textBox8
+            // textBoxKanaSei
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox8.Location = new System.Drawing.Point(9, 3);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(162, 26);
-            this.textBox8.TabIndex = 0;
+            this.textBoxKanaSei.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxKanaSei.Location = new System.Drawing.Point(9, 3);
+            this.textBoxKanaSei.Name = "textBoxKanaSei";
+            this.textBoxKanaSei.Size = new System.Drawing.Size(162, 26);
+            this.textBoxKanaSei.TabIndex = 0;
             // 
             // label2
             // 
@@ -528,38 +536,41 @@ class TabFile : Form
             this.label13.TabIndex = 20;
             this.label13.Text = "メモ";
             // 
-            // textBox9
+            // textBoxEmailAddress
             // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox9.Location = new System.Drawing.Point(258, 226);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(353, 26);
-            this.textBox9.TabIndex = 22;
+            this.textBoxEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxEmailAddress.Location = new System.Drawing.Point(180, 226);
+            this.textBoxEmailAddress.Name = "textBoxEmailAddress";
+            this.textBoxEmailAddress.Size = new System.Drawing.Size(353, 26);
+            this.textBoxEmailAddress.TabIndex = 22;
             // 
-            // textBox10
+            // textBoxPhoneNumber
             // 
-            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox10.Location = new System.Drawing.Point(258, 194);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(351, 26);
-            this.textBox10.TabIndex = 21;
+            this.textBoxPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(180, 194);
+            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(351, 26);
+            this.textBoxPhoneNumber.TabIndex = 21;
             // 
-            // textBox11
+            // textBoxHobby
             // 
-            this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox11.Location = new System.Drawing.Point(258, 324);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(353, 26);
-            this.textBox11.TabIndex = 24;
+            this.textBoxHobby.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxHobby.Location = new System.Drawing.Point(180, 324);
+            this.textBoxHobby.Name = "textBoxHobby";
+            this.textBoxHobby.Size = new System.Drawing.Size(353, 26);
+            this.textBoxHobby.TabIndex = 24;
             // 
-            // comboBox1
+            // textBoxMemo
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(258, 291);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 27);
-            this.comboBox1.TabIndex = 26;
+            this.textBoxMemo.AcceptsReturn = true;
+            this.textBoxMemo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxMemo.BackColor = System.Drawing.Color.White;
+            this.textBoxMemo.Location = new System.Drawing.Point(180, 356);
+            this.textBoxMemo.Multiline = true;
+            this.textBoxMemo.Name = "textBoxMemo";
+            this.textBoxMemo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxMemo.Size = new System.Drawing.Size(387, 187);
+            this.textBoxMemo.TabIndex = 25;
             // 
             // tableLayoutPanel4
             // 
@@ -567,9 +578,9 @@ class TabFile : Form
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.radioButton1, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.radioButton2, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(258, 63);
+            this.tableLayoutPanel4.Controls.Add(this.radioButtonMan, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.radioButtonWoman, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(180, 63);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -577,51 +588,49 @@ class TabFile : Form
             this.tableLayoutPanel4.Size = new System.Drawing.Size(212, 29);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
-            // radioButton1
+            // radioButtonMan
             // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(21, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 23);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "男性";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonMan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonMan.AutoSize = true;
+            this.radioButtonMan.Location = new System.Drawing.Point(21, 3);
+            this.radioButtonMan.Name = "radioButtonMan";
+            this.radioButtonMan.Size = new System.Drawing.Size(65, 23);
+            this.radioButtonMan.TabIndex = 3;
+            this.radioButtonMan.TabStop = true;
+            this.radioButtonMan.Text = "男性";
+            this.radioButtonMan.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonWoman
             // 
-            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(127, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(65, 23);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "女性";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonWoman.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonWoman.AutoSize = true;
+            this.radioButtonWoman.Location = new System.Drawing.Point(127, 3);
+            this.radioButtonWoman.Name = "radioButtonWoman";
+            this.radioButtonWoman.Size = new System.Drawing.Size(65, 23);
+            this.radioButtonWoman.TabIndex = 7;
+            this.radioButtonWoman.TabStop = true;
+            this.radioButtonWoman.Text = "女性";
+            this.radioButtonWoman.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // comboBoxBirthPlace
             // 
-            this.textBox12.AcceptsReturn = true;
-            this.textBox12.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox12.BackColor = System.Drawing.Color.White;
-            this.textBox12.Location = new System.Drawing.Point(258, 417);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox12.Size = new System.Drawing.Size(387, 187);
-            this.textBox12.TabIndex = 25;
+            this.comboBoxBirthPlace.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.comboBoxBirthPlace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBirthPlace.FormattingEnabled = true;
+            this.comboBoxBirthPlace.Location = new System.Drawing.Point(180, 291);
+            this.comboBoxBirthPlace.Name = "comboBoxBirthPlace";
+            this.comboBoxBirthPlace.Size = new System.Drawing.Size(351, 27);
+            this.comboBoxBirthPlace.TabIndex = 26;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(23, 20);
+            this.label1.Location = new System.Drawing.Point(8, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 12);
+            this.label1.Size = new System.Drawing.Size(164, 12);
             this.label1.TabIndex = 1;
-            this.label1.Text = "新規顧客情報を登録します";
+            this.label1.Text = "顧客情報を修正してください。";
             // 
             // tabPage2
             // 
