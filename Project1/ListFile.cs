@@ -5,10 +5,16 @@ using System.Windows.Forms;
 class ListFile : Form
 {
     private Button[] bt = new Button[6];
-    private Button button1;
+    private Button detail_button;
     private Panel panel1;
     private Label label1;
-    private Button button2;
+    private DataGridView dataGridView1;
+    private DataGridViewTextBoxColumn 購入日;
+    private DataGridViewTextBoxColumn 購入内容;
+    private DataGridViewTextBoxColumn 金額;
+    private DataGridViewTextBoxColumn 支払方法;
+    private DataGridViewTextBoxColumn 担当者;
+    private Button create_button;
 
         public ListFile()
     {
@@ -50,29 +56,37 @@ class ListFile : Form
 
     private void InitializeComponent()
     {
-            this.button1 = new System.Windows.Forms.Button();
+            this.detail_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.create_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.購入日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.購入内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.金額 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.支払方法 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.担当者 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // detail_button
             // 
-            this.button1.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(521, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 79);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "顧客情報詳細へ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.detail_button.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.detail_button.Location = new System.Drawing.Point(820, 0);
+            this.detail_button.Name = "detail_button";
+            this.detail_button.Size = new System.Drawing.Size(150, 38);
+            this.detail_button.TabIndex = 0;
+            this.detail_button.Text = "顧客情報詳細へ";
+            this.detail_button.UseVisualStyleBackColor = true;
+            this.detail_button.Click += new System.EventHandler(this.detail_button_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.create_button);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.detail_button);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -80,16 +94,16 @@ class ListFile : Form
             this.panel1.Size = new System.Drawing.Size(1129, 626);
             this.panel1.TabIndex = 6;
             // 
-            // button2
+            // create_button
             // 
-            this.button2.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(521, 523);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(186, 71);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "顧客情報新規作成";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.create_button.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.create_button.Location = new System.Drawing.Point(846, 527);
+            this.create_button.Name = "create_button";
+            this.create_button.Size = new System.Drawing.Size(153, 36);
+            this.create_button.TabIndex = 2;
+            this.create_button.Text = "顧客情報新規作成";
+            this.create_button.UseVisualStyleBackColor = true;
+            this.create_button.Click += new System.EventHandler(this.create_button_Click);
             // 
             // label1
             // 
@@ -97,9 +111,50 @@ class ListFile : Form
             this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(23, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 12);
+            this.label1.Size = new System.Drawing.Size(128, 12);
             this.label1.TabIndex = 1;
-            this.label1.Text = "顧客一覧を表示します";
+            this.label1.Text = "顧客一覧を表示します。";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.購入日,
+            this.購入内容,
+            this.金額,
+            this.支払方法,
+            this.担当者});
+            this.dataGridView1.Location = new System.Drawing.Point(23, 44);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 21;
+            this.dataGridView1.Size = new System.Drawing.Size(961, 489);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // 購入日
+            // 
+            this.購入日.HeaderText = "購入日";
+            this.購入日.Name = "購入日";
+            // 
+            // 購入内容
+            // 
+            this.購入内容.HeaderText = "購入内容";
+            this.購入内容.Name = "購入内容";
+            // 
+            // 金額
+            // 
+            this.金額.HeaderText = "金額";
+            this.金額.Name = "金額";
+            // 
+            // 支払方法
+            // 
+            this.支払方法.HeaderText = "支払方法";
+            this.支払方法.Name = "支払方法";
+            // 
+            // 担当者
+            // 
+            this.担当者.HeaderText = "担当者";
+            this.担当者.Name = "担当者";
             // 
             // ListFile
             // 
@@ -109,7 +164,9 @@ class ListFile : Form
             this.Text = "顧客一覧画面";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+
     }
 
 
@@ -118,7 +175,7 @@ class ListFile : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void button1_Click(object sender, EventArgs e)
+    private void detail_button_Click(object sender, EventArgs e)
     {
         {
             TabFile tabfile = new TabFile();
@@ -126,7 +183,7 @@ class ListFile : Form
         }
     }
 
-    private void button2_Click(object sender, EventArgs e)
+    private void create_button_Click(object sender, EventArgs e)
     {
         NewFile newfile = new NewFile();
         newfile.Show();
