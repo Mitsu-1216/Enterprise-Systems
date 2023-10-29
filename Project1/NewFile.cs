@@ -13,7 +13,7 @@ class NewFile : Form
     private Button[] bt = new Button[6];
     private Panel panel1;
     private Label label1;
-    private Button button2;
+    private Button register_button;
     private DateTimePicker dateTimePicker1;
     private RadioButton radioButtonMan;
     private RadioButton radioButtonWoman;
@@ -93,7 +93,7 @@ class NewFile : Form
             this.radioButtonMan = new System.Windows.Forms.RadioButton();
             this.radioButtonWoman = new System.Windows.Forms.RadioButton();
             this.comboBoxBirthPlace = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.register_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -107,7 +107,7 @@ class NewFile : Form
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.register_button);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -473,16 +473,16 @@ class NewFile : Form
             this.comboBoxBirthPlace.Size = new System.Drawing.Size(351, 27);
             this.comboBoxBirthPlace.TabIndex = 26;
             // 
-            // button2
+            // register_button
             // 
-            this.button2.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(393, 599);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 45);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "登録する";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.register_button.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.register_button.Location = new System.Drawing.Point(420, 609);
+            this.register_button.Name = "register_button";
+            this.register_button.Size = new System.Drawing.Size(143, 45);
+            this.register_button.TabIndex = 2;
+            this.register_button.Text = "登録する";
+            this.register_button.UseVisualStyleBackColor = true;
+            this.register_button.Click += new System.EventHandler(this.register_button_Click);
             // 
             // label1
             // 
@@ -528,7 +528,7 @@ class NewFile : Form
         }
     }
 
-    private void button2_Click(object sender, EventArgs e)
+    private void register_button_Click(object sender, EventArgs e)
     {
         string nameKanjiSei = textBoxKanjiSei.Text;
         string nameKanjiMei = textBoxKanjiMei.Text;
@@ -537,12 +537,13 @@ class NewFile : Form
         DateTime birthday = dateTimePicker1.Value;
         string phoneNumber = textBoxPhoneNumber.Text;
         string emailAddress = textBoxEmailAddress.Text;
-        int postalNumber = int.Parse(textBoxPostalNumber.Text);
         string address = textBoxAddress.Text;
         int job = comboBoxJob.SelectedIndex + 1;
         int birthplace = comboBoxBirthPlace.SelectedIndex + 1;
         string hobby = textBoxHobby.Text;
         string memo = textBoxMemo.Text;
+
+        //性別
         int gender = 0;
         if (radioButtonMan.Checked == true)
         {
@@ -551,6 +552,13 @@ class NewFile : Form
         {
             gender = 2;
         }
+        // 郵便番号
+        int postalNumber = 0;
+        if (textBoxPostalNumber.Text!="")
+        {
+            postalNumber = int.Parse(textBoxPostalNumber.Text);
+        }
+        
 
         string connectInfo = string.Empty;
         string sql = string.Empty;
