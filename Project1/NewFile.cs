@@ -537,7 +537,7 @@ class NewFile : Form
         DateTime birthday = dateTimePicker1.Value;
         string phoneNumber = textBoxPhoneNumber.Text;
         string emailAddress = textBoxEmailAddress.Text;
-        string postalNumber = textBoxPostalNumber.Text;
+        int postalNumber = int.Parse(textBoxPostalNumber.Text);
         string address = textBoxAddress.Text;
         int job = comboBoxJob.SelectedIndex;
         int birthplace = comboBoxBirthPlace.SelectedIndex;
@@ -587,8 +587,8 @@ class NewFile : Form
         int customerId = int.Parse(dt.Rows[0][0].ToString());
 
         //新規顧客情報登録
-        sql = "INSERT INTO customer_table(customer_id, sei_kanji, mei_kanji, sei_kana, mei_kana, gender, birthday, postal_number, address, phone_number, email_address, job, birthplace, hobby, memo)";
-        sql += "VALUES (@customer_id, @sei_kanji, @mei_kanji, @sei_kana, @mei_kana, @gender, @birthday, @postal_number, @address, @phone_number, @email_address, @job, @birthplace, @hobby, @memo)";
+        sql = "INSERT INTO customer_table(customer_id, sei_kanji, mei_kanji, sei_kana, mei_kana, gender, birthday,postal_number,address,phone_number,email_Address,job,birthplace,hobby,memo)";
+        sql += "VALUES (@customer_id, @sei_kanji, @mei_kanji, @sei_kana, @mei_kana, @gender, @birthday,@postal_number,@address,@phone_number,@email_Address,@job,@birthplace,@hobby,@memo)";
         NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
 
         ////パラメーター追加
@@ -611,7 +611,7 @@ class NewFile : Form
         cmd.Parameters.Add(new NpgsqlParameter("address", NpgsqlDbType.Varchar));
         cmd.Parameters["address"].Value = address;
         cmd.Parameters.Add(new NpgsqlParameter("phone_number", NpgsqlDbType.Varchar));
-        cmd.Parameters["phone_number"].Value = phoneNumber; 
+        cmd.Parameters["phone_number"].Value = phoneNumber;
         cmd.Parameters.Add(new NpgsqlParameter("email_Address", NpgsqlDbType.Varchar));
         cmd.Parameters["email_Address"].Value = emailAddress;
         cmd.Parameters.Add(new NpgsqlParameter("job", NpgsqlDbType.Smallint));
@@ -622,7 +622,6 @@ class NewFile : Form
         cmd.Parameters["hobby"].Value = hobby;
         cmd.Parameters.Add(new NpgsqlParameter("memo", NpgsqlDbType.Text));
         cmd.Parameters["memo"].Value = memo;
-
 
         //SQL実行
         NpgsqlDataReader dr = cmd.ExecuteReader();
