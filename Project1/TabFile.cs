@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -88,6 +89,8 @@ class TabFile : Form
 
         InitializeComponent();
 
+        comboBoxBirthPlace_set();
+
         DataTable dt = new DataTable();
         dt = customerData;
 
@@ -96,39 +99,45 @@ class TabFile : Form
         textBoxKanaSei.Text = (string)dt.Rows[0][3];
         textBoxKanaMei.Text = (string)dt.Rows[0][4];
         dateTimePicker1.Value = (DateTime)dt.Rows[0][6];
-        //if (dt.Rows[0][7] != "")
-        //{
-        //textBoxPostalNumber.Text = (string)dt.Rows[0][7];
-        //}
-        //if (dt.Rows[0][8] != null)
-        //{
-        //    textBoxAddress.Text = (string)dt.Rows[0][8];
-        //}
-        //if (dt.Rows[0][9] != null)
-        //{
-        //    textBoxPhoneNumber.Text = (string)dt.Rows[0][9];
-        //}
-        //if (dt.Rows[0][10] != null)
-        //{
-        //    textBoxEmailAddress.Text = (string)dt.Rows[0][10];
-        //}
-        //if (dt.Rows[0][13] != null)
-        //{
-        //    textBoxHobby.Text = (string)dt.Rows[0][13];
-        //}
-        //if (dt.Rows[0][14] != null)
-        //{
-        //    textBoxMemo.Text = (string)dt.Rows[0][14];
-        //}
-        //comboBoxJob.SelectedIndex + 1;
+        if (!dt.Rows[0][7].Equals(DBNull.Value))
+        {
+            //textBoxPostalNumber.Text = dt.Rows[0][7];
+        }
+        if (!dt.Rows[0][8].Equals(DBNull.Value))
+        {
+            textBoxAddress.Text = (string)dt.Rows[0][8];
+        }
+        if (!dt.Rows[0][9].Equals(DBNull.Value))
+        {
+            textBoxPhoneNumber.Text = (string)dt.Rows[0][9];
+        }
+        if (!dt.Rows[0][10].Equals(DBNull.Value))
+        {
+            textBoxEmailAddress.Text = (string)dt.Rows[0][10];
+        }
+        if (!dt.Rows[0][13].Equals(DBNull.Value))
+        {
+            textBoxHobby.Text = (string)dt.Rows[0][13];
+        }
+        if (!dt.Rows[0][14].Equals(DBNull.Value))
+        {
+            textBoxMemo.Text = (string)dt.Rows[0][14];
+        }
+        //comboBoxJob.SelectedIndex = int.Parse((string)dt.Rows[0][11]);
+        comboBoxJob.SelectedIndex = 6;
+
         //comboBoxBirthPlace.SelectedIndex + 1;
         //if (int.Parse((string)dt.Rows[0][5]) == 1)
         //{
         //    radioButtonMan;
-        //} else if (int.Parse((string)dt.Rows[0][5]) == 2)
+        //}
+        //else if (int.Parse((string)dt.Rows[0][5]) == 2)
         //{
         //    radioButtonWoman;
         //}
+        
+
+
     }
 
 
@@ -963,5 +972,46 @@ class TabFile : Form
             this.ResumeLayout(false);
 
     }
+
+    private void comboBoxBirthPlace_set( )
+    {
+        //DB接続
+        string connectInfo = string.Empty;
+        string sql = string.Empty;
+        string userid = string.Empty;
+        string username = string.Empty;
+
+        //接続情報を作成
+        connectInfo = "Server=localhost;" //接続先サーバ 
+                    + "Port=5432;"  //ポート番号
+                    + "User Id=postgres;"  //接続ユーザ
+                    + "Password=root;" //パスワード
+                    + "Database=postgres;"; //接続先データベース
+
+        //インスタンスを生成
+        NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
+
+        //データベース接続
+        connection.Open();
+
+        NpgsqlCommand command = null;
+        string cmd_str = null;
+        DataTable dt = null;
+        NpgsqlDataAdapter da = null;
+
+        dt = new DataTable();
+        cmd_str = "SELECT prefecture_id,prefecture_name FROM m_prefecture ORDER BY prefecture_id";
+        command = new NpgsqlCommand(cmd_str, connection);
+        da = new NpgsqlDataAdapter(command);
+        da.Fill(dt);
+
+        connection.Close();
+
+        comboBoxBirthPlace.DataSource = dt;
+        ////コンボボックスに表示させる内容を設定
+        comboBoxBirthPlace.DisplayMember = "prefecture_name";
+    }
+
+
 
 }

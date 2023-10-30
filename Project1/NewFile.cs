@@ -752,6 +752,4 @@ class NewFile : Form
         ////コンボボックスに表示させる内容を設定
         comboBoxBirthPlace.DisplayMember = "prefecture_name";
     }
-
-
 }
