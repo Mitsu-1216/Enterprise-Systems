@@ -88,24 +88,40 @@ class TabFile : Form
 
         InitializeComponent();
 
-
         DataTable dt = new DataTable();
         dt = customerData;
 
         textBoxKanjiSei.Text = (string)dt.Rows[0][1];
         textBoxKanjiMei.Text = (string)dt.Rows[0][2];
-        textBoxKanjiSei.Text = (string)dt.Rows[0][3];
+        textBoxKanaSei.Text = (string)dt.Rows[0][3];
         textBoxKanaMei.Text = (string)dt.Rows[0][4];
         dateTimePicker1.Value = (DateTime)dt.Rows[0][6];
-        //string phoneNumber = textBoxPhoneNumber.Text;
-        //string emailAddress = textBoxEmailAddress.Text;
-        //postalNumber = int.Parse(textBoxPostalNumber.Text);
-        //textBoxPostalNumber.Text =
-        //textBoxAddress.Text;
+        //if (dt.Rows[0][7] != "")
+        //{
+        //textBoxPostalNumber.Text = (string)dt.Rows[0][7];
+        //}
+        //if (dt.Rows[0][8] != null)
+        //{
+        //    textBoxAddress.Text = (string)dt.Rows[0][8];
+        //}
+        //if (dt.Rows[0][9] != null)
+        //{
+        //    textBoxPhoneNumber.Text = (string)dt.Rows[0][9];
+        //}
+        //if (dt.Rows[0][10] != null)
+        //{
+        //    textBoxEmailAddress.Text = (string)dt.Rows[0][10];
+        //}
+        //if (dt.Rows[0][13] != null)
+        //{
+        //    textBoxHobby.Text = (string)dt.Rows[0][13];
+        //}
+        //if (dt.Rows[0][14] != null)
+        //{
+        //    textBoxMemo.Text = (string)dt.Rows[0][14];
+        //}
         //comboBoxJob.SelectedIndex + 1;
         //comboBoxBirthPlace.SelectedIndex + 1;
-        //textBoxHobby.Text;
-        //textBoxMemo.Text
         //if (int.Parse((string)dt.Rows[0][5]) == 1)
         //{
         //    radioButtonMan;
