@@ -89,6 +89,7 @@ class TabFile : Form
 
         InitializeComponent();
 
+        comboBoxJob_set();
         comboBoxBirthPlace_set();
 
         DataTable dt = new DataTable();
@@ -123,8 +124,8 @@ class TabFile : Form
         {
             textBoxMemo.Text = (string)dt.Rows[0][14];
         }
-        //comboBoxJob.SelectedIndex = int.Parse((string)dt.Rows[0][11]);
-        //comboBoxJob.SelectedIndex = 2;
+
+        comboBoxJob.SelectedIndex = int.Parse(dt.Rows[0][11].ToString()) - 1;
         comboBoxBirthPlace.SelectedIndex = int.Parse(dt.Rows[0][12].ToString()) -1;
 
 
@@ -973,6 +974,45 @@ class TabFile : Form
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
+    }
+
+    private void comboBoxJob_set()
+    {
+        //DB接続
+        string connectInfo = string.Empty;
+        string sql = string.Empty;
+        string userid = string.Empty;
+        string username = string.Empty;
+
+        //接続情報を作成
+        connectInfo = "Server=localhost;" //接続先サーバ 
+                    + "Port=5432;"  //ポート番号
+                    + "User Id=postgres;"  //接続ユーザ
+                    + "Password=root;" //パスワード
+                    + "Database=postgres;"; //接続先データベース
+
+        //インスタンスを生成
+        NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
+
+        //データベース接続
+        connection.Open();
+
+        NpgsqlCommand command = null;
+        string cmd_str = null;
+        DataTable dt = null;
+        NpgsqlDataAdapter da = null;
+
+        dt = new DataTable();
+        cmd_str = "SELECT job_id,job_name FROM m_job";
+        command = new NpgsqlCommand(cmd_str, connection);
+        da = new NpgsqlDataAdapter(command);
+        da.Fill(dt);
+
+        connection.Close();
+
+        comboBoxJob.DataSource = dt;
+        ////コンボボックスに表示させる内容を設定
+        comboBoxJob.DisplayMember = "job_name";
     }
 
     private void comboBoxBirthPlace_set( )
