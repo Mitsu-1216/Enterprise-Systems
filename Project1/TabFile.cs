@@ -95,6 +95,8 @@ class TabFile : Form
         DataTable dt = new DataTable();
         dt = customerData;
 
+        Object i = dt.Rows[0][7];
+
         textBoxKanjiSei.Text = (string)dt.Rows[0][1];
         textBoxKanjiMei.Text = (string)dt.Rows[0][2];
         textBoxKanaSei.Text = (string)dt.Rows[0][3];
@@ -102,7 +104,7 @@ class TabFile : Form
         dateTimePicker1.Value = (DateTime)dt.Rows[0][6];
         if (!dt.Rows[0][7].Equals(DBNull.Value))
         {
-            //textBoxPostalNumber.Text = (string)dt.Rows[0][7];
+            textBoxPostalNumber.Text = dt.Rows[0][7].ToString();
         }
         if (!dt.Rows[0][8].Equals(DBNull.Value))
         {
