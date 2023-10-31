@@ -126,12 +126,14 @@ class TabFile : Form
         {
             textBoxMemo.Text = (string)dt.Rows[0][14];
         }
-
-        comboBoxJob.SelectedIndex = int.Parse(dt.Rows[0][11].ToString()) - 1;
-        comboBoxBirthPlace.SelectedIndex = int.Parse(dt.Rows[0][12].ToString()) -1;
-
-
-        //comboBoxBirthPlace.SelectedIndex + 1;
+        if (!dt.Rows[0][11].Equals(DBNull.Value))
+        {
+            comboBoxJob.SelectedIndex = int.Parse(dt.Rows[0][11].ToString()) - 1;
+        }
+        if (!dt.Rows[0][12].Equals(DBNull.Value))
+        {
+            comboBoxBirthPlace.SelectedIndex = int.Parse(dt.Rows[0][12].ToString()) - 1;
+        }
         //if (int.Parse((string)dt.Rows[0][5]) == 1)
         //{
         //    radioButtonMan;
