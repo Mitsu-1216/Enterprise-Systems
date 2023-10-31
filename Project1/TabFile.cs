@@ -101,7 +101,7 @@ class TabFile : Form
         dateTimePicker1.Value = (DateTime)dt.Rows[0][6];
         if (!dt.Rows[0][7].Equals(DBNull.Value))
         {
-            //textBoxPostalNumber.Text = dt.Rows[0][7];
+            textBoxPostalNumber.Text = (string)dt.Rows[0][7];
         }
         if (!dt.Rows[0][8].Equals(DBNull.Value))
         {
@@ -124,7 +124,8 @@ class TabFile : Form
             textBoxMemo.Text = (string)dt.Rows[0][14];
         }
         //comboBoxJob.SelectedIndex = int.Parse((string)dt.Rows[0][11]);
-        comboBoxJob.SelectedIndex = 6;
+        //comboBoxJob.SelectedIndex = 2;
+
 
         //comboBoxBirthPlace.SelectedIndex + 1;
         //if (int.Parse((string)dt.Rows[0][5]) == 1)
