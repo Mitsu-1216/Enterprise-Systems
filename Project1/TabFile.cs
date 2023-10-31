@@ -101,7 +101,7 @@ class TabFile : Form
         dateTimePicker1.Value = (DateTime)dt.Rows[0][6];
         if (!dt.Rows[0][7].Equals(DBNull.Value))
         {
-            textBoxPostalNumber.Text = (string)dt.Rows[0][7];
+            //textBoxPostalNumber.Text = (string)dt.Rows[0][7];
         }
         if (!dt.Rows[0][8].Equals(DBNull.Value))
         {
@@ -125,6 +125,7 @@ class TabFile : Form
         }
         //comboBoxJob.SelectedIndex = int.Parse((string)dt.Rows[0][11]);
         //comboBoxJob.SelectedIndex = 2;
+        comboBoxBirthPlace.SelectedIndex = int.Parse(dt.Rows[0][12].ToString()) -1;
 
 
         //comboBoxBirthPlace.SelectedIndex + 1;
@@ -136,7 +137,7 @@ class TabFile : Form
         //{
         //    radioButtonWoman;
         //}
-        
+
 
 
     }
@@ -1011,6 +1012,7 @@ class TabFile : Form
         comboBoxBirthPlace.DataSource = dt;
         ////コンボボックスに表示させる内容を設定
         comboBoxBirthPlace.DisplayMember = "prefecture_name";
+
     }
 
 
