@@ -134,17 +134,16 @@ class TabFile : Form
         {
             comboBoxBirthPlace.SelectedIndex = int.Parse(dt.Rows[0][12].ToString()) - 1;
         }
-        //if (int.Parse((string)dt.Rows[0][5]) == 1)
-        //{
-        //    radioButtonMan;
-        //}
-        //else if (int.Parse((string)dt.Rows[0][5]) == 2)
-        //{
-        //    radioButtonWoman;
-        //}
-
-
-
+        if (!dt.Rows[0][12].Equals(DBNull.Value))
+        {
+            if (int.Parse(dt.Rows[0][5].ToString()) == 1)
+            {
+                radioButtonMan.Checked = true;
+            } else
+            {
+            radioButtonWoman.Checked = true;
+            }
+        }
     }
 
 
