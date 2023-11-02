@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using NpgsqlTypes;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -78,7 +79,8 @@ class TabFile : Form
     private RadioButton radioButtonMan;
     private RadioButton radioButtonWoman;
     private ComboBox comboBoxBirthPlace;
-    private Button button1;
+    private Button edit_button;
+    private int customerId;
 
 
     public TabFile(DataTable customerData)
@@ -95,6 +97,7 @@ class TabFile : Form
         DataTable dt = new DataTable();
         dt = customerData;
 
+        customerId = int.Parse(dt.Rows[0][0].ToString());
         textBoxKanjiSei.Text = (string)dt.Rows[0][1];
         textBoxKanjiMei.Text = (string)dt.Rows[0][2];
         textBoxKanaSei.Text = (string)dt.Rows[0][3];
@@ -132,7 +135,7 @@ class TabFile : Form
         {
             comboBoxBirthPlace.SelectedIndex = int.Parse(dt.Rows[0][12].ToString()) - 1;
         }
-        if (!dt.Rows[0][12].Equals(DBNull.Value))
+        if (!dt.Rows[0][5].Equals(DBNull.Value))
         {
             if (int.Parse(dt.Rows[0][5].ToString()) == 1)
             {
@@ -156,7 +159,7 @@ class TabFile : Form
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.edit_button = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -255,15 +258,16 @@ class TabFile : Form
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // button1
+            // edit_button
             // 
-            this.button1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(1312, 644);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 59);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "編集する\r\n";
-            this.button1.UseVisualStyleBackColor = true;
+            this.edit_button.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.edit_button.Location = new System.Drawing.Point(1312, 644);
+            this.edit_button.Name = "edit_button";
+            this.edit_button.Size = new System.Drawing.Size(106, 59);
+            this.edit_button.TabIndex = 7;
+            this.edit_button.Text = "編集する\r\n";
+            this.edit_button.UseVisualStyleBackColor = true;
+            this.edit_button.Click += new System.EventHandler(this.edit_button_Click);
             // 
             // tabControl1
             // 
@@ -302,7 +306,7 @@ class TabFile : Form
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.tableLayoutPanel1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.edit_button);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel2.ForeColor = System.Drawing.Color.Black;
@@ -1056,6 +1060,151 @@ class TabFile : Form
 
     }
 
+    private void edit_button_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            //入力された値を取得
+            //int customerId = 0;
+            string nameKanjiSei = textBoxKanjiSei.Text;
+            string nameKanjiMei = textBoxKanjiMei.Text;
+            string nameKanaSei = textBoxKanjiSei.Text;
+            string nameKanaMei = textBoxKanaMei.Text;
+            DateTime birthday = dateTimePicker1.Value;
+            string phoneNumber = textBoxPhoneNumber.Text;
+            string emailAddress = textBoxEmailAddress.Text;
+            string address = textBoxAddress.Text;
+            int job = comboBoxJob.SelectedIndex + 1;
+            int birthplace = comboBoxBirthPlace.SelectedIndex + 1;
+            string hobby = textBoxHobby.Text;
+            string memo = textBoxMemo.Text;
 
+            //性別
+            int gender = 0;
+            if (radioButtonMan.Checked == true)
+            {
+                gender = 1;
+            }
+            else if (radioButtonWoman.Checked == true)
+            {
+                gender = 2;
+            }
+            // 郵便番号
+            int postalNumber = 0;
+            if (textBoxPostalNumber.Text != "")
+            {
+                postalNumber = int.Parse(textBoxPostalNumber.Text);
+            }
 
+            //入力チェック
+            if (nameKanjiSei == "")
+            {
+                //アラート表示
+                MessageBox.Show("お名前(姓)を入力してください。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+            if (nameKanjiMei == "")
+            {
+                //アラート表示
+                MessageBox.Show("お名前(名)を入力してください。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+            if (nameKanaSei == "")
+            {
+                //アラート表示
+                MessageBox.Show("フリガナ(姓)を入力してください。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+            if (nameKanaMei == "")
+            {
+                //アラート表示
+                MessageBox.Show("フリガナ(名)を入力してください。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+
+            string connectInfo = string.Empty;
+            string sql = string.Empty;
+            string userid = string.Empty;
+            string username = string.Empty;
+
+            //接続情報を作成
+            connectInfo = "Server=localhost;" //接続先サーバ 
+                        + "Port=5432;"  //ポート番号
+                        + "User Id=postgres;"  //接続ユーザ
+                        + "Password=root;" //パスワード
+                        + "Database=postgres;"; //接続先データベース
+
+            //インスタンスを生成
+            NpgsqlConnection connection = new NpgsqlConnection(connectInfo);
+
+            //データベース接続
+            connection.Open();
+            Console.WriteLine("接続開始");
+
+            //新規顧客情報登録
+            sql = "UPDATE customer_table SET(customer_id, sei_kanji, mei_kanji, sei_kana, mei_kana, gender, birthday,postal_number,address,phone_number,email_Address,job,birthplace,hobby,memo)";
+            sql += "VALUES (@customer_id, @sei_kanji, @mei_kanji, @sei_kana, @mei_kana, @gender, @birthday,@postal_number,@address,@phone_number,@email_Address,@job,@birthplace,@hobby,@memo)";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
+
+            ////パラメーター追加
+            cmd.Parameters.Add(new NpgsqlParameter("customer_id", NpgsqlDbType.Bigint));
+            cmd.Parameters["customer_id"].Value = customerId;
+            cmd.Parameters.Add(new NpgsqlParameter("sei_kanji", NpgsqlDbType.Varchar));
+            cmd.Parameters["sei_kanji"].Value = nameKanjiSei;
+            cmd.Parameters.Add(new NpgsqlParameter("mei_kanji", NpgsqlDbType.Varchar));
+            cmd.Parameters["mei_kanji"].Value = nameKanjiMei;
+            cmd.Parameters.Add(new NpgsqlParameter("sei_kana", NpgsqlDbType.Varchar));
+            cmd.Parameters["sei_kana"].Value = nameKanaSei;
+            cmd.Parameters.Add(new NpgsqlParameter("mei_kana", NpgsqlDbType.Varchar));
+            cmd.Parameters["mei_kana"].Value = nameKanaMei;
+            cmd.Parameters.Add(new NpgsqlParameter("gender", NpgsqlDbType.Smallint));
+            cmd.Parameters["gender"].Value = gender;
+            cmd.Parameters.Add(new NpgsqlParameter("birthday", NpgsqlDbType.Date));
+            cmd.Parameters["birthday"].Value = birthday;
+            cmd.Parameters.Add(new NpgsqlParameter("postal_number", NpgsqlDbType.Smallint));
+            cmd.Parameters["postal_number"].Value = postalNumber;
+            cmd.Parameters.Add(new NpgsqlParameter("address", NpgsqlDbType.Varchar));
+            cmd.Parameters["address"].Value = address;
+            cmd.Parameters.Add(new NpgsqlParameter("phone_number", NpgsqlDbType.Varchar));
+            cmd.Parameters["phone_number"].Value = phoneNumber;
+            cmd.Parameters.Add(new NpgsqlParameter("email_Address", NpgsqlDbType.Varchar));
+            cmd.Parameters["email_Address"].Value = emailAddress;
+            cmd.Parameters.Add(new NpgsqlParameter("job", NpgsqlDbType.Smallint));
+            cmd.Parameters["job"].Value = job;
+            cmd.Parameters.Add(new NpgsqlParameter("birthplace", NpgsqlDbType.Smallint));
+            cmd.Parameters["birthplace"].Value = birthplace;
+            cmd.Parameters.Add(new NpgsqlParameter("hobby", NpgsqlDbType.Varchar));
+            cmd.Parameters["hobby"].Value = hobby;
+            cmd.Parameters.Add(new NpgsqlParameter("memo", NpgsqlDbType.Text));
+            cmd.Parameters["memo"].Value = memo;
+
+            //SQL実行
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+
+            Console.WriteLine("接続解除");
+            connection.Close();
+
+        }
+        catch (Exception ex)
+        {
+            //例外処理時
+            MessageBox.Show("登録処理に失敗しました。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+            return;
+        }
+    }
 }
