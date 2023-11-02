@@ -95,8 +95,6 @@ class TabFile : Form
         DataTable dt = new DataTable();
         dt = customerData;
 
-        Object i = dt.Rows[0][7];
-
         textBoxKanjiSei.Text = (string)dt.Rows[0][1];
         textBoxKanjiMei.Text = (string)dt.Rows[0][2];
         textBoxKanaSei.Text = (string)dt.Rows[0][3];
