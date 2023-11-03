@@ -288,6 +288,7 @@ class TabFile : Form
             this.tabControl1.ShowToolTips = true;
             this.tabControl1.Size = new System.Drawing.Size(1466, 762);
             this.tabControl1.TabIndex = 18;
+            this.tabControl1.TabStop = false;
             // 
             // tabPage1
             // 
@@ -316,7 +317,7 @@ class TabFile : Form
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel2.Size = new System.Drawing.Size(1502, 843);
-            this.panel2.TabIndex = 7;
+            this.panel2.TabIndex = 20;
             // 
             // tableLayoutPanel1
             // 
@@ -649,7 +650,7 @@ class TabFile : Form
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(212, 29);
-            this.tableLayoutPanel4.TabIndex = 6;
+            this.tableLayoutPanel4.TabIndex = 4;
             // 
             // radioButtonMan
             // 
@@ -658,7 +659,7 @@ class TabFile : Form
             this.radioButtonMan.Location = new System.Drawing.Point(21, 3);
             this.radioButtonMan.Name = "radioButtonMan";
             this.radioButtonMan.Size = new System.Drawing.Size(65, 23);
-            this.radioButtonMan.TabIndex = 4;
+            this.radioButtonMan.TabIndex = 5;
             this.radioButtonMan.TabStop = true;
             this.radioButtonMan.Text = "男性";
             this.radioButtonMan.UseVisualStyleBackColor = true;
@@ -670,7 +671,7 @@ class TabFile : Form
             this.radioButtonWoman.Location = new System.Drawing.Point(127, 3);
             this.radioButtonWoman.Name = "radioButtonWoman";
             this.radioButtonWoman.Size = new System.Drawing.Size(65, 23);
-            this.radioButtonWoman.TabIndex = 5;
+            this.radioButtonWoman.TabIndex = 6;
             this.radioButtonWoman.TabStop = true;
             this.radioButtonWoman.Text = "女性";
             this.radioButtonWoman.UseVisualStyleBackColor = true;
