@@ -1069,7 +1069,7 @@ class TabFile : Form
             //入力された値を取得
             string nameKanjiSei = textBoxKanjiSei.Text;
             string nameKanjiMei = textBoxKanjiMei.Text;
-            string nameKanaSei = textBoxKanjiSei.Text;
+            string nameKanaSei = textBoxKanaSei.Text;
             string nameKanaMei = textBoxKanaMei.Text;
             DateTime birthday = dateTimePicker1.Value;
             string phoneNumber = textBoxPhoneNumber.Text;
