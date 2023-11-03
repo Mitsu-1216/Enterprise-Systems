@@ -287,7 +287,7 @@ class TabFile : Form
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.ShowToolTips = true;
             this.tabControl1.Size = new System.Drawing.Size(1466, 762);
-            this.tabControl1.TabIndex = 7;
+            this.tabControl1.TabIndex = 18;
             // 
             // tabPage1
             // 
@@ -462,7 +462,7 @@ class TabFile : Form
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(362, 24);
-            this.tableLayoutPanel2.TabIndex = 4;
+            this.tableLayoutPanel2.TabIndex = 16;
             // 
             // textBoxKanjiSei
             // 
@@ -773,7 +773,7 @@ class TabFile : Form
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1458, 736);
-            this.tabPage5.TabIndex = 4;
+            this.tabPage5.TabIndex = 18;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
@@ -1227,6 +1227,8 @@ class TabFile : Form
             cmd.Parameters["memo"].Value = memo;
 
             //SQL実行
+            
+            
             NpgsqlDataReader dr = cmd.ExecuteReader();
 
             Console.WriteLine("接続解除");
