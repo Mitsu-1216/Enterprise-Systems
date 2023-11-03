@@ -385,6 +385,7 @@ class TabFile : Form
             this.textBoxAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxAddress.Location = new System.Drawing.Point(180, 162);
             this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxAddress.Size = new System.Drawing.Size(353, 26);
             this.textBoxAddress.TabIndex = 14;
             // 
@@ -393,6 +394,7 @@ class TabFile : Form
             this.textBoxPostalNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxPostalNumber.Location = new System.Drawing.Point(180, 130);
             this.textBoxPostalNumber.Name = "textBoxPostalNumber";
+            this.textBoxPostalNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxPostalNumber.Size = new System.Drawing.Size(351, 26);
             this.textBoxPostalNumber.TabIndex = 13;
             // 
@@ -598,6 +600,7 @@ class TabFile : Form
             this.textBoxEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxEmailAddress.Location = new System.Drawing.Point(180, 226);
             this.textBoxEmailAddress.Name = "textBoxEmailAddress";
+            this.textBoxEmailAddress.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxEmailAddress.Size = new System.Drawing.Size(353, 26);
             this.textBoxEmailAddress.TabIndex = 22;
             // 
@@ -606,6 +609,7 @@ class TabFile : Form
             this.textBoxPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxPhoneNumber.Location = new System.Drawing.Point(180, 194);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(351, 26);
             this.textBoxPhoneNumber.TabIndex = 21;
             // 
@@ -614,6 +618,7 @@ class TabFile : Form
             this.textBoxHobby.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxHobby.Location = new System.Drawing.Point(180, 324);
             this.textBoxHobby.Name = "textBoxHobby";
+            this.textBoxHobby.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxHobby.Size = new System.Drawing.Size(353, 26);
             this.textBoxHobby.TabIndex = 24;
             // 
