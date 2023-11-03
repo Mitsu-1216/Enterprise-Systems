@@ -599,7 +599,7 @@ class NewFile : Form
             }
         }
 
-            string connectInfo = string.Empty;
+        string connectInfo = string.Empty;
         string sql = string.Empty;
         string userid = string.Empty;
         string username = string.Empty;
