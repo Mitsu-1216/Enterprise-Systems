@@ -266,7 +266,7 @@ class TabFile : Form
             this.edit_button.Location = new System.Drawing.Point(1312, 644);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(106, 59);
-            this.edit_button.TabIndex = 7;
+            this.edit_button.TabIndex = 14;
             this.edit_button.Text = "編集する\r\n";
             this.edit_button.UseVisualStyleBackColor = true;
             this.edit_button.Click += new System.EventHandler(this.edit_button_Click);
@@ -377,7 +377,7 @@ class TabFile : Form
             this.comboBoxJob.Location = new System.Drawing.Point(180, 258);
             this.comboBoxJob.Name = "comboBoxJob";
             this.comboBoxJob.Size = new System.Drawing.Size(351, 27);
-            this.comboBoxJob.TabIndex = 27;
+            this.comboBoxJob.TabIndex = 11;
             this.comboBoxJob.ValueMember = "job_name";
             // 
             // textBoxAddress
@@ -387,7 +387,7 @@ class TabFile : Form
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxAddress.Size = new System.Drawing.Size(353, 26);
-            this.textBoxAddress.TabIndex = 14;
+            this.textBoxAddress.TabIndex = 8;
             // 
             // textBoxPostalNumber
             // 
@@ -396,7 +396,7 @@ class TabFile : Form
             this.textBoxPostalNumber.Name = "textBoxPostalNumber";
             this.textBoxPostalNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxPostalNumber.Size = new System.Drawing.Size(351, 26);
-            this.textBoxPostalNumber.TabIndex = 13;
+            this.textBoxPostalNumber.TabIndex = 7;
             // 
             // label7
             // 
@@ -471,7 +471,7 @@ class TabFile : Form
             this.textBoxKanjiSei.Name = "textBoxKanjiSei";
             this.textBoxKanjiSei.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxKanjiSei.Size = new System.Drawing.Size(162, 26);
-            this.textBoxKanjiSei.TabIndex = 3;
+            this.textBoxKanjiSei.TabIndex = 0;
             // 
             // textBoxKanjiMei
             // 
@@ -480,7 +480,7 @@ class TabFile : Form
             this.textBoxKanjiMei.Name = "textBoxKanjiMei";
             this.textBoxKanjiMei.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxKanjiMei.Size = new System.Drawing.Size(162, 26);
-            this.textBoxKanjiMei.TabIndex = 2;
+            this.textBoxKanjiMei.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
@@ -489,7 +489,7 @@ class TabFile : Form
             this.dateTimePicker1.Location = new System.Drawing.Point(180, 98);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(197, 26);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // tableLayoutPanel3
             // 
@@ -523,7 +523,7 @@ class TabFile : Form
             this.textBoxKanaSei.Name = "textBoxKanaSei";
             this.textBoxKanaSei.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxKanaSei.Size = new System.Drawing.Size(162, 26);
-            this.textBoxKanaSei.TabIndex = 0;
+            this.textBoxKanaSei.TabIndex = 2;
             // 
             // label2
             // 
@@ -602,7 +602,7 @@ class TabFile : Form
             this.textBoxEmailAddress.Name = "textBoxEmailAddress";
             this.textBoxEmailAddress.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxEmailAddress.Size = new System.Drawing.Size(353, 26);
-            this.textBoxEmailAddress.TabIndex = 22;
+            this.textBoxEmailAddress.TabIndex = 10;
             // 
             // textBoxPhoneNumber
             // 
@@ -611,7 +611,7 @@ class TabFile : Form
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(351, 26);
-            this.textBoxPhoneNumber.TabIndex = 21;
+            this.textBoxPhoneNumber.TabIndex = 9;
             // 
             // textBoxHobby
             // 
@@ -620,7 +620,7 @@ class TabFile : Form
             this.textBoxHobby.Name = "textBoxHobby";
             this.textBoxHobby.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxHobby.Size = new System.Drawing.Size(353, 26);
-            this.textBoxHobby.TabIndex = 24;
+            this.textBoxHobby.TabIndex = 13;
             // 
             // textBoxMemo
             // 
@@ -633,7 +633,7 @@ class TabFile : Form
             this.textBoxMemo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxMemo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxMemo.Size = new System.Drawing.Size(387, 187);
-            this.textBoxMemo.TabIndex = 25;
+            this.textBoxMemo.TabIndex = 14;
             // 
             // tableLayoutPanel4
             // 
@@ -658,7 +658,7 @@ class TabFile : Form
             this.radioButtonMan.Location = new System.Drawing.Point(21, 3);
             this.radioButtonMan.Name = "radioButtonMan";
             this.radioButtonMan.Size = new System.Drawing.Size(65, 23);
-            this.radioButtonMan.TabIndex = 3;
+            this.radioButtonMan.TabIndex = 4;
             this.radioButtonMan.TabStop = true;
             this.radioButtonMan.Text = "男性";
             this.radioButtonMan.UseVisualStyleBackColor = true;
@@ -670,7 +670,7 @@ class TabFile : Form
             this.radioButtonWoman.Location = new System.Drawing.Point(127, 3);
             this.radioButtonWoman.Name = "radioButtonWoman";
             this.radioButtonWoman.Size = new System.Drawing.Size(65, 23);
-            this.radioButtonWoman.TabIndex = 7;
+            this.radioButtonWoman.TabIndex = 5;
             this.radioButtonWoman.TabStop = true;
             this.radioButtonWoman.Text = "女性";
             this.radioButtonWoman.UseVisualStyleBackColor = true;
@@ -683,7 +683,7 @@ class TabFile : Form
             this.comboBoxBirthPlace.Location = new System.Drawing.Point(180, 291);
             this.comboBoxBirthPlace.Name = "comboBoxBirthPlace";
             this.comboBoxBirthPlace.Size = new System.Drawing.Size(351, 27);
-            this.comboBoxBirthPlace.TabIndex = 26;
+            this.comboBoxBirthPlace.TabIndex = 12;
             // 
             // label1
             // 
