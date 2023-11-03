@@ -7,6 +7,7 @@ using System.Data;
 using NpgsqlTypes;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Text.RegularExpressions;
 
 class NewFile : Form
 {
@@ -542,12 +543,6 @@ class NewFile : Form
         {
             gender = 2;
         }
-        // 郵便番号
-        int postalNumber = 0;
-        if (textBoxPostalNumber.Text!="")
-        {
-            postalNumber = int.Parse(textBoxPostalNumber.Text);
-        }
 
         //入力チェック
         if (nameKanjiSei == "")
@@ -586,8 +581,25 @@ class NewFile : Form
             MessageBoxIcon.Error);
             return;
          }
+            // 郵便番号
+            int postalNumber = 0;
+        if (textBoxPostalNumber.Text != "")
+        {
+            if (isHanSu(textBoxPostalNumber.Text))
+            {
+                postalNumber = int.Parse(textBoxPostalNumber.Text);
+            }
+            else
+            {
+                MessageBox.Show("郵便番号は半角数字で入力してください。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+        }
 
-        string connectInfo = string.Empty;
+            string connectInfo = string.Empty;
         string sql = string.Empty;
         string userid = string.Empty;
         string username = string.Empty;
@@ -751,5 +763,22 @@ class NewFile : Form
         comboBoxBirthPlace.DataSource = dt;
         ////コンボボックスに表示させる内容を設定
         comboBoxBirthPlace.DisplayMember = "prefecture_name";
+    }
+
+    /// <summary>
+    /// 半角数字チェック
+    /// </summary>
+    /// <param name="val">対象文字列</param>
+    /// <returns>true:半角数字のみ　false:半角数字以外を含む</returns>
+    public static bool isHanSu(string val)
+    {
+        // nullの場合はfalseを返す
+        if (val == null)
+        {
+            return false;
+        }
+
+        // 半角英数チェック
+        return Regex.IsMatch(val, @"^[0-9]+$");
     }
 }
