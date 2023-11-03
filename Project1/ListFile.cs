@@ -49,7 +49,7 @@ class ListFile : Form
         NpgsqlDataAdapter da = null;
 
         dt = new DataTable();
-        cmd_str = "SELECT * FROM customer_table";
+        cmd_str = "SELECT * FROM customer_table ORDER BY customer_id";
         command = new NpgsqlCommand(cmd_str, connection);
         da = new NpgsqlDataAdapter(command);
         da.Fill(dt);
