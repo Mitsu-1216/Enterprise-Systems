@@ -467,6 +467,7 @@ class TabFile : Form
             this.textBoxKanjiSei.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxKanjiSei.Location = new System.Drawing.Point(10, 3);
             this.textBoxKanjiSei.Name = "textBoxKanjiSei";
+            this.textBoxKanjiSei.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxKanjiSei.Size = new System.Drawing.Size(162, 26);
             this.textBoxKanjiSei.TabIndex = 3;
             // 
@@ -475,6 +476,7 @@ class TabFile : Form
             this.textBoxKanjiMei.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxKanjiMei.Location = new System.Drawing.Point(191, 3);
             this.textBoxKanjiMei.Name = "textBoxKanjiMei";
+            this.textBoxKanjiMei.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxKanjiMei.Size = new System.Drawing.Size(162, 26);
             this.textBoxKanjiMei.TabIndex = 2;
             // 
@@ -508,6 +510,7 @@ class TabFile : Form
             this.textBoxKanaMei.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxKanaMei.Location = new System.Drawing.Point(189, 3);
             this.textBoxKanaMei.Name = "textBoxKanaMei";
+            this.textBoxKanaMei.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxKanaMei.Size = new System.Drawing.Size(162, 26);
             this.textBoxKanaMei.TabIndex = 3;
             // 
@@ -516,6 +519,7 @@ class TabFile : Form
             this.textBoxKanaSei.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxKanaSei.Location = new System.Drawing.Point(9, 3);
             this.textBoxKanaSei.Name = "textBoxKanaSei";
+            this.textBoxKanaSei.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxKanaSei.Size = new System.Drawing.Size(162, 26);
             this.textBoxKanaSei.TabIndex = 0;
             // 
@@ -621,6 +625,7 @@ class TabFile : Form
             this.textBoxMemo.Location = new System.Drawing.Point(180, 356);
             this.textBoxMemo.Multiline = true;
             this.textBoxMemo.Name = "textBoxMemo";
+            this.textBoxMemo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxMemo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxMemo.Size = new System.Drawing.Size(387, 187);
             this.textBoxMemo.TabIndex = 25;
