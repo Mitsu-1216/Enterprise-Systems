@@ -1153,9 +1153,23 @@ class TabFile : Form
             connection.Open();
             Console.WriteLine("接続開始");
 
-            //新規顧客情報登録
-            sql = "UPDATE customer_table SET(customer_id, sei_kanji, mei_kanji, sei_kana, mei_kana, gender, birthday,postal_number,address,phone_number,email_Address,job,birthplace,hobby,memo)";
-            sql += "VALUES (@customer_id, @sei_kanji, @mei_kanji, @sei_kana, @mei_kana, @gender, @birthday,@postal_number,@address,@phone_number,@email_Address,@job,@birthplace,@hobby,@memo)";
+            //顧客情報修正
+            sql = "UPDATE customer_table SET ";
+            sql += "sei_kanji = @sei_kanji,";
+            sql += "mei_kanji = @mei_kanji,";
+            sql += "sei_kana = @sei_kana,";
+            sql += "mei_kana = @mei_kana,";
+            sql += "gender = @gender,";
+            sql += "birthday = @birthday,";
+            sql += "postal_number = @postal_number,";
+            sql += "address = @address,";
+            sql += "phone_number = @phone_number,";
+            sql += "email_Address = @email_Address,";
+            sql += "job = @job,";
+            sql += "birthplace = @birthplace,";
+            sql += "hobby = @hobby,";
+            sql += "memo = @memo ";
+            sql += "WHERE customer_id = @customer_id";
             NpgsqlCommand cmd = new NpgsqlCommand(sql, connection);
 
             ////パラメーター追加
@@ -1195,6 +1209,12 @@ class TabFile : Form
 
             Console.WriteLine("接続解除");
             connection.Close();
+
+            //編集処理完了
+            MessageBox.Show("編集処理が完了しました。",
+            "エラー",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
 
         }
         catch (Exception ex)
