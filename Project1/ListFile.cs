@@ -5,6 +5,7 @@ using System.Data;
 using System.Net.Mail;
 using System.Net;
 using System.Windows.Forms;
+using System.IO;
 
 class ListFile : Form
 {
@@ -147,10 +148,6 @@ class ListFile : Form
 
     }
 
-
-
-
-
     private void create_button_Click(object sender, EventArgs e)
     {
         NewFile newfile = new NewFile();
@@ -184,33 +181,54 @@ class ListFile : Form
 
         //データベース接続
         connection.Open();
-        Console.WriteLine("接続開始");
 
+        //顧客情報取得
         NpgsqlCommand cmd = null;
         string cmd_str = null;
-        DataTable dt = null;
+        DataTable dt_customer = null;
         NpgsqlDataAdapter da = null;
 
-        dt = new DataTable();
+        dt_customer = new DataTable();
         cmd_str = "SELECT * FROM customer_table WHERE customer_id = @customer_id";
         cmd = new NpgsqlCommand(cmd_str, connection);
-        
+
         ////パラメーター追加
         cmd.Parameters.Add(new NpgsqlParameter("customer_id", NpgsqlDbType.Bigint));
         cmd.Parameters["customer_id"].Value = clickId;
-        
-        da = new NpgsqlDataAdapter(cmd);
-        da.Fill(dt);
 
+        da = new NpgsqlDataAdapter(cmd);
+        da.Fill(dt_customer);
 
         //SQL実行
         NpgsqlDataReader dr = cmd.ExecuteReader();
 
-        Console.WriteLine("接続解除");
+        connection.Close();
+        connection.Open();
+
+        //購入情報取得
+        NpgsqlCommand cmd_p = null;
+        string cmd_str_p = null;
+        DataTable dt_purchase = null;
+        NpgsqlDataAdapter da_p = null;
+
+        dt_purchase = new DataTable();
+        cmd_str_p = "SELECT * FROM purchase_table WHERE customer_id = @customer_id";
+        cmd_p = new NpgsqlCommand(cmd_str_p, connection);
+
+        ////パラメーター追加
+        cmd_p.Parameters.Add(new NpgsqlParameter("customer_id", NpgsqlDbType.Bigint));
+        cmd_p.Parameters["customer_id"].Value = clickId;
+
+        da_p = new NpgsqlDataAdapter(cmd_p);
+        da_p.Fill(dt_purchase);
+
+        //SQL実行
+        NpgsqlDataReader dr_p = cmd_p.ExecuteReader();
+
+        //データベース接続解除
         connection.Close();
 
-
-        TabFile tabfile = new TabFile(dt);
+        TabFile tabfile = new TabFile(dt_customer, dt_purchase);
         tabfile.Show();
     }
 }

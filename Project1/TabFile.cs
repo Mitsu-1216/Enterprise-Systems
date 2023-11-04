@@ -23,11 +23,6 @@ class TabFile : Form
     private Label label1;
     private TabPage tabPage2;
     private DataGridView dataGridView1;
-    private DataGridViewTextBoxColumn 購入日;
-    private DataGridViewTextBoxColumn 購入内容;
-    private DataGridViewTextBoxColumn 金額;
-    private DataGridViewTextBoxColumn 支払方法;
-    private DataGridViewTextBoxColumn 担当者;
     private TabPage tabPage3;
     private TabPage tabPage4;
     private TabPage tabPage5;
@@ -81,10 +76,14 @@ class TabFile : Form
     private RadioButton radioButtonWoman;
     private ComboBox comboBoxBirthPlace;
     private Button edit_button;
+    private DataGridViewTextBoxColumn 購入日;
+    private DataGridViewTextBoxColumn 支払方法;
+    private DataGridViewTextBoxColumn 担当者;
+    private DataGridViewTextBoxColumn 金額;
+    private DataGridViewTextBoxColumn 購入内容;
     private int customerId;
 
-
-    public TabFile(DataTable customerData)
+    public TabFile(DataTable customerData, DataTable dt_purchase)
     {
         this.Text = "detail screen";
         this.Width = 3000;
@@ -147,6 +146,7 @@ class TabFile : Form
                 radioButtonWoman.Checked = true;
             }
         }
+
     }
 
 
@@ -199,11 +199,6 @@ class TabFile : Form
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.購入日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.購入内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.金額 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.支払方法 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.担当者 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -226,6 +221,11 @@ class TabFile : Form
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.購入日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.支払方法 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.担当者 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.金額 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.購入内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -713,40 +713,15 @@ class TabFile : Form
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.購入日,
-            this.購入内容,
-            this.金額,
             this.支払方法,
-            this.担当者});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 40);
+            this.担当者,
+            this.金額,
+            this.購入内容});
+            this.dataGridView1.Location = new System.Drawing.Point(34, 46);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(542, 489);
+            this.dataGridView1.Size = new System.Drawing.Size(1080, 489);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // 購入日
-            // 
-            this.購入日.HeaderText = "購入日";
-            this.購入日.Name = "購入日";
-            // 
-            // 購入内容
-            // 
-            this.購入内容.HeaderText = "購入内容";
-            this.購入内容.Name = "購入内容";
-            // 
-            // 金額
-            // 
-            this.金額.HeaderText = "金額";
-            this.金額.Name = "金額";
-            // 
-            // 支払方法
-            // 
-            this.支払方法.HeaderText = "支払方法";
-            this.支払方法.Name = "支払方法";
-            // 
-            // 担当者
-            // 
-            this.担当者.HeaderText = "担当者";
-            this.担当者.Name = "担当者";
             // 
             // tabPage3
             // 
@@ -957,6 +932,31 @@ class TabFile : Form
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(1472, 809);
             this.panel1.TabIndex = 6;
+            // 
+            // 購入日
+            // 
+            this.購入日.HeaderText = "購入日";
+            this.購入日.Name = "購入日";
+            // 
+            // 支払方法
+            // 
+            this.支払方法.HeaderText = "支払方法";
+            this.支払方法.Name = "支払方法";
+            // 
+            // 担当者
+            // 
+            this.担当者.HeaderText = "担当者";
+            this.担当者.Name = "担当者";
+            // 
+            // 金額
+            // 
+            this.金額.HeaderText = "金額";
+            this.金額.Name = "金額";
+            // 
+            // 購入内容
+            // 
+            this.購入内容.HeaderText = "購入内容";
+            this.購入内容.Name = "購入内容";
             // 
             // TabFile
             // 
@@ -1227,9 +1227,7 @@ class TabFile : Form
             cmd.Parameters.Add(new NpgsqlParameter("memo", NpgsqlDbType.Text));
             cmd.Parameters["memo"].Value = memo;
 
-            //SQL実行
-            
-            
+            //SQL実行     
             NpgsqlDataReader dr = cmd.ExecuteReader();
 
             Console.WriteLine("接続解除");
