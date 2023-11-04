@@ -76,6 +76,7 @@ class TabFile : Form
     private RadioButton radioButtonWoman;
     private ComboBox comboBoxBirthPlace;
     private Button edit_button;
+    private DataGridViewButtonColumn purchase_detail_button;
     private int customerId;
 
     public TabFile(DataTable customerData, DataTable dt_purchase)
@@ -224,6 +225,7 @@ class TabFile : Form
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.purchase_detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -709,11 +711,15 @@ class TabFile : Form
             // 
             this.dataGridView_purchaseinfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView_purchaseinfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_purchaseinfo.Location = new System.Drawing.Point(34, 46);
+            this.dataGridView_purchaseinfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.purchase_detail_button});
+            this.dataGridView_purchaseinfo.Location = new System.Drawing.Point(26, 34);
             this.dataGridView_purchaseinfo.Name = "dataGridView_purchaseinfo";
+            this.dataGridView_purchaseinfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView_purchaseinfo.RowTemplate.Height = 21;
-            this.dataGridView_purchaseinfo.Size = new System.Drawing.Size(1080, 489);
+            this.dataGridView_purchaseinfo.Size = new System.Drawing.Size(818, 466);
             this.dataGridView_purchaseinfo.TabIndex = 0;
+            this.dataGridView_purchaseinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_purchaseinfo_CellContentClick);
             // 
             // tabPage3
             // 
@@ -924,6 +930,16 @@ class TabFile : Form
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(1472, 809);
             this.panel1.TabIndex = 6;
+            // 
+            // purchase_detail_button
+            // 
+            this.purchase_detail_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.purchase_detail_button.HeaderText = "";
+            this.purchase_detail_button.Name = "purchase_detail_button";
+            this.purchase_detail_button.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.purchase_detail_button.Text = "詳細";
+            this.purchase_detail_button.ToolTipText = "購買履歴詳細を表示します。";
+            this.purchase_detail_button.UseColumnTextForButtonValue = true;
             // 
             // TabFile
             // 
@@ -1232,5 +1248,10 @@ class TabFile : Form
 
         // 半角英数チェック
         return Regex.IsMatch(val, @"^[0-9]+$");
+    }
+
+    private void dataGridView_purchaseinfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
     }
 }
