@@ -144,7 +144,12 @@ class TabFile : Form
 
         dataGridView_purchaseinfo.DataSource = dt_purchase;
 
-
+        dt_purchase.Columns["purchase_id"].ColumnName = "顧客ID";
+        dt_purchase.Columns["customer_id"].ColumnName = "名前（姓）";
+        dt_purchase.Columns["amount"].ColumnName = "単価";
+        dt_purchase.Columns["manager"].ColumnName = "担当者";
+        dt_purchase.Columns["payment"].ColumnName = "支払方法";
+        dt_purchase.Columns["purchase_date"].ColumnName = "購入日";
     }
 
 
