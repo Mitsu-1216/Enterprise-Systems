@@ -57,6 +57,23 @@ class ListFile : Form
 
         dataGridView_customerinfo.DataSource = dt;
 
+        dt.Columns["customer_id"].ColumnName = "顧客ID";
+        dt.Columns["sei_kanji"].ColumnName = "名前（姓）";
+        dt.Columns["mei_kanji"].ColumnName = "名前（名）";
+        dt.Columns["sei_kana"].ColumnName = "フリガナ（姓）";
+        dt.Columns["mei_kana"].ColumnName = "フリガナ（名）";
+        dt.Columns["gender"].ColumnName = "性別";
+        dt.Columns["birthday"].ColumnName = "生年月日";
+        dt.Columns["postal_number"].ColumnName = "郵便番号";
+        dt.Columns["address"].ColumnName = "住所";
+        dt.Columns["phone_number"].ColumnName = "電話番号";
+        dt.Columns["email_Address"].ColumnName = "メールアドレス";
+        dt.Columns["job"].ColumnName = "職業";
+        dt.Columns["birthplace"].ColumnName = "出身地";
+        dt.Columns["hobby"].ColumnName = "趣味";
+        dt.Columns["memo"].ColumnName = "備考";
+        dt.AcceptChanges();
+
         Console.WriteLine("接続解除");
         connection.Close();
     }
