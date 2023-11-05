@@ -16,7 +16,6 @@ class CodeFile1 : Form
     private Label label2;
     private TextBox textBoxUserId;
     private TableLayoutPanel tableLayoutPanel1;
-    private Panel panel1;
     private TextBox textBoxPassword;
     private Label label3;
     private TableLayoutPanel tlp;
@@ -47,17 +46,15 @@ class CodeFile1 : Form
             this.textBoxUserId = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginbutton
             // 
             this.loginbutton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginbutton.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.loginbutton.Location = new System.Drawing.Point(403, 518);
+            this.loginbutton.Location = new System.Drawing.Point(185, 409);
             this.loginbutton.Name = "loginbutton";
             this.loginbutton.Size = new System.Drawing.Size(247, 80);
             this.loginbutton.TabIndex = 0;
@@ -69,7 +66,7 @@ class CodeFile1 : Form
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(51, 25);
+            this.label1.Location = new System.Drawing.Point(50, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 101);
             this.label1.TabIndex = 1;
@@ -80,7 +77,7 @@ class CodeFile1 : Form
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(73, 177);
+            this.label2.Location = new System.Drawing.Point(72, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 102);
             this.label2.TabIndex = 2;
@@ -93,7 +90,7 @@ class CodeFile1 : Form
             this.textBoxUserId.BackColor = System.Drawing.Color.Pink;
             this.textBoxUserId.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxUserId.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxUserId.Location = new System.Drawing.Point(316, 61);
+            this.textBoxUserId.Location = new System.Drawing.Point(315, 61);
             this.textBoxUserId.Multiline = true;
             this.textBoxUserId.Name = "textBoxUserId";
             this.textBoxUserId.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -107,11 +104,11 @@ class CodeFile1 : Form
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.textBoxPassword, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxUserId, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(262, 143);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxUserId, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPassword, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 85);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -125,7 +122,7 @@ class CodeFile1 : Form
             this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPassword.BackColor = System.Drawing.Color.Pink;
             this.textBoxPassword.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxPassword.Location = new System.Drawing.Point(316, 212);
+            this.textBoxPassword.Location = new System.Drawing.Point(315, 212);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -133,41 +130,32 @@ class CodeFile1 : Form
             this.textBoxPassword.TabIndex = 4;
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.loginbutton);
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(1134, 675);
-            this.panel1.TabIndex = 6;
-            // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(24, 29);
+            this.label3.Location = new System.Drawing.Point(71, 20);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(444, 41);
+            this.label3.Size = new System.Drawing.Size(474, 41);
             this.label3.TabIndex = 6;
             this.label3.Text = "ログインID、パスワードを入力してください。";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // CodeFile1
             // 
-            this.ClientSize = new System.Drawing.Size(1484, 861);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(610, 501);
+            this.Controls.Add(this.loginbutton);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeFile1";
             this.Text = "ログイン画面";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
     }
@@ -283,4 +271,8 @@ class CodeFile1 : Form
         }
     }
 
+    private void label3_Click(object sender, EventArgs e)
+    {
+
+    }
 }

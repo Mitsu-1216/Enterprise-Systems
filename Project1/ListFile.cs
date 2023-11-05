@@ -80,7 +80,9 @@ class ListFile : Form
 
     private void InitializeComponent()
     {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView_customerinfo = new System.Windows.Forms.DataGridView();
             this.detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -98,31 +100,47 @@ class ListFile : Form
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(1460, 786);
+            this.panel1.Size = new System.Drawing.Size(1460, 708);
             this.panel1.TabIndex = 6;
             // 
             // dataGridView_customerinfo
             // 
             this.dataGridView_customerinfo.AllowUserToDeleteRows = false;
             this.dataGridView_customerinfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_customerinfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_customerinfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_customerinfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.detail_button});
-            this.dataGridView_customerinfo.Location = new System.Drawing.Point(27, 65);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("BIZ UDPゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_customerinfo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_customerinfo.Location = new System.Drawing.Point(27, 55);
             this.dataGridView_customerinfo.Name = "dataGridView_customerinfo";
             this.dataGridView_customerinfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView_customerinfo.RowTemplate.Height = 21;
-            this.dataGridView_customerinfo.Size = new System.Drawing.Size(1080, 596);
+            this.dataGridView_customerinfo.Size = new System.Drawing.Size(1080, 653);
             this.dataGridView_customerinfo.TabIndex = 3;
             this.dataGridView_customerinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_customerinfo_CellContentClick);
             // 
             // detail_button
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.detail_button.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.detail_button.DefaultCellStyle = dataGridViewCellStyle2;
             this.detail_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.detail_button.HeaderText = "";
             this.detail_button.Name = "detail_button";
@@ -154,7 +172,7 @@ class ListFile : Form
             // 
             // ListFile
             // 
-            this.ClientSize = new System.Drawing.Size(1486, 861);
+            this.ClientSize = new System.Drawing.Size(1144, 741);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.create_button);
             this.Name = "ListFile";
