@@ -18,6 +18,7 @@ class CodeFile1 : Form
     private TableLayoutPanel tableLayoutPanel1;
     private Panel panel1;
     private TextBox textBoxPassword;
+    private Label label3;
     private TableLayoutPanel tlp;
         public static void Main()
     {
@@ -47,18 +48,20 @@ class CodeFile1 : Form
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginbutton
             // 
-            this.loginbutton.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.loginbutton.Location = new System.Drawing.Point(516, 489);
+            this.loginbutton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loginbutton.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.loginbutton.Location = new System.Drawing.Point(403, 518);
             this.loginbutton.Name = "loginbutton";
-            this.loginbutton.Size = new System.Drawing.Size(121, 43);
+            this.loginbutton.Size = new System.Drawing.Size(247, 80);
             this.loginbutton.TabIndex = 0;
-            this.loginbutton.Text = "ログインする";
+            this.loginbutton.Text = "ログイン";
             this.loginbutton.UseVisualStyleBackColor = true;
             this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
             // 
@@ -98,6 +101,7 @@ class CodeFile1 : Form
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -105,7 +109,7 @@ class CodeFile1 : Form
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBoxUserId, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(306, 117);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(262, 143);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -128,6 +132,7 @@ class CodeFile1 : Form
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.loginbutton);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -136,6 +141,18 @@ class CodeFile1 : Form
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(1134, 675);
             this.panel1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(24, 29);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(444, 41);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "ログインID、パスワードを入力してください。";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CodeFile1
             // 

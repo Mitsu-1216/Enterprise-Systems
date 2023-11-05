@@ -491,9 +491,10 @@ class NewFile : Form
             this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(23, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 16);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(205, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "新規顧客情報を登録します";
+            this.label1.Text = "新規顧客情報を登録します。";
             // 
             // NewFile
             // 

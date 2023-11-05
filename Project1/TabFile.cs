@@ -413,7 +413,7 @@ class TabFile : Form
             this.tableLayoutPanel1.Controls.Add(this.comboBoxBirthPlace, 0, 9);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 17);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 34);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 12;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -751,10 +751,11 @@ class TabFile : Form
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(8, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 12);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(260, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "顧客情報を修正してください。";
             // 
