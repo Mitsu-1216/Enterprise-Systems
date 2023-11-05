@@ -203,6 +203,7 @@ class TabFile : Form
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView_purchaseinfo = new System.Windows.Forms.DataGridView();
+            this.purchase_detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -225,7 +226,6 @@ class TabFile : Form
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.purchase_detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -721,6 +721,16 @@ class TabFile : Form
             this.dataGridView_purchaseinfo.TabIndex = 0;
             this.dataGridView_purchaseinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_purchaseinfo_CellContentClick);
             // 
+            // purchase_detail_button
+            // 
+            this.purchase_detail_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.purchase_detail_button.HeaderText = "";
+            this.purchase_detail_button.Name = "purchase_detail_button";
+            this.purchase_detail_button.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.purchase_detail_button.Text = "詳細";
+            this.purchase_detail_button.ToolTipText = "購買履歴詳細を表示します。";
+            this.purchase_detail_button.UseColumnTextForButtonValue = true;
+            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -930,16 +940,6 @@ class TabFile : Form
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(1472, 809);
             this.panel1.TabIndex = 6;
-            // 
-            // purchase_detail_button
-            // 
-            this.purchase_detail_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.purchase_detail_button.HeaderText = "";
-            this.purchase_detail_button.Name = "purchase_detail_button";
-            this.purchase_detail_button.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.purchase_detail_button.Text = "詳細";
-            this.purchase_detail_button.ToolTipText = "購買履歴詳細を表示します。";
-            this.purchase_detail_button.UseColumnTextForButtonValue = true;
             // 
             // TabFile
             // 

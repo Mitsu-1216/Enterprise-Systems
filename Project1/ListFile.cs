@@ -150,6 +150,7 @@ class ListFile : Form
             this.create_button.TabIndex = 2;
             this.create_button.Text = "顧客情報新規作成";
             this.create_button.UseVisualStyleBackColor = true;
+            this.create_button.Click += new System.EventHandler(this.create_button_Click_1);
             // 
             // ListFile
             // 
@@ -165,7 +166,7 @@ class ListFile : Form
 
     }
 
-    private void create_button_Click(object sender, EventArgs e)
+    private void create_button_Click_1(object sender, EventArgs e)
     {
         NewFile newfile = new NewFile();
         newfile.Show();
