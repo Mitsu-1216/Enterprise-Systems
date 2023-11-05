@@ -186,6 +186,7 @@ class TabFile : Form
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabFile));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -772,6 +773,8 @@ class TabFile : Form
             // 
             // dataGridView_purchaseinfo
             // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.dataGridView_purchaseinfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_purchaseinfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView_purchaseinfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_purchaseinfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

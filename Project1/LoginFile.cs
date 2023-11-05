@@ -90,12 +90,14 @@ class CodeFile1 : Form
             // textBoxUserId
             // 
             this.textBoxUserId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxUserId.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxUserId.Location = new System.Drawing.Point(316, 54);
+            this.textBoxUserId.BackColor = System.Drawing.Color.Pink;
+            this.textBoxUserId.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBoxUserId.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxUserId.Location = new System.Drawing.Point(316, 61);
             this.textBoxUserId.Multiline = true;
             this.textBoxUserId.Name = "textBoxUserId";
-            this.textBoxUserId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBoxUserId.Size = new System.Drawing.Size(165, 44);
+            this.textBoxUserId.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxUserId.Size = new System.Drawing.Size(165, 29);
             this.textBoxUserId.TabIndex = 3;
             this.textBoxUserId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -121,17 +123,19 @@ class CodeFile1 : Form
             // textBoxPassword
             // 
             this.textBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPassword.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxPassword.Location = new System.Drawing.Point(316, 206);
+            this.textBoxPassword.BackColor = System.Drawing.Color.Pink;
+            this.textBoxPassword.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBoxPassword.Location = new System.Drawing.Point(316, 212);
             this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxPassword.Size = new System.Drawing.Size(165, 44);
+            this.textBoxPassword.Size = new System.Drawing.Size(165, 32);
             this.textBoxPassword.TabIndex = 4;
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.loginbutton);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
