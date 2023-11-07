@@ -143,7 +143,6 @@ class CodeFile1 : Form
             this.label3.TabIndex = 6;
             this.label3.Text = "ログインID、パスワードを入力してください。";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // CodeFile1
             // 
@@ -271,8 +270,4 @@ class CodeFile1 : Form
         }
     }
 
-    private void label3_Click(object sender, EventArgs e)
-    {
-
-    }
 }

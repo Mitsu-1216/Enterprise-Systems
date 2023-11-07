@@ -236,6 +236,7 @@ class TabFile : Form
             this.dataGridView_purchaseinfo = new System.Windows.Forms.DataGridView();
             this.purchase_detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.purchaseRegisterButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -286,7 +287,6 @@ class TabFile : Form
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.purchaseRegisterButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -787,7 +787,6 @@ class TabFile : Form
             this.dataGridView_purchaseinfo.RowTemplate.Height = 21;
             this.dataGridView_purchaseinfo.Size = new System.Drawing.Size(818, 466);
             this.dataGridView_purchaseinfo.TabIndex = 0;
-            this.dataGridView_purchaseinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_purchaseinfo_CellContentClick);
             // 
             // purchase_detail_button
             // 
@@ -812,7 +811,15 @@ class TabFile : Form
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "購入履歴登録";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // purchaseRegisterButton
+            // 
+            this.purchaseRegisterButton.Location = new System.Drawing.Point(868, 57);
+            this.purchaseRegisterButton.Name = "purchaseRegisterButton";
+            this.purchaseRegisterButton.Size = new System.Drawing.Size(126, 48);
+            this.purchaseRegisterButton.TabIndex = 9;
+            this.purchaseRegisterButton.Text = "登録する";
+            this.purchaseRegisterButton.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel6
             // 
@@ -938,7 +945,6 @@ class TabFile : Form
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(604, 206);
             this.tableLayoutPanel5.TabIndex = 0;
-            this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
             // 
             // flowLayoutPanel3
             // 
@@ -1344,15 +1350,6 @@ class TabFile : Form
             this.panel1.Size = new System.Drawing.Size(1472, 809);
             this.panel1.TabIndex = 6;
             // 
-            // purchaseRegisterButton
-            // 
-            this.purchaseRegisterButton.Location = new System.Drawing.Point(868, 57);
-            this.purchaseRegisterButton.Name = "purchaseRegisterButton";
-            this.purchaseRegisterButton.Size = new System.Drawing.Size(126, 48);
-            this.purchaseRegisterButton.TabIndex = 9;
-            this.purchaseRegisterButton.Text = "登録する";
-            this.purchaseRegisterButton.UseVisualStyleBackColor = true;
-            // 
             // TabFile
             // 
             this.ClientSize = new System.Drawing.Size(1484, 861);
@@ -1670,18 +1667,4 @@ class TabFile : Form
         return Regex.IsMatch(val, @"^[0-9]+$");
     }
 
-    private void dataGridView_purchaseinfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
-
-    }
-
-    private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
-    {
-
-    }
-
-    private void tabPage3_Click(object sender, EventArgs e)
-    {
-
-    }
 }
