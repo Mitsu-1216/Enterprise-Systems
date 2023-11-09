@@ -107,6 +107,7 @@ class ListFile : Form
             // 
             this.dataGridView_customerinfo.AllowUserToDeleteRows = false;
             this.dataGridView_customerinfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView_customerinfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("BIZ UDPゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -147,6 +148,7 @@ class ListFile : Form
             this.detail_button.Text = "詳細";
             this.detail_button.ToolTipText = "顧客情報詳細画面を表示します。";
             this.detail_button.UseColumnTextForButtonValue = true;
+            this.detail_button.Width = 5;
             // 
             // label1
             // 
