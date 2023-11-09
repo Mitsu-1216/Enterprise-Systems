@@ -86,9 +86,9 @@ class ListFile : Form
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView_customerinfo = new System.Windows.Forms.DataGridView();
-            this.detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.create_button = new System.Windows.Forms.Button();
+            this.detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_customerinfo)).BeginInit();
             this.SuspendLayout();
@@ -107,10 +107,13 @@ class ListFile : Form
             // dataGridView_customerinfo
             // 
             this.dataGridView_customerinfo.AllowUserToDeleteRows = false;
+            this.dataGridView_customerinfo.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Thistle;
             this.dataGridView_customerinfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_customerinfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView_customerinfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView_customerinfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_customerinfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGridView_customerinfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("BIZ UDPゴシック", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -138,21 +141,6 @@ class ListFile : Form
             this.dataGridView_customerinfo.TabIndex = 3;
             this.dataGridView_customerinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_customerinfo_CellContentClick);
             // 
-            // detail_button
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.detail_button.DefaultCellStyle = dataGridViewCellStyle3;
-            this.detail_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.detail_button.HeaderText = "";
-            this.detail_button.Name = "detail_button";
-            this.detail_button.Text = "詳細";
-            this.detail_button.ToolTipText = "顧客情報詳細画面を表示します。";
-            this.detail_button.UseColumnTextForButtonValue = true;
-            this.detail_button.Width = 5;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -174,6 +162,22 @@ class ListFile : Form
             this.create_button.Text = "顧客情報新規作成";
             this.create_button.UseVisualStyleBackColor = true;
             this.create_button.Click += new System.EventHandler(this.create_button_Click_1);
+            // 
+            // detail_button
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.detail_button.DefaultCellStyle = dataGridViewCellStyle3;
+            this.detail_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.detail_button.HeaderText = "";
+            this.detail_button.MinimumWidth = 20;
+            this.detail_button.Name = "detail_button";
+            this.detail_button.Text = "詳細";
+            this.detail_button.ToolTipText = "顧客情報詳細画面を表示します。";
+            this.detail_button.UseColumnTextForButtonValue = true;
+            this.detail_button.Width = 21;
             // 
             // ListFile
             // 
