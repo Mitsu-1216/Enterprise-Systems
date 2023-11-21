@@ -582,8 +582,9 @@ class NewFile : Form
             MessageBoxIcon.Error);
             return;
          }
-            // 郵便番号
-            int postalNumber = 0;
+        
+         // 郵便番号
+        int postalNumber = 0;
         if (textBoxPostalNumber.Text != "")
         {
             if (isHanSu(textBoxPostalNumber.Text))
