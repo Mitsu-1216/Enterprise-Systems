@@ -194,6 +194,7 @@ class NewFile : Form
             this.textBoxPostalNumber.Name = "textBoxPostalNumber";
             this.textBoxPostalNumber.Size = new System.Drawing.Size(351, 26);
             this.textBoxPostalNumber.TabIndex = 13;
+            this.textBoxPostalNumber.TextChanged += new System.EventHandler(this.textBoxPostalNumber_TextChanged);
             // 
             // label7
             // 
@@ -782,5 +783,25 @@ class NewFile : Form
 
         // 半角英数チェック
         return Regex.IsMatch(val, @"^[0-9]+$");
+    }
+
+    private void textBoxPostalNumber_TextChanged(object sender, EventArgs e)
+    {
+        int postalNumber = 0;
+        if (textBoxPostalNumber.Text != "")
+        {
+            if (isHanSu(textBoxPostalNumber.Text))
+            {
+                postalNumber = int.Parse(textBoxPostalNumber.Text);
+            }
+            else
+            {
+                MessageBox.Show("郵便番号は半角数字で入力してください。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }
