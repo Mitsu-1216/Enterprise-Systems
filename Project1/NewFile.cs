@@ -642,7 +642,6 @@ class NewFile : Form
 
         //データベース接続
         connection.Open();
-        Console.WriteLine("接続開始");
 
         //シーケンス取得
         NpgsqlCommand command = null;
@@ -699,7 +698,6 @@ class NewFile : Form
         //SQL実行
         NpgsqlDataReader dr = cmd.ExecuteReader();
 
-        Console.WriteLine("接続解除");
         connection.Close();
 
         } catch(Exception ex)

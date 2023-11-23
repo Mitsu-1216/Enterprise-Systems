@@ -41,7 +41,6 @@ class ListFile : Form
 
         //データベース接続
         connection.Open();
-        Console.WriteLine("接続開始");
 
         //顧客情報取得
         NpgsqlCommand command = null;
@@ -74,7 +73,6 @@ class ListFile : Form
         dt.Columns["memo"].ColumnName = "備考";
         dt.AcceptChanges();
 
-        Console.WriteLine("接続解除");
         connection.Close();
     }
 
