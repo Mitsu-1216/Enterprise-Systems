@@ -133,11 +133,11 @@ class ListFile : Form
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_customerinfo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView_customerinfo.Location = new System.Drawing.Point(27, 55);
+            this.dataGridView_customerinfo.Location = new System.Drawing.Point(55, 55);
             this.dataGridView_customerinfo.Name = "dataGridView_customerinfo";
             this.dataGridView_customerinfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView_customerinfo.RowTemplate.Height = 21;
-            this.dataGridView_customerinfo.Size = new System.Drawing.Size(904, 653);
+            this.dataGridView_customerinfo.Size = new System.Drawing.Size(1378, 653);
             this.dataGridView_customerinfo.TabIndex = 3;
             this.dataGridView_customerinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_customerinfo_CellContentClick);
             // 
@@ -171,9 +171,9 @@ class ListFile : Form
             // create_button
             // 
             this.create_button.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.create_button.Location = new System.Drawing.Point(739, 747);
+            this.create_button.Location = new System.Drawing.Point(1241, 772);
             this.create_button.Name = "create_button";
-            this.create_button.Size = new System.Drawing.Size(153, 36);
+            this.create_button.Size = new System.Drawing.Size(192, 51);
             this.create_button.TabIndex = 2;
             this.create_button.Text = "顧客情報新規作成";
             this.create_button.UseVisualStyleBackColor = true;
