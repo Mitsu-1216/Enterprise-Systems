@@ -501,6 +501,7 @@ class NewFile : Form
             // register_button
             // 
             this.register_button.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.register_button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.register_button.Location = new System.Drawing.Point(420, 609);
             this.register_button.Name = "register_button";
             this.register_button.Size = new System.Drawing.Size(143, 45);
@@ -513,6 +514,7 @@ class NewFile : Form
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(23, 20);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
