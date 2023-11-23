@@ -8,6 +8,10 @@ using NpgsqlTypes;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Diagnostics;
+using System.Drawing;
+
 
 class NewFile : Form
 {
@@ -48,7 +52,7 @@ class NewFile : Form
     private ComboBox comboBoxJob;
     private Label alertLabel;
     private TableLayoutPanel tlp;
-
+    private Timer t;
     public NewFile()
     {
         this.Text = "Lists";
@@ -815,13 +819,19 @@ class NewFile : Form
             }
             else
             {
+                t = new Timer();
+                t.Tick += new EventHandler(MyEvent);
+                t.Interval = 5000; // ミリ秒単位で指定
+                t.Start();
                 alertLabel.Visible = true;
-                //MessageBox.Show("郵便番号は半角数字で入力してください。",
-                //"エラー",
-                //MessageBoxButtons.OK,
-                //MessageBoxIcon.Error);
                 return;
             }
         }
+    }
+
+    private void MyEvent(object sender, EventArgs e)
+    {
+        t.Stop();
+        alertLabel.Visible = false;
     }
 }
