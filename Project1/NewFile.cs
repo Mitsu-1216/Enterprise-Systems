@@ -68,6 +68,7 @@ class NewFile : Form
     private void InitializeComponent()
     {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.alertLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxJob = new System.Windows.Forms.ComboBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
@@ -101,7 +102,6 @@ class NewFile : Form
             this.comboBoxBirthPlace = new System.Windows.Forms.ComboBox();
             this.register_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.alertLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -124,6 +124,21 @@ class NewFile : Form
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(1123, 684);
             this.panel1.TabIndex = 6;
+            // 
+            // alertLabel
+            // 
+            this.alertLabel.AutoSize = true;
+            this.alertLabel.BackColor = System.Drawing.Color.Crimson;
+            this.alertLabel.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.alertLabel.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.alertLabel.Location = new System.Drawing.Point(664, 4);
+            this.alertLabel.Name = "alertLabel";
+            this.alertLabel.Padding = new System.Windows.Forms.Padding(10);
+            this.alertLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.alertLabel.Size = new System.Drawing.Size(375, 39);
+            this.alertLabel.TabIndex = 7;
+            this.alertLabel.Text = "郵便番号は半角数字で入力してください。";
+            this.alertLabel.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -504,21 +519,6 @@ class NewFile : Form
             this.label1.Size = new System.Drawing.Size(205, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "新規顧客情報を登録します。";
-            // 
-            // alertLabel
-            // 
-            this.alertLabel.AutoSize = true;
-            this.alertLabel.BackColor = System.Drawing.Color.Crimson;
-            this.alertLabel.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.alertLabel.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.alertLabel.Location = new System.Drawing.Point(664, 4);
-            this.alertLabel.Name = "alertLabel";
-            this.alertLabel.Padding = new System.Windows.Forms.Padding(10);
-            this.alertLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.alertLabel.Size = new System.Drawing.Size(375, 39);
-            this.alertLabel.TabIndex = 7;
-            this.alertLabel.Text = "郵便番号は半角数字で入力してください。";
-            this.alertLabel.Visible = false;
             // 
             // NewFile
             // 

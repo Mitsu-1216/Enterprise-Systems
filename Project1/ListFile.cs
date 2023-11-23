@@ -86,9 +86,9 @@ class ListFile : Form
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView_customerinfo = new System.Windows.Forms.DataGridView();
+            this.detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.create_button = new System.Windows.Forms.Button();
-            this.detail_button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_customerinfo)).BeginInit();
             this.SuspendLayout();
@@ -137,31 +137,9 @@ class ListFile : Form
             this.dataGridView_customerinfo.Name = "dataGridView_customerinfo";
             this.dataGridView_customerinfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView_customerinfo.RowTemplate.Height = 21;
-            this.dataGridView_customerinfo.Size = new System.Drawing.Size(1080, 653);
+            this.dataGridView_customerinfo.Size = new System.Drawing.Size(904, 653);
             this.dataGridView_customerinfo.TabIndex = 3;
             this.dataGridView_customerinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_customerinfo_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(23, 20);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(205, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "顧客一覧を表示します。";
-            // 
-            // create_button
-            // 
-            this.create_button.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.create_button.Location = new System.Drawing.Point(1319, 792);
-            this.create_button.Name = "create_button";
-            this.create_button.Size = new System.Drawing.Size(153, 36);
-            this.create_button.TabIndex = 2;
-            this.create_button.Text = "顧客情報新規作成";
-            this.create_button.UseVisualStyleBackColor = true;
-            this.create_button.Click += new System.EventHandler(this.create_button_Click_1);
             // 
             // detail_button
             // 
@@ -179,9 +157,31 @@ class ListFile : Form
             this.detail_button.UseColumnTextForButtonValue = true;
             this.detail_button.Width = 21;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(23, 20);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(205, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "顧客一覧を表示します。";
+            // 
+            // create_button
+            // 
+            this.create_button.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.create_button.Location = new System.Drawing.Point(739, 747);
+            this.create_button.Name = "create_button";
+            this.create_button.Size = new System.Drawing.Size(153, 36);
+            this.create_button.TabIndex = 2;
+            this.create_button.Text = "顧客情報新規作成";
+            this.create_button.UseVisualStyleBackColor = true;
+            this.create_button.Click += new System.EventHandler(this.create_button_Click_1);
+            // 
             // ListFile
             // 
-            this.ClientSize = new System.Drawing.Size(1144, 741);
+            this.ClientSize = new System.Drawing.Size(1483, 864);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.create_button);
             this.Name = "ListFile";
