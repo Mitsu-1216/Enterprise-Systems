@@ -108,6 +108,8 @@ class TabFile : Form
     private RadioButton radioButton10;
     private Button purchaseRegisterButton;
     private int customerId;
+    private Label alertLabel;
+    private Timer t;
 
     public TabFile(DataTable customerData, DataTable dt_purchase)
     {
@@ -200,6 +202,7 @@ class TabFile : Form
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.alertLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxJob = new System.Windows.Forms.ComboBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
@@ -373,6 +376,7 @@ class TabFile : Form
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.alertLabel);
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.edit_button);
             this.panel2.Controls.Add(this.label1);
@@ -383,6 +387,21 @@ class TabFile : Form
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel2.Size = new System.Drawing.Size(1502, 843);
             this.panel2.TabIndex = 20;
+            // 
+            // alertLabel
+            // 
+            this.alertLabel.AutoSize = true;
+            this.alertLabel.BackColor = System.Drawing.Color.Crimson;
+            this.alertLabel.Font = new System.Drawing.Font("BIZ UDPゴシック", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.alertLabel.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.alertLabel.Location = new System.Drawing.Point(613, 2);
+            this.alertLabel.Name = "alertLabel";
+            this.alertLabel.Padding = new System.Windows.Forms.Padding(10);
+            this.alertLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.alertLabel.Size = new System.Drawing.Size(375, 39);
+            this.alertLabel.TabIndex = 15;
+            this.alertLabel.Text = "郵便番号は半角数字で入力してください。";
+            this.alertLabel.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -463,6 +482,7 @@ class TabFile : Form
             this.textBoxPostalNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxPostalNumber.Size = new System.Drawing.Size(351, 26);
             this.textBoxPostalNumber.TabIndex = 7;
+            this.textBoxPostalNumber.TextChanged += new System.EventHandler(this.textBoxPostalNumber_TextChanged);
             // 
             // label7
             // 
@@ -1665,6 +1685,33 @@ class TabFile : Form
 
         // 半角英数チェック
         return Regex.IsMatch(val, @"^[0-9]+$");
+    }
+
+    private void textBoxPostalNumber_TextChanged(object sender, EventArgs e)
+    {
+        int postalNumber = 0;
+        if (textBoxPostalNumber.Text != "")
+        {
+            if (isHanSu(textBoxPostalNumber.Text))
+            {
+                postalNumber = int.Parse(textBoxPostalNumber.Text);
+            }
+            else
+            {
+                t = new Timer();
+                t.Tick += new EventHandler(MyEvent);
+                t.Interval = 5000; // ミリ秒単位で指定
+                t.Start();
+                alertLabel.Visible = true;
+                return;
+            }
+        }
+    }
+
+    private void MyEvent(object sender, EventArgs e)
+    {
+        t.Stop();
+        alertLabel.Visible = false;
     }
 
 }
