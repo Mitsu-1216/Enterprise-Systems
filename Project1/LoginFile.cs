@@ -30,6 +30,8 @@ class CodeFile1 : Form
         this.Text = "Enterprise Systems";
         this.Width = 5000;
         this.Height = 1600;
+        //ログインウインドウをセンターに指定
+        this.StartPosition = FormStartPosition.CenterScreen;
 
         InitializeComponent();
 
