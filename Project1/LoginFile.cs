@@ -260,8 +260,13 @@ class CodeFile1 : Form
                 }
             }
 
-            //顧客一覧リストへ
             ListFile listfile = new ListFile();
+            //listfile.StartPosition = FormStartPosition.CenterScreen;
+            //ウインドウ位置を指定
+            listfile.Left = 10;
+            listfile.Top = 20;
+            listfile.StartPosition = FormStartPosition.Manual;
+            //顧客一覧リストへ
             listfile.Show();
         }
         catch(Exception ex)
