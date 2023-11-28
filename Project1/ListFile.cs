@@ -134,9 +134,11 @@ class ListFile : Form
             this.dataGridView_customerinfo.Location = new System.Drawing.Point(55, 55);
             this.dataGridView_customerinfo.Name = "dataGridView_customerinfo";
             this.dataGridView_customerinfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView_customerinfo.RowHeadersWidth = 40;
             this.dataGridView_customerinfo.RowTemplate.Height = 21;
             this.dataGridView_customerinfo.Size = new System.Drawing.Size(1378, 653);
             this.dataGridView_customerinfo.TabIndex = 3;
+            this.dataGridView_customerinfo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_customerinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_customerinfo_CellContentClick);
             // 
             // detail_button
